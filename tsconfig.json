@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "include": [
+    "src/**/*",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.css",
+    "./vite.config.ts",
+    ".eslintrc.ts", "jest.config.js", "tests/suma.test.ts", "tests/suma.ts",
+  ]
+}

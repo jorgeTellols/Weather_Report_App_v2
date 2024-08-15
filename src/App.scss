@@ -1,0 +1,60 @@
+/* Body styles */
+
+$green: #66d195;
+
+.content {
+    height: 75vh;
+    width: 50vw;
+    background-color: $green;
+    margin: 5%;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.london {
+    background: url("../public/assets/london.jpg");
+    background-size: cover
+}
+
+.singapore {
+    background: url("../public/assets/singapore.jpg");
+    background-size: cover
+}
+
+.toronto {
+    background: url("../public/assets/toronto.jpg");
+    background-size: cover;
+}
+
+.emoji {
+    height: 40%;
+    width: 30%;
+}
+
+.empty-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.weather-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.language-buttons-container {
+    margin-top: 3%;
+    height: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  

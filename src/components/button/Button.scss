@@ -8,12 +8,12 @@ $darkThemeBackgroundHover: #39fe90;
 $darkThemeFontColorSelected: black;
 
 .language-button:hover {
-  background-color: $darkBackgroundHover;
+  background-color: $darkThemeBackgroundHover;
   color: $darkThemeFontColorSelected;
 }
 
 .language-button {
-  background-color: $darkBackground;
+  background-color: $darkThemeBackground;
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 1vh 1vw;
@@ -26,7 +26,7 @@ $darkThemeFontColorSelected: black;
 }
 
 .highlighted-button {
-  background-color: $darkBackgroundHover;
+  background-color: $darkThemeBackgroundHover;
   color: $darkThemeFontColorSelected;
 }
 

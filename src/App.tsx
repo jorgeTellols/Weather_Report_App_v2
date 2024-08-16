@@ -5,6 +5,7 @@ import "./App.scss";
 import es from "./utils/es";
 import en from "./utils/en";
 import Button from "./components/button/Button";
+import EmptyContent from "./views/emptyContent/EmptyContent";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -57,25 +58,24 @@ function App() {
         <Button
           buttonType="button"
           styleButton="language-button"
-          isSelected={languageSelected == en ? "highlighted-button" : ""}
+          highLightedButton={languageSelected == en}
           handleClick={() => setLanguageSelected(en)}
           textContent={languageSelected.englishLanguage}
         ></Button>
         <Button
           buttonType="button"
           styleButton="language-button"
-          isSelected={languageSelected == es ? "highlighted-button" : ""}
+          highLightedButton={languageSelected == es}
           handleClick={() => setLanguageSelected(es)}
           textContent={languageSelected.spanishLanguage}
         ></Button>
       </div>
       <div className={`${setContentBackground()} content`}>
         {selectedCityName == "" ? (
-          <div className="empty-content">
-            <img className="emoji" src="/src/assets/thinking.gif" />
-            <h1>{languageSelected.emptyContentTitle} </h1>
-            <span>{languageSelected.emptyContentSpan}</span>
-          </div>
+          <EmptyContent
+            emptyContentTitle={languageSelected.emptyContentTitle}
+            emptyContentSpan={languageSelected.emptyContentSpan}
+          />
         ) : (
           // <WeatherReport
           //   selectedCityName={selectedCityName}

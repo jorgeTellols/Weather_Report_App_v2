@@ -1,22 +1,33 @@
-  .language-button:hover {
-    background-color: #39fe90;
-    color: black;
-  }
-  
-  .language-button {
-    background-color: #1a1a1a;
-    border: 0.1vw solid silver;
-    border-radius: 15%;
-    padding: 0.6em 1.2em;
-    margin-right: 2vw;
-    font-size: 1vw;
-    font-weight: 500;
-    font-family: inherit;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .highlighted-button {
-    background-color: #39fe90;
-    color: black;
-  }
+$lightThemeBackground: white;
+$lightThemeFontColor: black;
+$lightThemeBackgroundHover: blue;
+$lightThemeFontColorSelected: white;
+$darkThemeBackground: #1a1a1a;
+$darkThemeFontColor: white;
+$darkThemeBackgroundHover: #39fe90;
+$darkThemeFontColorSelected: black;
+
+.language-button:hover {
+  background-color: $darkBackgroundHover;
+  color: $darkThemeFontColorSelected;
+}
+
+.language-button {
+  background-color: $darkBackground;
+  border: 0.1vw solid silver;
+  border-radius: 15%;
+  padding: 1vh 1vw;
+  margin-right: 2vw;
+  font-size: 100%;
+  font-weight: 500;
+  font-family: inherit;
+  color: $darkThemeFontColor;
+  cursor: pointer;
+}
+
+.highlighted-button {
+  background-color: $darkBackgroundHover;
+  color: $darkThemeFontColorSelected;
+}
+
+@import "ButtonResponsive";

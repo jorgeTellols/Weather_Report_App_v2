@@ -1,21 +1,21 @@
 import "./Button.scss";
 
-interface props {
-  isSelected: string;
+interface Props {
+  highLightedButton: boolean;
   styleButton: string;
   handleClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   textContent: string;
   buttonType: HTMLButtonElement["type"];
 }
 
-const Button: React.FC<props> = (props) => {
+const Button: React.FC<Props> = ({ highLightedButton, styleButton, handleClick, textContent, buttonType }) => {
   return (
     <button
-      className={`${props.isSelected} ${props.styleButton}`}
-      onClick={props.handleClick}
-      type={props.buttonType}
+      className={`${highLightedButton ? 'highlighted-button' : ''} ${styleButton}`}
+      onClick={handleClick}
+      type={buttonType}
     >
-      {props.textContent}
+      {textContent}
     </button>
   );
 };

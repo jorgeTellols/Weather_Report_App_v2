@@ -1,0 +1,34 @@
+/* Phones */
+@media (min-width: 300px) and (max-width: 599px) {
+  .language-button {
+    height: 5vh;
+    width: 20vw;
+    margin-right: 5%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 600px) and (max-width: 767px) {
+  .language-button {
+    height: 5vh;
+    width: 20vw;
+    margin-right: 5%;
+  }
+}
+
+/* Horizontal tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language-button {
+    height: 5vh;
+    width: 20vw;
+    margin-right: 5%;
+  }
+}
+
+/*Laptops*/
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .language-button {
+    width: 10vw;
+    margin-right: 5%;
+  }
+}

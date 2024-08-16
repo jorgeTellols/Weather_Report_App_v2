@@ -1,0 +1,55 @@
+/* Phones */
+@media (min-width: 300px) and (max-width: 599px) {
+  .emoji {
+    height: 35%;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 4vw;
+  }
+
+  span {
+    font-size: 3vw;
+  }
+}
+
+/* Tablets */
+@media (min-width: 600px) and (max-width: 767px) {
+  .emoji {
+    height: 40%;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 3vw;
+  }
+
+  span {
+    font-size: 2vw;
+  }
+}
+
+/* Horizontal tablets*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .emoji {
+    height: 50%;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 3vw;
+  }
+
+  span {
+    font-size: 2vw;
+  }
+}
+
+/*Laptops*/
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .emoji {
+    height: 50%;
+    width: 40%;
+  }
+}

@@ -1,0 +1,24 @@
+.empty-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+}
+
+.emoji {
+  height: 40%;
+  width: 30%;
+}
+
+h1 {
+  font-size: 2vw;
+}
+
+span {
+  font-size: 1vw;
+}
+
+@import "EmptyContentResponsive";

@@ -2,10 +2,10 @@
 // import WeatherReport from './widgets/w-weatherReport';
 // import Form from './modals/m-form';
 import "./App.scss";
-import es from "./utils/es";
-import en from "./utils/en";
-import Button from "./components/button/Button";
-import EmptyContent from "./views/emptyContent/EmptyContent";
+import es from "../utils/es";
+import en from "../utils/en";
+import Button from "../components/button/Button";
+import EmptyContent from "../views/emptyContent/EmptyContent";
 import { useState, useEffect } from "react";
 
 function App() {

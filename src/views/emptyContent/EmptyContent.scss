@@ -6,19 +6,19 @@
   justify-content: center;
   align-items: center;
   font-size: 1vw;
-}
 
-.emoji {
-  height: 40%;
-  width: 30%;
-}
+  .emoji {
+    height: 40%;
+    width: 30%;
+  }
 
-h1 {
-  font-size: 2vw;
-}
+  h1 {
+    font-size: 2vw;
+  }
 
-span {
-  font-size: 1vw;
-}
+  span {
+    font-size: 1vw;
+  }
 
-@import "EmptyContentResponsive";
+  @import "EmptyContentResponsive";
+}

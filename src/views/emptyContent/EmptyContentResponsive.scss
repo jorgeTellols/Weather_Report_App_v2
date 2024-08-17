@@ -1,55 +1,107 @@
-/* Phones */
-@media (min-width: 300px) and (max-width: 599px) {
-  .emoji {
-    height: 35%;
-    width: 60%;
+@media (orientation: portrait) {
+  /* Phones */
+  @media (min-width: 300px) and (max-width: 599px) {
+    .emoji {
+      height: 30%;
+      width: 60%;
+    }
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    span {
+      font-size: 4vw;
+    }
   }
 
-  h1 {
-    font-size: 4vw;
+  /* Tablets */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .emoji {
+      height: 40%;
+      width: 60%;
+    }
+
+    h1 {
+      font-size: 3vw;
+    }
+
+    span {
+      font-size: 2vw;
+    }
   }
 
-  span {
-    font-size: 3vw;
+  /* Horizontal tablets*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .emoji {
+      height: 40%;
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 5vw;
+    }
+
+    span {
+      font-size: 3vw;
+    }
   }
 }
 
-/* Tablets */
-@media (min-width: 600px) and (max-width: 767px) {
-  .emoji {
-    height: 40%;
-    width: 60%;
+@media (orientation: landscape) {
+  /* Phones */
+  @media (min-width: 300px) and (max-width: 599px) {
+    .emoji {
+      height: 50%;
+      width: 30%;
+    }
   }
 
-  h1 {
-    font-size: 3vw;
+  /* Tablets */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .emoji {
+      height: 50%;
+      width: 30%;
+    }
+
+    h1 {
+      font-size: 3vw;
+    }
+
+    span {
+      font-size: 2vw;
+    }
   }
 
-  span {
-    font-size: 2vw;
-  }
-}
+  /* Horizontal tablets*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .emoji {
+      height: 50%;
+      width: 30%;
+    }
 
-/* Horizontal tablets*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  .emoji {
-    height: 50%;
-    width: 60%;
+    h1 {
+      font-size: 3vw;
+    }
+
+    span {
+      font-size: 2vw;
+    }
   }
 
-  h1 {
-    font-size: 3vw;
-  }
+  /*Laptops and desktops*/
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .emoji {
+      height: 50%;
+      width: 40%;
+    }
 
-  span {
-    font-size: 2vw;
-  }
-}
+    h1 {
+      font-size: 3vw;
+    }
 
-/*Laptops*/
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .emoji {
-    height: 50%;
-    width: 40%;
+    span {
+      font-size: 2vw;
+    }
   }
 }

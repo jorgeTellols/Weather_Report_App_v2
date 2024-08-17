@@ -7,22 +7,24 @@ $darkThemeFontColor: white;
 $darkThemeBackgroundHover: #39fe90;
 $darkThemeFontColorSelected: black;
 
-.language-button:hover {
-  background-color: $darkThemeBackgroundHover;
-  color: $darkThemeFontColorSelected;
-}
-
 .language-button {
   background-color: $darkThemeBackground;
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 1vh 1vw;
+  height: 100%;
+  width: 7%;
   margin-right: 2vw;
-  font-size: 100%;
+  font-size: 1vw;
   font-weight: 500;
   font-family: inherit;
   color: $darkThemeFontColor;
   cursor: pointer;
+
+  :hover {
+    background-color: $darkThemeBackgroundHover;
+    color: $darkThemeFontColorSelected;
+  }
 }
 
 .highlighted-button {

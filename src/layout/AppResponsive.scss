@@ -1,0 +1,92 @@
+@media (orientation: portrait) {
+  /* Phones */
+  @media (min-width: 300px) and (max-width: 599px) {
+    .language-buttons-container {
+      margin-top: 7%;
+      margin-bottom: 7%;
+    }
+
+    .content {
+      height: 80vh;
+      width: 80vw;
+    }
+  }
+
+  /* Tablets */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .language-buttons-container {
+      margin-top: 7%;
+      margin-bottom: 4%;
+    }
+
+    .content {
+      height: 75vh;
+      width: 70vw;
+    }
+  }
+
+  /* Horizontal tablets*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .language-buttons-container {
+      margin-top: 7%;
+      margin-bottom: 4%;
+    }
+
+    .content {
+      height: 75vh;
+      width: 70vw;
+    }
+  }
+
+  /*Laptops*/
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .language-buttons-container {
+      margin-top: 7%;
+      margin-bottom: 4%;
+    }
+
+    .content {
+      height: 70vh;
+      width: 65vw;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  /* Phones */
+  @media (min-width: 300px) and (max-width: 599px) {
+    .language-buttons-container {
+      margin-top: 7%;
+      margin-bottom: 7%;
+    }
+
+    .content {
+      height: 80vh;
+      width: 80vw;
+    }
+  }
+
+  /* Tablets */
+  @media (min-width: 600px) and (max-width: 767px) {
+    .content {
+      height: 70vh;
+      width: 60vw;
+    }
+  }
+
+  /* Horizontal tablets*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .content {
+      height: 65vh;
+      width: 60vw;
+    }
+  }
+
+  /*Laptops and desktops*/
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .content {
+      height: 70vh;
+      width: 65vw;
+    }
+  }
+}

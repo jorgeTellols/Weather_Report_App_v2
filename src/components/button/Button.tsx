@@ -1,23 +1,35 @@
-import "./Button.scss";
+import './Button.scss';
 
 interface Props {
-  highLightedButton: boolean;
-  styleButton: string;
-  handleClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  highlightedButton?: boolean;
+  styleButton?: string;
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   textContent: string;
-  buttonType: HTMLButtonElement["type"];
 }
 
-const Button: React.FC<Props> = ({ highLightedButton, styleButton, handleClick, textContent, buttonType }) => {
+function Button({
+  highlightedButton,
+  styleButton,
+  handleClick,
+  textContent,
+}: Props) {
   return (
     <button
-      className={`${highLightedButton ? 'highlighted-button' : ''} ${styleButton}`}
+      className={`${
+        highlightedButton ? 'highlighted-button' : ''
+      } ${styleButton}`}
       onClick={handleClick}
-      type={buttonType}
+      type="button"
     >
       {textContent}
     </button>
   );
+}
+
+// Default props in case they are unused
+Button.defaultProps = {
+  highlightedButton: false,
+  styleButton: '',
 };
 
 export default Button;

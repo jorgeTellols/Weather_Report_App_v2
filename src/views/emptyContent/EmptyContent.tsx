@@ -1,18 +1,23 @@
-import "./EmptyContent.scss";
+import './EmptyContent.scss';
 
 interface Props {
   emptyContentTitle: string;
   emptyContentSpan: string;
 }
 
-const EmptyContent: React.FC<Props> = (props) => {
+function EmptyContent({
+  emptyContentTitle,
+  emptyContentSpan,
+} : Props) {
   return (
     <div className="empty-content">
-      <img className="emoji" src="/src/assets/thinking.gif" />
-      <h1>{props.emptyContentTitle} </h1>
-      <span>{props.emptyContentSpan}</span>
+      <img className="emoji" src="/src/assets/thinking.gif" alt="emoji" />
+      <h1>
+        {emptyContentTitle}
+      </h1>
+      <span>{emptyContentSpan}</span>
     </div>
   );
-};
+}
 
 export default EmptyContent;

@@ -7,7 +7,7 @@ import es from '../utils/es.json';
 import en from '../utils/en.json';
 import Button from '../components/button/Button';
 import EmptyContent from '../views/emptyContent/EmptyContent';
-import Sidebar from '../widgets/sidebar/sidebar';
+import Sidebar from '../widgets/sidebar/Sidebar';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(en);

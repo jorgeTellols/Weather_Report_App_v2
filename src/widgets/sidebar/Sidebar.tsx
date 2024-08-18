@@ -5,16 +5,16 @@ import Button from '../../components/button/Button';
 interface Props {
   languageSelected: { [key: string]: string },
   //   showModal: (event: React.MouseEvent<HTMLButtonElement>) => void,
-//   handleClickLondon: (event: React.MouseEvent<HTMLButtonElement>) => void;
-//   handleClickToronto: (event: React.MouseEvent<HTMLButtonElement>) => void;
-//   handleClickSingapore: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  // handleClickLondon: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  // handleClickToronto: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  // handleClickSingapore: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 function Sidebar({
   languageSelected,
-//   handleClickLondon,
-//   handleClickToronto,
-//   handleClickSingapore,
+  // handleClickLondon,
+  // handleClickToronto,
+  // handleClickSingapore,
 //   showModal,
 } : Props) {
   // Hook initialization
@@ -22,19 +22,19 @@ function Sidebar({
   const [firstTime, setFirstTime] = useState(true);
 
   // Allows me to change the state of "isVisible" and use the prop given by the father component
-  //   const handleClick = (prop) => {
-  //     prop();
-  //     setIsVisible(false);
-  //   };
+  function handleClick() {
+    // prop();
+    setIsVisible(!isVisible);
+  }
 
   return (
     <div>
       {firstTime
         ? (
           <div className="sidebar first-time">
-            <div className="toggle-sidebar">
+            <div className="sidebar-toggle">
               <Button
-                styleButton="toggle-sidebar"
+                styleButton="sidebar-toggle-button"
                 handleClick={() => {
                   setIsVisible(!isVisible);
                   setFirstTime(false);
@@ -48,18 +48,21 @@ function Sidebar({
           <div className={`${isVisible ? 'visible' : 'not-visible'} sidebar`}>
             <h1>{(languageSelected).sidebarTitle}</h1>
             <Button
-                //   handleClick={() => handleClick(handleClickLondon)}
-              handleClick={() => console.log('London')}
+              styleButton="city-option"
+              // handleClick={() => handleClick(handleClickLondon)}
+              handleClick={() => handleClick()}
               textContent={(languageSelected).sidebarLondon}
             />
             <Button
-                //   handleClick={() => handleClick(handleClickToronto)}
-              handleClick={() => console.log('Toronto')}
+              styleButton="city-option"
+              // handleClick={() => handleClick(handleClickToronto)}
+              handleClick={() => handleClick()}
               textContent={(languageSelected).sidebarToronto}
             />
             <Button
-                //   handleClick={() => handleClick(handleClickSingapore)}
-              handleClick={() => console.log('Singapur')}
+              styleButton="city-option"
+              // handleClick={() => handleClick(handleClickSingapore)}
+              handleClick={() => handleClick()}
               textContent={(languageSelected).sidebarSingapore}
             />
             <p>
@@ -68,13 +71,26 @@ function Sidebar({
               <a href="https://www.google.com">{(languageSelected).sidebarFormLink}</a>
             </p>
             {/* <div className="toggle-sidebar" onClick={() => setIsVisible(!isVisible)}> */}
-            <div className="toggle-sidebar">
+            <div className="sidebar-toggle">
               {isVisible
                 ? (
-                  <h1 className="hide">🌏</h1>
+                  <Button
+                    styleButton="sidebar-toggle-button hide"
+                    handleClick={() => {
+                      setIsVisible(!isVisible);
+                    }}
+                    textContent="🌏"
+                  />
                 )
                 : (
-                  <h1 className="show">🌏</h1>
+                  <Button
+                    styleButton="sidebar-toggle-button"
+                    handleClick={() => {
+                      setIsVisible(!isVisible);
+                    }}
+                    textContent="🌏"
+                  />
+
                 )}
             </div>
           </div>

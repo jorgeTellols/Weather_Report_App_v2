@@ -33,19 +33,11 @@
   }
 }
 
-//Esto se encarga de la posición del sidebar SEGUIR POR AQUI
-
-.first-time {
-  margin-right: 115%;
-}
-
 .visible {
-  margin-right: 115%;
   animation: ShowSidebarAnimation forwards 0.5s;
 }
 
 .not-visible {
-  margin-right: 115%;
   animation: HideSidebarAnimation forwards 0.5s;
 }
 

@@ -1,4 +1,3 @@
-// import Sidebar from './widgets/w-sidebar';
 // import WeatherReport from './widgets/w-weatherReport';
 // import Form from './modals/m-form';
 import './App.scss';
@@ -11,10 +10,8 @@ import Sidebar from '../widgets/sidebar/Sidebar';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(en);
-  // const [isFormShowing, setIsFormShowing] = useState(false);
-  // const [selectedCityName, setSelectedCityName] = useState('');
-  const [isFormShowing] = useState(false);
-  const [selectedCityName] = useState('');
+  const [isFormShowing, setIsFormShowing] = useState(false);
+  const [selectedCityName, setSelectedCityName] = useState('');
 
   // useEffect(() => {
   //   if((selectedCityName == (en.sidebarLondon)) || (selectedCityName == (es.sidebarLondon)))
@@ -52,10 +49,10 @@ function App() {
   return (
     <div className="weather-app">
       <Sidebar
-      // handleClickLondon={() => setSelectedCityName(languageSelected.sidebarLondon)}
-      // handleClickToronto={() => setSelectedCityName(languageSelected.sidebarToronto)}
-      // handleClickSingapore={() => setSelectedCityName(languageSelected.sidebarSingapore)}
-      // showModal={() => setIsFormShowing(true)}
+        selectLondon={() => setSelectedCityName(languageSelected.sidebarLondon)}
+        selectToronto={() => setSelectedCityName(languageSelected.sidebarToronto)}
+        selectSingapore={() => setSelectedCityName(languageSelected.sidebarSingapore)}
+        showModal={() => setIsFormShowing(true)}
         languageSelected={languageSelected}
       />
       <div className="language-buttons-container">

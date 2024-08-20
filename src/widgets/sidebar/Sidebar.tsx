@@ -2,28 +2,36 @@ import './sidebar.scss';
 import { useState } from 'react';
 import Button from '../../components/button/Button';
 
+// Interface to define props
 interface Props {
   languageSelected: { [key: string]: string },
-  //   showModal: (event: React.MouseEvent<HTMLButtonElement>) => void,
-  // handleClickLondon: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  // handleClickToronto: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  // handleClickSingapore: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  showModal: () => void,
+  selectLondon: () => void;
+  selectToronto: () => void;
+  selectSingapore: () => void;
 }
 
+// Destructuring and hook initialization
 function Sidebar({
   languageSelected,
-  // handleClickLondon,
-  // handleClickToronto,
-  // handleClickSingapore,
-//   showModal,
+  selectLondon,
+  selectToronto,
+  selectSingapore,
+  showModal,
 } : Props) {
-  // Hook initialization
   const [isVisible, setIsVisible] = useState(false);
   const [firstTime, setFirstTime] = useState(true);
 
-  // Allows me to change the state of "isVisible" and use the prop given by the father component
-  function handleClick() {
-    // prop();
+  // // Use hooks to change the properties and apply the correct styles
+  // function toggleVisibility() {
+  //   setIsVisible(!isVisible);
+  //   setFirstTime(false);
+  // }
+
+  // Function that changes the state of "isVisible" and sends the selected option
+  // to the father component, this will allow it to display the correct weather content
+  function handleCitySelection(citySelected: () => void) {
+    citySelected();
     setIsVisible(!isVisible);
   }
 
@@ -31,7 +39,7 @@ function Sidebar({
     <div>
       {firstTime
         ? (
-          <div className="sidebar first-time">
+          <div className="sidebar">
             <div className="sidebar-toggle">
               <Button
                 styleButton="sidebar-toggle-button"
@@ -49,49 +57,35 @@ function Sidebar({
             <h1>{(languageSelected).sidebarTitle}</h1>
             <Button
               styleButton="city-option"
-              // handleClick={() => handleClick(handleClickLondon)}
-              handleClick={() => handleClick()}
+              handleClick={() => handleCitySelection(selectLondon)}
               textContent={(languageSelected).sidebarLondon}
             />
             <Button
               styleButton="city-option"
-              // handleClick={() => handleClick(handleClickToronto)}
-              handleClick={() => handleClick()}
+              handleClick={() => handleCitySelection(selectToronto)}
               textContent={(languageSelected).sidebarToronto}
             />
             <Button
               styleButton="city-option"
-              // handleClick={() => handleClick(handleClickSingapore)}
-              handleClick={() => handleClick()}
+              handleClick={() => handleCitySelection(selectSingapore)}
               textContent={(languageSelected).sidebarSingapore}
             />
             <p>
               {(languageSelected).sidebarForm}
-              {/* <a onClick={showModal}>{(languageSelected).sidebarFormLink}</a> */}
-              <a href="https://www.google.com">{(languageSelected).sidebarFormLink}</a>
+              <Button
+                textContent={`${(languageSelected).sidebarFormLink}`}
+                handleClick={showModal}
+                styleButton="form-button"
+              />
             </p>
-            {/* <div className="toggle-sidebar" onClick={() => setIsVisible(!isVisible)}> */}
             <div className="sidebar-toggle">
-              {isVisible
-                ? (
-                  <Button
-                    styleButton="sidebar-toggle-button hide"
-                    handleClick={() => {
-                      setIsVisible(!isVisible);
-                    }}
-                    textContent="🌏"
-                  />
-                )
-                : (
-                  <Button
-                    styleButton="sidebar-toggle-button"
-                    handleClick={() => {
-                      setIsVisible(!isVisible);
-                    }}
-                    textContent="🌏"
-                  />
-
-                )}
+              <Button
+                styleButton={`sidebar-toggle-button ${isVisible ? 'hide' : ''}`}
+                handleClick={() => {
+                  setIsVisible(!isVisible);
+                }}
+                textContent="🌏"
+              />
             </div>
           </div>
         )}

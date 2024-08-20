@@ -21,12 +21,11 @@ function Button({
       onClick={handleClick}
       type="button"
     >
-      {textContent}
+      <span>{textContent}</span>
     </button>
   );
 }
 
-// Default props in case they are unused
 Button.defaultProps = {
   highlightedButton: false,
   styleButton: '',

@@ -12,42 +12,58 @@ $darkThemeFontColorSelected: black;
 //Language Buttons
 
 .language-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $darkThemeBackground;
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 1vh 1vw;
-  height: 100%;
   width: 7%;
-  margin-right: 2vw;
-  font-size: 1vw;
-  font-weight: 500;
   font-family: inherit;
-  color: $darkThemeFontColor;
+  margin-right: 2vw;
   cursor: pointer;
 
-  :hover {
+  span {
+    font-size: 1vw;
+    font-weight: 500;
+    color: $darkThemeFontColor;
+  }
+
+  &:hover {
     background-color: $darkThemeBackgroundHover;
-    color: $darkThemeFontColorSelected;
+
+    span {
+      color: $darkThemeFontColorSelected;
+    }
   }
 }
 
 .highlighted-button {
   background-color: $darkThemeBackgroundHover;
-  color: $darkThemeFontColorSelected;
+
+  span {
+    color: $darkThemeFontColorSelected;
+  }
 }
 
 //Sidebar Buttons
 
 .sidebar-toggle-button {
-  margin-right: 10%;
-  margin-bottom: 7%;
+  height: 100%;
+  width: 100%;
   background-color: #39fe90;
   border-width: 0;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
-  font-size: xx-large;
   cursor: pointer;
-  animation: MakeSidebarEyeCatching infinite 0.8s alternate;
+
+  span {
+    font-size: xx-large;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    animation: MakeSidebarEyeCatching infinite 0.7s alternate;
+  }
 }
 
 .city-option {
@@ -60,25 +76,40 @@ $darkThemeFontColorSelected: black;
   cursor: pointer;
   background-color: #39fe90;
   border: 0;
+
+  &:hover {
+    background-color: #27b164;
+  }
 }
 
-.city-option:hover {
-  background-color: #27b164;
-}
-
-.hide {
+.hide > span {
   animation: none;
+}
+
+.form-button {
+  background-color: $darkThemeBackgroundHover;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+
+  span {
+    text-decoration: underline;
+    color: blue;
+    font-size: larger;
+    cursor: pointer;
+    font-family: inherit;
+  }
 }
 
 //Animations for sidebar buttons
 
 @keyframes MakeSidebarEyeCatching {
   0% {
-    transform: scale(1);
+    font-size: x-large;
   }
 
   100% {
-    transform: scale(1.3);
+    font-size: xx-large;
   }
 }
 

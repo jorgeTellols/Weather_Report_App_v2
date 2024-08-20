@@ -1,5 +1,5 @@
 import './sidebar.scss';
-import { useState } from 'react';
+import useSidebar from './useSidebar';
 import Button from '../../components/button/Button';
 
 // Interface to define props
@@ -19,22 +19,9 @@ function Sidebar({
   selectSingapore,
   showModal,
 } : Props) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [firstTime, setFirstTime] = useState(true);
+  const { isVisible, firstTime, toggleVisibility, handleCitySelection } = useSidebar();
 
-  // // Use hooks to change the properties and apply the correct styles
-  // function toggleVisibility() {
-  //   setIsVisible(!isVisible);
-  //   setFirstTime(false);
-  // }
-
-  // Function that changes the state of "isVisible" and sends the selected option
-  // to the father component, this will allow it to display the correct weather content
-  function handleCitySelection(citySelected: () => void) {
-    citySelected();
-    setIsVisible(!isVisible);
-  }
-
+  // Main return
   return (
     <div>
       {firstTime
@@ -43,10 +30,7 @@ function Sidebar({
             <div className="sidebar-toggle">
               <Button
                 styleButton="sidebar-toggle-button"
-                handleClick={() => {
-                  setIsVisible(!isVisible);
-                  setFirstTime(false);
-                }}
+                handleClick={toggleVisibility}
                 textContent="🌏"
               />
             </div>
@@ -81,9 +65,7 @@ function Sidebar({
             <div className="sidebar-toggle">
               <Button
                 styleButton={`sidebar-toggle-button ${isVisible ? 'hide' : ''}`}
-                handleClick={() => {
-                  setIsVisible(!isVisible);
-                }}
+                handleClick={toggleVisibility}
                 textContent="🌏"
               />
             </div>

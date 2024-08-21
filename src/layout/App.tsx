@@ -7,10 +7,12 @@ import en from '../utils/en.json';
 import Button from '../components/button/Button';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
+// import Modal from '../modals/Modal';
+// import Form from '../widgets/Form/Form';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(en);
-  const [isFormShowing, setIsFormShowing] = useState(false);
+  // const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
 
   // useEffect(() => {
@@ -52,7 +54,8 @@ function App() {
         selectLondon={() => setSelectedCityName(languageSelected.sidebarLondon)}
         selectToronto={() => setSelectedCityName(languageSelected.sidebarToronto)}
         selectSingapore={() => setSelectedCityName(languageSelected.sidebarSingapore)}
-        showModal={() => setIsFormShowing(true)}
+        // showModal={() => setIsFormShowing(true)}
+        showModal={() => console.log('HOLA')}
         languageSelected={languageSelected}
       />
       <div className="language-buttons-container">
@@ -83,15 +86,12 @@ function App() {
           <h1>prueba</h1>
         )}
       </div>
-      {isFormShowing ? (
-        // <Form
-        //   languageSelected={languageSelected}
-        //   hideModal={() => setIsFormShowing(false)}>
-        // </Form>
-        <h1>No sale el form</h1>
-      ) : (
-        ''
-      )}
+      {/* {isFormShowing ? (
+        <Modal hideModal={() => setIsFormShowing(false)}>
+          <Form languageSelected={languageSelected} />
+        </Modal>
+      ) : ('')} */}
+      <h1>Debería lanzar la modal y el form</h1>
     </div>
   );
 }

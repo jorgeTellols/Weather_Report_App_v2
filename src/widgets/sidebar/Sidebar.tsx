@@ -19,7 +19,9 @@ function Sidebar({
   selectSingapore,
   showModal,
 } : Props) {
-  const { isVisible, firstTime, toggleVisibility, handleCitySelection } = useSidebar();
+  const {
+    isVisible, firstTime, toggleVisibility, handleCitySelection,
+  } = useSidebar();
 
   // Main return
   return (

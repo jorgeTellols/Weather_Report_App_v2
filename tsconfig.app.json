@@ -21,5 +21,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "jest.config.js", "tests/suma.test.ts", "tests/suma.ts"]
+  "include": [
+    "src/**/*", 
+    "tests/**/*",
+    "jest.config.js",
+  ]
 }

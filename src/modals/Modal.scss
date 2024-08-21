@@ -1,0 +1,13 @@
+.modal {
+    height: 45vh;
+    width: 65vh;
+    background-color: #1f2222;
+    position: absolute;
+    z-index: 5;
+    border: solid 0.5vh #39fe90;
+    animation: MakeModalPop ease-out 0.5s;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

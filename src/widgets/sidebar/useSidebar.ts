@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-//Custom hook to separate logic from UI in the "Sidebar" component
-//It contains all the useStates used in "Sidebar" and a few functions
+// Custom hook to separate logic from UI in the "Sidebar" component
+// It contains all the useStates used in "Sidebar" and a few functions
 function useSidebar() {
   const [isVisible, setIsVisible] = useState(false);
   const [firstTime, setFirstTime] = useState(true);
@@ -11,16 +11,16 @@ function useSidebar() {
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
     setFirstTime(false);
-  }
+  };
 
   // Function that throws "toggleVisibility" and sends the selected option
   // to the father component (this will allow it to display the correct weather content)
   const handleCitySelection = (citySelected: () => void) => {
     citySelected();
     toggleVisibility();
-  }
+  };
 
-  //Main return
+  // Main return
   return {
     isVisible,
     firstTime,

@@ -1,19 +1,35 @@
+//Variable initialization
+
+$lightThemeBackground: white;
+$lightThemeFontColor: black;
+$lightThemeBlueBackground: blue;
+$darkThemeBlueHover: rgb(89, 136, 232);
+$lightThemeFontColorSelected: white;
+
+$darkThemeBackground: #1a1a1a;
+$darkThemeFontColor: white;
+$darkThemeGreenBackground: #39fe90;
+$darkThemeGreenHover: #27b164;
+$darkThemeFontColorSelected: black;
+
+//General styles
+
 html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #1f2222;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1f2222;
 }
 
 h1,
 span {
-    color: black;
+  color: black;
 }

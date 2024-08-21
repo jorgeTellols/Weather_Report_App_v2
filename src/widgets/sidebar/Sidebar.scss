@@ -1,11 +1,11 @@
 @import "../../components/button/Button.scss";
 
 .sidebar {
-  border-radius: 1%;
+  border-radius: 1em;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   position: fixed;
-  background-color: #39fe90;
+  background-color: $darkThemeGreenBackground;
   height: 100vh;
   width: 15vw;
   display: flex;
@@ -25,12 +25,6 @@
     font-size: 2vh;
     text-align: center;
   }
-
-  a {
-    cursor: pointer;
-    text-decoration: underline;
-    color: blue;
-  }
 }
 
 .visible {
@@ -44,13 +38,9 @@
 .sidebar-toggle {
   width: 30%;
   height: 10%;
-  background-color: #39fe90;
+  background-color: $darkThemeGreenBackground;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   bottom: 45%;
   margin-left: 100%;
@@ -78,3 +68,5 @@
     transform: translateX(-101%);
   }
 }
+
+@import "sidebarResponsive";

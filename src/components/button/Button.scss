@@ -1,21 +1,11 @@
-//Variable initialization
-
-$lightThemeBackground: white;
-$lightThemeFontColor: black;
-$lightThemeBackgroundHover: blue;
-$lightThemeFontColorSelected: white;
-$darkThemeBackground: #1a1a1a;
-$darkThemeFontColor: white;
-$darkThemeBackgroundHover: #39fe90;
-$darkThemeFontColorSelected: black;
+@import "../../index.scss";
 
 //Language Buttons
-
 .language-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $darkThemeBackground;
+  background-color: $darkThemeFontColorSelected;
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 1vh 1vw;
@@ -31,7 +21,7 @@ $darkThemeFontColorSelected: black;
   }
 
   &:hover {
-    background-color: $darkThemeBackgroundHover;
+    background-color: $darkThemeGreenHover;
 
     span {
       color: $darkThemeFontColorSelected;
@@ -40,7 +30,7 @@ $darkThemeFontColorSelected: black;
 }
 
 .highlighted-button {
-  background-color: $darkThemeBackgroundHover;
+  background-color: $darkThemeGreenBackground;
 
   span {
     color: $darkThemeFontColorSelected;
@@ -52,16 +42,15 @@ $darkThemeFontColorSelected: black;
 .sidebar-toggle-button {
   height: 100%;
   width: 100%;
-  background-color: #39fe90;
+  background-color: $darkThemeGreenBackground;
   border-width: 0;
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
   cursor: pointer;
 
   span {
-    font-size: xx-large;
+    font-size: 4vh;
     margin-right: 10%;
-    margin-bottom: 10%;
     animation: MakeSidebarEyeCatching infinite 0.5s alternate;
   }
 }
@@ -69,16 +58,16 @@ $darkThemeFontColorSelected: black;
 .city-option {
   color: black;
   font-weight: 500;
-  font-size: 3.5vh;
+  font-size: 4vh;
   text-align: center;
   border-radius: 1%;
   padding: 25% 0;
   cursor: pointer;
-  background-color: #39fe90;
+  background-color: $darkThemeGreenBackground;
   border: 0;
 
   &:hover {
-    background-color: #27b164;
+    background-color: $darkThemeGreenHover;
   }
 }
 
@@ -87,15 +76,16 @@ $darkThemeFontColorSelected: black;
 }
 
 .form-button {
-  background-color: $darkThemeBackgroundHover;
+  background-color: $darkThemeGreenBackground;
   border: none;
   padding: 0;
   font-family: inherit;
+  font-size: inherit;
 
   span {
     text-decoration: underline;
     color: blue;
-    font-size: larger;
+    font-size: inherit;
     cursor: pointer;
     font-family: inherit;
   }
@@ -105,11 +95,11 @@ $darkThemeFontColorSelected: black;
 
 @keyframes MakeSidebarEyeCatching {
   0% {
-    font-size: x-large;
+    font-size: 5vh;
   }
 
   100% {
-    font-size: xx-large;
+    font-size: 6vh;
   }
 }
 

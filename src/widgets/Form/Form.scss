@@ -1,13 +1,52 @@
-.modal {
-    height: 45vh;
-    width: 65vh;
-    background-color: #1f2222;
-    position: absolute;
-    z-index: 5;
-    border: solid 0.5vh #39fe90;
-    animation: MakeModalPop ease-out 0.5s;
-    border-radius: 2%;
+@import "../../index.scss";
+
+form {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .first-row {
     display: flex;
+    width: 35%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
+
+  .second-row {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .form-buttons-container {
+      width: 100%;
+      margin-top: 7%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+label {
+  font-weight: 500;
+  font-style: bold;
+  font-size: 1vw;
+  color: $darkThemeGreenBackground;
+}
+
+input {
+  color: black;
+  font-size: 1vw;
+  border-width: 0;
+  outline: none;
+  background-color: white;
+}
+
+.input-style {
+  display: flex;
+  flex-direction: column;
+}

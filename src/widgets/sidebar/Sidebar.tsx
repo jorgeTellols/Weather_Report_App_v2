@@ -61,7 +61,7 @@ function Sidebar({
               <Button
                 textContent={`${(languageSelected).sidebarFormLink}`}
                 handleClick={showModal}
-                styleButton="form-button"
+                styleButton="display-form-button"
               />
             </p>
             <div className="sidebar-toggle">

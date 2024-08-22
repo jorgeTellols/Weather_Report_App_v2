@@ -1,5 +1,4 @@
 // import WeatherReport from './widgets/w-weatherReport';
-// import Form from './modals/m-form';
 import './App.scss';
 import { useState } from 'react';
 import es from '../utils/es.json';
@@ -7,12 +6,11 @@ import en from '../utils/en.json';
 import Button from '../components/button/Button';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
-// import Modal from '../modals/Modal';
-// import Form from '../widgets/Form/Form';
+import ModalForm from '../modals/ModalForm';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(en);
-  // const [isFormShowing, setIsFormShowing] = useState(false);
+  const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
 
   // useEffect(() => {
@@ -54,20 +52,19 @@ function App() {
         selectLondon={() => setSelectedCityName(languageSelected.sidebarLondon)}
         selectToronto={() => setSelectedCityName(languageSelected.sidebarToronto)}
         selectSingapore={() => setSelectedCityName(languageSelected.sidebarSingapore)}
-        // showModal={() => setIsFormShowing(true)}
-        showModal={() => console.log('HOLA')}
+        showModal={() => setIsFormShowing(true)}
         languageSelected={languageSelected}
       />
       <div className="language-buttons-container">
         <Button
           styleButton="language-button"
-          highlightedButton={languageSelected === en}
+          highlightedButton={languageSelected === en ? 'highlighted-button' : ''}
           handleClick={() => setLanguageSelected(en)}
           textContent={languageSelected.englishLanguage}
         />
         <Button
           styleButton="language-button"
-          highlightedButton={languageSelected === es}
+          highlightedButton={languageSelected === es ? 'highlighted-button' : ''}
           handleClick={() => setLanguageSelected(es)}
           textContent={languageSelected.spanishLanguage}
         />
@@ -86,12 +83,12 @@ function App() {
           <h1>prueba</h1>
         )}
       </div>
-      {/* {isFormShowing ? (
-        <Modal hideModal={() => setIsFormShowing(false)}>
-          <Form languageSelected={languageSelected} />
-        </Modal>
-      ) : ('')} */}
-      <h1>Debería lanzar la modal y el form</h1>
+      {isFormShowing ? (
+        <ModalForm
+          languageSelected={languageSelected}
+          hideModal={() => setIsFormShowing(false)}
+        />
+      ) : ('')}
     </div>
   );
 }

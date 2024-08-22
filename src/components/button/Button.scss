@@ -75,7 +75,7 @@
   animation: none;
 }
 
-.form-button {
+.display-form-button {
   background-color: $darkThemeGreenBackground;
   border: none;
   padding: 0;
@@ -101,6 +101,50 @@
   100% {
     font-size: 6vh;
   }
+}
+
+//Form buttons
+
+.submit-form-button {
+  height: 100%;
+  width: 40%;
+  font-size: 1vw;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8vw;
+  border: 0.1vw solid silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-form-button {
+  background-color: rgb(130, 5, 5);
+  height: 100%;
+  width: 40%;
+  border-radius: 8vw;
+  font-family: inherit;
+  border: 0.1vw solid rgb(180, 8, 8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    font-size: 1vw;
+    color: white;
+  }
+}
+
+.disabled-button {
+  background-color: grey;
+  color: black;
+}
+
+.enabled-button {
+  background-color: $darkThemeGreenBackground;
+  color: black;
+  cursor: pointer;
 }
 
 @import "ButtonResponsive";

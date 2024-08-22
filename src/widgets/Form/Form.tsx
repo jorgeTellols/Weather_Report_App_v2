@@ -1,47 +1,44 @@
-/* eslint-disable max-len */
-import { useState, useEffect } from 'react';
+import './Form.scss';
+import useForm from './useForm';
 import Button from '../../components/button/Button';
 import Input from '../../components/input/Input';
 
 interface Props {
   languageSelected: { [key: string]: string },
+  hideModal: () => void;
 }
 
 function Form({
+  hideModal,
   languageSelected,
 }: Props) {
-  const [buttonStatus, setButtonStatus] = useState(true);
-  const [nameField] = useState('');
-  const [birthdateField] = useState('');
-  const [cityField] = useState('');
-  // const [nameField, setNameField] = useState('');
-  // const [birthdateField, setBirthdateField] = useState('');
-  // const [cityField, setCityField] = useState('');
-  const [emailField, setEmailField] = useState('');
-  const [phoneNumberField, setPhoneNumberField] = useState('');
+  const {
+    buttonStatus,
+    setName,
+    setBirthdate,
+    setCity,
+    setEmail,
+    setPhone,
+    disableButton,
+  } = useForm();
 
-  // Validates the fields and enables/disables the button
-  useEffect(() => {
-    if (!(nameField === '') && !(birthdateField === '') && !(cityField === '') && !(emailField === '') && !(phoneNumberField === '')) {
-      setButtonStatus(true);
-    } else {
-      setButtonStatus(false);
-    }
-  }, [nameField, birthdateField, cityField, emailField, phoneNumberField]);
-
+  // Main return
   return (
     <>
       <h1>{(languageSelected).formTitle}</h1>
       <form>
         <div className="first-row">
-          {/* <Input handleChange={(e: Event) => setNameField((e.target.value).trim())} labelContent={languageSelected.formName} inputType="text" />
-          <Input handleChange={(e: Event) => setBirthdateField((e.target.value).trim())} labelContent={languageSelected.formBirthdate} inputType="text" />
-          <Input handleChange={(e: Event) => setCityField((e.target.value).trim())} labelContent={languageSelected.formCity} inputType="text" /> */}
+          <Input handleChange={setName} labelContent={languageSelected.formName} inputType="text" />
+          <Input handleChange={setBirthdate} labelContent={languageSelected.formBirthdate} inputType="text" />
+          <Input handleChange={setCity} labelContent={languageSelected.formCity} inputType="text" />
         </div>
         <div className="second-row">
-          <Input handleChange={(e) => setEmailField((e.target.value).trim())} labelContent={languageSelected.formEmail} inputType="text" />
-          <Input handleChange={(e) => setPhoneNumberField((e.target.value).trim())} labelContent={languageSelected.formPhoneNumber} inputType="text" />
-          <Button handleClick={(e) => e.preventDefault()} highlightedButton={buttonStatus} styleButton="form-button" textContent={languageSelected.formSubmitButton} />
+          <Input handleChange={setEmail} labelContent={languageSelected.formEmail} inputType="text" />
+          <Input handleChange={setPhone} labelContent={languageSelected.formPhoneNumber} inputType="text" />
+          <div className="form-buttons-container">
+            <Button handleClick={hideModal} styleButton="close-form-button" textContent={languageSelected.formCloseButton} />
+            <Button handleClick={disableButton} highlightedButton={buttonStatus ? 'enabled-button' : 'disabled-button'} styleButton="submit-form-button" textContent={languageSelected.formSubmitButton} />
+          </div>
         </div>
       </form>
     </>

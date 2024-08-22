@@ -19,8 +19,8 @@ function Input({
     <div className="input-style">
       <label htmlFor={labelContent} className={labelClass}>
         {labelContent}
-        <input id={labelContent} onChange={handleChange} className={inputClass} type={inputType} />
       </label>
+      <input id={labelContent} onChange={handleChange} className={inputClass} type={inputType} />
     </div>
   );
 }

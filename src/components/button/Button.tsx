@@ -1,7 +1,7 @@
 import './Button.scss';
 
 interface Props {
-  highlightedButton?: boolean;
+  highlightedButton?: string;
   styleButton?: string;
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   textContent: string;
@@ -15,9 +15,7 @@ function Button({
 }: Props) {
   return (
     <button
-      className={`${
-        highlightedButton ? 'highlighted-button' : ''
-      } ${styleButton}`}
+      className={`${highlightedButton} ${styleButton}`}
       onClick={handleClick}
       type="button"
     >

@@ -1,0 +1,44 @@
+.language-buttons-container {
+  margin-top: 2%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkThemeFontColorSelected;
+  border: 0.1vw solid silver;
+  border-radius: 15%;
+  padding: 1vh 1vw;
+  width: 7%;
+  font-family: inherit;
+  margin-right: 2vw;
+  cursor: pointer;
+
+  span {
+    font-size: 1vw;
+    font-weight: 500;
+    color: $darkThemeFontColor;
+  }
+
+  &:hover {
+    background-color: $darkThemeGreenHover;
+
+    span {
+      color: $darkThemeFontColorSelected;
+    }
+  }
+}
+
+.highlighted-button {
+  background-color: $darkThemeGreenBackground;
+
+  span {
+    color: $darkThemeFontColorSelected;
+  }
+}

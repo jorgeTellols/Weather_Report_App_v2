@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import './Button.scss';
 
 interface Props {
@@ -8,8 +9,8 @@ interface Props {
 }
 
 function Button({
-  highlightedButton,
-  styleButton,
+  highlightedButton = '',
+  styleButton = '',
   handleClick,
   textContent,
 }: Props) {
@@ -23,10 +24,5 @@ function Button({
     </button>
   );
 }
-
-Button.defaultProps = {
-  highlightedButton: false,
-  styleButton: '',
-};
 
 export default Button;

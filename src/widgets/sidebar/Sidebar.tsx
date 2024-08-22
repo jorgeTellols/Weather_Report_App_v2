@@ -20,8 +20,13 @@ function Sidebar({
   showModal,
 } : Props) {
   const {
-    isVisible, firstTime, toggleVisibility, handleCitySelection,
-  } = useSidebar();
+    isVisible,
+    firstTime,
+    toggleVisibility,
+    londonSelection,
+    torontoSelection,
+    singaporeSelection,
+  } = useSidebar(selectLondon, selectToronto, selectSingapore);
 
   // Main return
   return (
@@ -43,17 +48,17 @@ function Sidebar({
             <h1>{(languageSelected).sidebarTitle}</h1>
             <Button
               styleButton="city-option"
-              handleClick={() => handleCitySelection(selectLondon)}
+              handleClick={londonSelection}
               textContent={(languageSelected).sidebarLondon}
             />
             <Button
               styleButton="city-option"
-              handleClick={() => handleCitySelection(selectToronto)}
+              handleClick={torontoSelection}
               textContent={(languageSelected).sidebarToronto}
             />
             <Button
               styleButton="city-option"
-              handleClick={() => handleCitySelection(selectSingapore)}
+              handleClick={singaporeSelection}
               textContent={(languageSelected).sidebarSingapore}
             />
             <p>

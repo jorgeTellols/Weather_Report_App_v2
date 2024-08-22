@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import './Input.scss';
 
 interface Props {
@@ -9,10 +10,10 @@ interface Props {
 }
 
 function Input({
-  labelClass,
+  labelClass = '',
   labelContent,
   handleChange,
-  inputClass,
+  inputClass = '',
   inputType,
 }: Props) {
   return (
@@ -24,10 +25,5 @@ function Input({
     </div>
   );
 }
-
-Input.defaultProps = {
-  labelClass: '',
-  inputClass: '',
-};
 
 export default Input;

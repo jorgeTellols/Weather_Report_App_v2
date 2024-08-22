@@ -3,7 +3,7 @@ import './App.scss';
 import { useState } from 'react';
 import es from '../utils/es.json';
 import en from '../utils/en.json';
-import Button from '../components/button/Button';
+import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
@@ -55,20 +55,7 @@ function App() {
         showModal={() => setIsFormShowing(true)}
         languageSelected={languageSelected}
       />
-      <div className="language-buttons-container">
-        <Button
-          styleButton="language-button"
-          highlightedButton={languageSelected === en ? 'highlighted-button' : ''}
-          handleClick={() => setLanguageSelected(en)}
-          textContent={languageSelected.englishLanguage}
-        />
-        <Button
-          styleButton="language-button"
-          highlightedButton={languageSelected === es ? 'highlighted-button' : ''}
-          handleClick={() => setLanguageSelected(es)}
-          textContent={languageSelected.spanishLanguage}
-        />
-      </div>
+      <LanguageButtons />
       <div className={`${setContentBackground()} content`}>
         {selectedCityName === '' ? (
           <EmptyContent

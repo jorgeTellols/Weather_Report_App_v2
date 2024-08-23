@@ -19,6 +19,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts",     "src/widgets/languageButtons/**/*",
-]
+  "include": [
+    "vite.config.ts",
+    "src/widgets/languageButtons/**/*",
+    "tsconfig.eslint.json"
+  ]
 }

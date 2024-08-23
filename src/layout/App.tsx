@@ -9,7 +9,7 @@ import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
 
 function App() {
-  const [languageSelected, setLanguageSelected] = useState(en);
+  const [languageSelected] = useState(en);
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
 

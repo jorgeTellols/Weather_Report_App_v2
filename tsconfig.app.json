@@ -22,9 +22,10 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src/**/*", 
+    "src/**/*",
     "src/widgets/languageButtons/**/*",
     "tests/**/*",
     "jest.config.js",
+    "tsconfig.eslint.json"
   ]
 }

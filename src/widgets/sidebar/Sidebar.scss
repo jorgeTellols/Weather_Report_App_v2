@@ -1,4 +1,4 @@
-@import "../../components/button/Button.scss";
+@import "../../index.scss";
 
 .sidebar {
   border-radius: 1em;
@@ -47,13 +47,67 @@
   position: absolute;
 }
 
-//Animations
+//Buttons style
+
+.sidebar-toggle-button {
+  height: 100%;
+  width: 100%;
+  background-color: $darkThemeGreenBackground;
+  border-width: 0;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  cursor: pointer;
+
+  span {
+    font-size: 4vh;
+    margin-right: 10%;
+    animation: MakeSidebarEyeCatching infinite 0.5s alternate;
+  }
+}
+
+.city-option {
+  color: black;
+  font-weight: 500;
+  font-size: 4vh;
+  text-align: center;
+  border-radius: 1%;
+  padding: 25% 0;
+  cursor: pointer;
+  background-color: $darkThemeGreenBackground;
+  border: 0;
+
+  &:hover {
+    background-color: $darkThemeGreenHover;
+  }
+}
+
+.hide > span {
+  animation: none;
+}
+
+.display-form-button {
+  background-color: $darkThemeGreenBackground;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+
+  span {
+    text-decoration: underline;
+    color: blue;
+    font-size: inherit;
+    cursor: pointer;
+    font-family: inherit;
+  }
+}
+
+//Animations for sidebar
 
 @keyframes ShowSidebarAnimation {
   0% {
     transform: translateX(-101%);
   }
-
+  
   100% {
     transform: translateX(0%);
   }
@@ -63,9 +117,21 @@
   0% {
     transform: translateX(0%);
   }
-
+  
   100% {
     transform: translateX(-101%);
+  }
+}
+
+//Animations for sidebar buttons
+
+@keyframes MakeSidebarEyeCatching {
+  0% {
+    font-size: 5vh;
+  }
+
+  100% {
+    font-size: 6vh;
   }
 }
 

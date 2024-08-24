@@ -2,24 +2,27 @@ import './Form.scss';
 import useForm from './useForm';
 import Button from '../../components/button/Button';
 import Input from '../../components/input/Input';
+import Language from '../../utils/Language';
 
+// Interface to define props
 interface Props {
-  languageSelected: { [key: string]: string },
+  languageSelected: Language,
   hideModal: () => void;
 }
 
+// Destructuring and hook initialization
 function Form({
   hideModal,
   languageSelected,
 }: Props) {
   const {
-    buttonStatus,
     setName,
     setBirthdate,
     setCity,
     setEmail,
     setPhone,
     disableButton,
+    buttonEnabledStyle,
   } = useForm();
 
   // Main return
@@ -37,7 +40,7 @@ function Form({
           <Input handleChange={setPhone} labelContent={languageSelected.formPhoneNumber} inputType="text" />
           <div className="form-buttons-container">
             <Button handleClick={hideModal} styleButton="close-form-button" textContent={languageSelected.formCloseButton} />
-            <Button handleClick={disableButton} highlightedButton={buttonStatus ? 'enabled-button' : 'disabled-button'} styleButton="submit-form-button" textContent={languageSelected.formSubmitButton} />
+            <Button handleClick={disableButton} highlightedButton={buttonEnabledStyle} styleButton="submit-form-button" textContent={languageSelected.formSubmitButton} />
           </div>
         </div>
       </form>

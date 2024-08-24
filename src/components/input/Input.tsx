@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
-import './Input.scss';
 
+// Interface to define props
 interface Props {
   labelClass?: string;
   labelContent: string;
@@ -9,6 +9,7 @@ interface Props {
   inputType: string;
 }
 
+// Destructuring and hook initialization
 function Input({
   labelClass = '',
   labelContent,
@@ -16,6 +17,7 @@ function Input({
   inputClass = '',
   inputType,
 }: Props) {
+  // Main return
   return (
     <div className="input-style">
       <label htmlFor={labelContent} className={labelClass}>

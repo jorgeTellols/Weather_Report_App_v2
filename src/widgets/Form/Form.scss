@@ -31,6 +31,8 @@ form {
   }
 }
 
+//Input style
+
 label {
   font-weight: 500;
   font-style: bold;
@@ -49,4 +51,46 @@ input {
 .input-style {
   display: flex;
   flex-direction: column;
+}
+
+
+//Buttons style
+
+.submit-form-button {
+  height: 100%;
+  width: 40%;
+  font-size: 1vw;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8vw;
+  border: 0.1vw solid silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  color: black;
+}
+
+.close-form-button {
+  background-color: rgb(130, 5, 5);
+  height: 100%;
+  width: 40%;
+  border-radius: 8vw;
+  font-family: inherit;
+  border: 0.1vw solid rgb(180, 8, 8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    font-size: 1vw;
+    color: white;
+  }
+}
+
+.highlighted-button {
+  background-color: $darkThemeGreenBackground;
+  color: black;
+  cursor: pointer;
 }

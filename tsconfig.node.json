@@ -21,7 +21,5 @@
   },
   "include": [
     "vite.config.ts",
-    "src/widgets/languageButtons/**/*",
-    "tsconfig.eslint.json"
   ]
 }

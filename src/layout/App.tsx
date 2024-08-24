@@ -1,17 +1,22 @@
 // import WeatherReport from './widgets/w-weatherReport';
 import './App.scss';
 import { useState } from 'react';
-import es from '../utils/es.json';
-import en from '../utils/en.json';
+import Language from '../utils/Language';
+// import es from '../utils/es';
+import En from '../utils/En';
 import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
 
 function App() {
-  const [languageSelected] = useState(en);
+  const [languageSelected, setLanguageSelected] = useState(En);
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
+
+  const handleLanguageChange = (language: Language) => {
+    setLanguageSelected(language);
+  };
 
   // useEffect(() => {
   //   if((selectedCityName == (en.sidebarLondon)) || (selectedCityName == (es.sidebarLondon)))
@@ -55,7 +60,9 @@ function App() {
         showModal={() => setIsFormShowing(true)}
         languageSelected={languageSelected}
       />
-      <LanguageButtons />
+      <LanguageButtons
+        switchLanguage={handleLanguageChange}
+      />
       <div className={`${setContentBackground()} content`}>
         {selectedCityName === '' ? (
           <EmptyContent

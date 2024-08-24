@@ -1,22 +1,24 @@
 /* eslint-disable react/require-default-props */
-import './Button.scss';
 
+// Interface to define props
 interface Props {
-  highlightedButton?: string;
+  highlightedButton?: boolean;
   styleButton?: string;
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   textContent: string;
 }
 
+// Destructuring and hook initialization
 function Button({
-  highlightedButton = '',
+  highlightedButton = false,
   styleButton = '',
   handleClick,
   textContent,
 }: Props) {
+  // Main return
   return (
     <button
-      className={`${highlightedButton} ${styleButton}`}
+      className={`${highlightedButton ? 'highlighted-button' : ''} ${styleButton}`}
       onClick={handleClick}
       type="button"
     >

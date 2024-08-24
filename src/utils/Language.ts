@@ -1,0 +1,30 @@
+type Language = {
+  spanishLanguage: string;
+  englishLanguage: string;
+  sidebarLondon: string;
+  sidebarToronto: string;
+  sidebarSingapore: string;
+  sidebarTitle: string;
+  sidebarForm: string;
+  sidebarFormLink: string;
+  formTitle: string;
+  formName: string;
+  formEmail: string;
+  formCity: string;
+  formBirthdate: string;
+  formPhoneNumber: string;
+  formSubmitButton: string;
+  formCloseButton: string;
+  emptyContentTitle: string;
+  emptyContentSpan: string;
+  dataFormat: string;
+  rainProbSpan: string;
+  minTempSpan: string;
+  maxTempSpan: string;
+  serverErrorMessage: string;
+  clientErrorMessage: string;
+  serverErrorTip: string;
+  clientErrorTip: string;
+};
+
+export default Language;

@@ -1,25 +1,35 @@
-import React from 'react';
+import useLanguageButtons from './useLanguageButtons';
+import './LanguageButtons.scss';
 import Button from '../../components/button/Button';
+import Language from '../../utils/Language';
 
+// Interface to define props
 interface Props {
-  languageSelected: { [key: string]: string },
+  switchLanguage: (language: Language) => void;
 }
 
-function LanguageButtons({
-  languageSelected,
-} : Props) {
+// Destructuring and hook initialization
+function LanguageButtons(switchLanguage : Props) {
+  const {
+    setEnglish,
+    setSpanish,
+    languageSelected,
+    isHighlighted,
+  } = useLanguageButtons(switchLanguage);
+
+  // Main return
   return (
     <div className="language-buttons-container">
       <Button
         styleButton="language-button"
-        highlightedButton={languageSelected === en ? 'highlighted-button' : ''}
-        handleClick={() => setLanguageSelected(en)}
+        highlightedButton={isHighlighted}
+        handleClick={setEnglish}
         textContent={languageSelected.englishLanguage}
       />
       <Button
         styleButton="language-button"
-        highlightedButton={languageSelected === es ? 'highlighted-button' : ''}
-        handleClick={() => setLanguageSelected(es)}
+        highlightedButton={!isHighlighted}
+        handleClick={setSpanish}
         textContent={languageSelected.spanishLanguage}
       />
     </div>

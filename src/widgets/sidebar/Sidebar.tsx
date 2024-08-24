@@ -1,10 +1,11 @@
 import './sidebar.scss';
 import useSidebar from './useSidebar';
 import Button from '../../components/button/Button';
+import Language from '../../utils/Language';
 
 // Interface to define props
 interface Props {
-  languageSelected: { [key: string]: string },
+  languageSelected: Language,
   showModal: () => void,
   selectLondon: () => void;
   selectToronto: () => void;

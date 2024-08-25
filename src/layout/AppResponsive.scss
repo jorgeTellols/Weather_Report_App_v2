@@ -1,92 +1,69 @@
-@media (orientation: portrait) {
-  /* Phones */
-  @media (min-width: 300px) and (max-width: 599px) {
-    .language-buttons-container {
-      margin-top: 7%;
-      margin-bottom: 7%;
-    }
+// Variable initialization
 
-    .content {
-      height: 80vh;
-      width: 80vw;
-    }
-  }
+$portrait-margin-bottom-phone: 7%;
+$portrait-margin-bottom-tablet: 4%;
+$height-portrait-phone: 80vh;
+$width-portrait-phone: 80vw;
+$height-portrait-tablet: 75vh;
+$width-portrait-tablet: 70vw;
+$height-landscape-phone: 80vh;
+$width-landscape-phone: 80vw;
+$height-landscape-tablet: 70vh;
+$width-landscape-tablet: 60vw;
+$height-landscape-laptop: 70vh;
+$width-landscape-laptop: 65vw;
+$height-landscape-bigger-tablet: 65vh;
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .language-buttons-container {
-      margin-top: 7%;
-      margin-bottom: 4%;
-    }
-
-    .content {
-      height: 75vh;
-      width: 70vw;
-    }
-  }
-
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .language-buttons-container {
-      margin-top: 7%;
-      margin-bottom: 4%;
-    }
-
-    .content {
-      height: 75vh;
-      width: 70vw;
-    }
-  }
-
-  /*Laptops*/
-  @media (min-width: 1024px) and (max-width: 1440px) {
-    .language-buttons-container {
-      margin-top: 7%;
-      margin-bottom: 4%;
-    }
-
-    .content {
-      height: 70vh;
-      width: 65vw;
-    }
+// Mixin for language buttons container styles
+@mixin language-buttons-container-styles($margin-bottom) {
+  .language-buttons-container {
+    margin-bottom: $margin-bottom;
   }
 }
 
-@media (orientation: landscape) {
-  /* Phones */
+// Mixin for content styles
+@mixin content-styles($height, $width) {
+  .content {
+    height: $height;
+    width: $width;
+  }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+  // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    .language-buttons-container {
-      margin-top: 7%;
-      margin-bottom: 7%;
-    }
-
-    .content {
-      height: 80vh;
-      width: 80vw;
-    }
+    @include language-buttons-container-styles($portrait-margin-bottom-phone);
+    @include content-styles($height-portrait-phone, $width-portrait-phone);
   }
 
-  /* Tablets */
+  // Tablets and Bigger Tablets
+  @media (min-width: 600px) and (max-width: 1024px) {
+    @include language-buttons-container-styles($portrait-margin-bottom-tablet);
+    @include content-styles($height-portrait-tablet, $width-portrait-tablet);
+  }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+  // Horizontal phones
+  @media (min-width: 300px) and (max-width: 599px) {
+    @include language-buttons-container-styles($portrait-margin-bottom-phone);
+    @include content-styles($height-landscape-phone, $width-landscape-phone);
+  }
+
+  // Horizontal tablets
   @media (min-width: 600px) and (max-width: 767px) {
-    .content {
-      height: 70vh;
-      width: 60vw;
-    }
+    @include content-styles($height-landscape-tablet, $width-landscape-tablet);
   }
 
-  /* Horizontal tablets*/
+  // Bigger horizontal tablets and other devices
   @media (min-width: 768px) and (max-width: 1024px) {
-    .content {
-      height: 65vh;
-      width: 60vw;
-    }
+    @include content-styles($height-landscape-bigger-tablet, $width-landscape-tablet);
   }
 
-  /*Laptops and desktops*/
+  // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    .content {
-      height: 70vh;
-      width: 65vw;
-    }
+    @include content-styles($height-landscape-laptop, $width-landscape-laptop);
   }
 }

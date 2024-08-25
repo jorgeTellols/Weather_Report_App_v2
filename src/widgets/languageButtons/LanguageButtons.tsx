@@ -9,7 +9,7 @@ interface Props {
 }
 
 // Destructuring and hook initialization
-function LanguageButtons(switchLanguage : Props) {
+function LanguageButtons(switchLanguage: Props) {
   const {
     setEnglish,
     setSpanish,

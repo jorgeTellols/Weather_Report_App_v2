@@ -1,99 +1,55 @@
-@media (orientation: portrait) {
-  /* Phones */
-  @media (min-width: 300px) and (max-width: 599px) {
-    .language-button {
-      height: 5vh;
-      width: 20vw;
-      margin-right: 5%;
+//Variable initialization
 
-      span {
-        font-size: 4vw;
-      }
-    }
-  }
+$height-portrait-small: 5vh;
+$width-portrait-small: 20vw;
+$height-portrait-medium: 5vh;
+$width-portrait-medium: 15vw;
+$height-landscape: 7vh;
+$width-landscape: 10vw;
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .language-button {
-      height: 5vh;
-      width: 20vw;
-      margin-right: 5%;
+$font-size-portrait-small: 4vw;
+$font-size-portrait-medium: 3vw;
+$font-size-landscape-small: 1.5vw;
+$font-size-landscape-large: 2vw;
 
-      span {
-        font-size: 3vw;
-      }
-    }
-  }
+// Mixin for language button styles
+@mixin language-button-styles($height, $width, $font-size) {
+  .language-button {
+    height: $height;
+    width: $width;
+    margin-right: 5%;
 
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .language-button {
-      height: 5vh;
-      width: 15vw;
-      margin-right: 5%;
-
-      span {
-        font-size: 3vw;
-      }
-    }
-  }
-
-  /*Laptops and desktops*/
-  @media (min-width: 1024px) and (max-width: 1440px) {
-    .language-button {
-      height: 5vh;
-      width: 15vw;
-      margin-right: 5%;
+    span {
+      font-size: $font-size;
     }
   }
 }
 
-@media (orientation: landscape) {
-  /* Phones */
+// Portrait orientation
+@media (orientation: portrait) {
+  // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    .language-button {
-      height: 7vh;
-      width: 10vw;
-
-      span {
-        font-size: 1.5vw;
-      }
-    }
+    @include language-button-styles($height-portrait-small, $width-portrait-small, $font-size-portrait-small);
   }
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .language-button {
-      height: 7vh;
-      width: 10vw;
+  //Tablets and bigger devices
+  @media (min-width: 600px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+    @include language-button-styles($height-portrait-small, $width-portrait-medium, $font-size-portrait-medium);
+  }
+}
 
-      span {
-        font-size: 1.5vw;
-      }
-    }
+// Landscape orientation
+@media (orientation: landscape) {
+  // Horizontal phones
+  @media (min-width: 300px) and (max-width: 599px),
+  (min-width: 600px) and (max-width: 767px),
+  (min-width: 768px) and (max-width: 1024px) {
+    @include language-button-styles($height-landscape, $width-landscape, $font-size-landscape-small);
   }
 
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .language-button {
-      height: 7vh;
-      width: 10vw;
-
-      span {
-        font-size: 1.5vw;
-      }
-    }
-  }
-
-  /*Laptops and desktops*/
+  //Horizontal tablets and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    .language-button {
-      height: 7vh;
-      width: 10vw;
-
-      span {
-        font-size: 2vw;
-      }
-    }
+    @include language-button-styles($height-landscape, $width-landscape, $font-size-landscape-large);
   }
 }

@@ -1,19 +1,19 @@
 @import "../../index.scss";
 
 .language-buttons-container {
-  margin-top: 2%;
-  height: 100%;
+  margin-bottom: 5%;
   width: 100%;
   display: flex;
   justify-content: right;
   align-items: center;
+  padding: 0;
 }
 
 .language-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $darkThemeFontColorSelected;
+  background-color: $dark-theme-background;
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 1vh 1vw;
@@ -25,23 +25,23 @@
   span {
     font-size: 1vw;
     font-weight: 500;
-    color: $darkThemeFontColor;
+    color: $dark-theme-font-color;
   }
 
   &:hover {
-    background-color: $darkThemeGreenHover;
+    background-color: $dark-theme-green-hover;
 
     span {
-      color: $darkThemeFontColorSelected;
+      color: $dark-theme-font-color-selected;
     }
   }
 }
 
 .highlighted-button {
-  background-color: $darkThemeGreenBackground;
+  background-color: $dark-theme-green-background;
 
   span {
-    color: $darkThemeFontColorSelected;
+    color: $dark-theme-font-color-selected;
   }
 }
 

@@ -1,0 +1,58 @@
+//Variable initialization
+
+$modal-background-height: 100%;
+$modal-height: 85%;
+$modal-width: 85%;
+
+$font-size-h1-portrait-phone: 3vh;
+$font-size-h1-portrait-tablet: 5vw;
+$font-size-h1-landscape-phone: 3vw;
+$font-size-h1-landscape-tablet: 4vw;
+$font-size-h1-landscape-laptop: 4vw;
+
+// Mixin for modal styles
+@mixin modal-styles($font-size-h1) {
+    .modal-background {
+        height: $modal-background-height;
+
+        .modal {
+            height: $modal-height;
+            width: $modal-width;
+
+            h1 {
+                font-size: $font-size-h1;
+            }
+        }
+    }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones
+    @media (min-width: 300px) and (max-width: 599px) {
+        @include modal-styles($font-size-h1-portrait-phone);
+    }
+
+    // Tablets and Bigger Tablets
+    @media (min-width: 600px) and (max-width: 1024px) {
+        @include modal-styles($font-size-h1-portrait-tablet);
+    }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+    // Horizontal phones
+    @media (min-width: 300px) and (max-width: 599px) {
+        @include modal-styles($font-size-h1-landscape-phone);
+    }
+
+    // Horizontal tablets
+    @media (min-width: 600px) and (max-width: 767px) {
+        @include modal-styles($font-size-h1-landscape-tablet);
+    }
+
+    // Laptops and bigger devices
+    @media (min-width: 768px) and (max-width: 1440px) {
+        @include modal-styles($font-size-h1-landscape-laptop);
+    }
+}

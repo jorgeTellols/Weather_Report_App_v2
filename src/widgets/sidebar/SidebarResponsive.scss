@@ -1,121 +1,81 @@
-@media (orientation: portrait) {
-  /* Phones */
-  @media (min-width: 300px) and (max-width: 599px) {
-    .sidebar {
-      width: 45vw;
-      border-top-right-radius: 0;
-    }
+// Variable initialization
 
-    .sidebar-toggle {
-      width: 40%;
-      height: 12%;
-      top: 0;
-    }
-  }
+$sidebar-width-portrait: 45vw;
+$sidebar-width-landscape-phone: 20vw;
+$sidebar-width-landscape-tablet: 15vw;
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .sidebar {
-      width: 45vw;
-      border-top-right-radius: 0;
-    }
+$sidebar-toggle-width-portrait: 40%;
+$sidebar-toggle-height: 12%;
+$sidebar-toggle-top: 0;
 
-    .sidebar-toggle {
-      width: 40%;
-      height: 12%;
-      top: 0;
-    }
-  }
+$font-size-sidebar-text-portrait-tablet: 3vw;
+$font-size-sidebar-text-landscape-phone: 1.8vw;
+$font-size-sidebar-text-landscape-tablet-large: 1.8vw;
+$font-size-sidebar-text-landscape-tablet-small: 1.3vw;
 
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .sidebar {
-      width: 45vw;
-      border-top-right-radius: 0;
+// Mixin for sidebar styles
+@mixin sidebar-styles($width, $font-size: null) {
+  .sidebar {
+    width: $width;
+    border-top-right-radius: 0;
 
+    @if $font-size {
       p {
-        font-size: 3vw;
+        font-size: $font-size;
       }
-    }
-
-    .sidebar-toggle {
-      width: 40%;
-      height: 12%;
-      top: 0;
     }
   }
 }
 
+// Mixin for sidebar toggle styles
+@mixin sidebar-toggle-styles($width) {
+  .sidebar-toggle {
+    width: $width;
+    height: $sidebar-toggle-height;
+    top: $sidebar-toggle-top;
+  }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+  // Phones and Tablets
+  @media (min-width: 300px) and (max-width: 1024px) {
+    @include sidebar-styles($sidebar-width-portrait);
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      p {
+        font-size: $font-size-sidebar-text-portrait-tablet;
+      }
+    }
+
+    @include sidebar-toggle-styles($sidebar-toggle-width-portrait);
+  }
+}
+
+// Landscape orientation
 @media (orientation: landscape) {
-  /* Phones */
+  // Horizontal phones
   @media (min-width: 300px) and (max-width: 599px) {
-    .sidebar {
-      width: 20vw;
-      border-top-right-radius: 0;
+    @include sidebar-styles($sidebar-width-landscape-phone, $font-size-sidebar-text-landscape-phone);
+    @include sidebar-toggle-styles(30%);
+  }
 
+  // Horizontal tablets
+  @media (min-width: 600px) and (max-width: 1024px) {
+    @include sidebar-styles($sidebar-width-landscape-tablet, $font-size-sidebar-text-landscape-tablet-small);
+
+    @media (min-width: 1024px) {
       p {
-        font-size: 1.8vw;
+        font-size: $font-size-sidebar-text-landscape-tablet-large;
       }
     }
 
-    .sidebar-toggle {
-      width: 30%;
-      height: 12%;
-      top: 0;
-    }
+    @include sidebar-toggle-styles(30%);
   }
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .sidebar {
-      width: 15vw;
-      border-top-right-radius: 0;
-
-      p {
-        font-size: 1.8vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 30%;
-      height: 12%;
-      top: 0;
-    }
-  }
-
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .sidebar {
-      width: 15vw;
-      border-top-right-radius: 0;
-
-      p {
-        font-size: 1.3vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 30%;
-      height: 12%;
-      top: 0;
-    }
-  }
-
-  /*Laptops and desktops*/
+  // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    .sidebar {
-      width: 15vw;
-      border-top-right-radius: 0;
-
-      p {
-        font-size: 1.8vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 30%;
-      height: 12%;
-      top: 0;
-    }
+    @include sidebar-styles($sidebar-width-landscape-tablet, $font-size-sidebar-text-landscape-tablet-large);
+    @include sidebar-toggle-styles(30%);
   }
 }

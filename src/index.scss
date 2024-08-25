@@ -1,16 +1,17 @@
 //Variable initialization
 
-$lightThemeBackground: white;
-$lightThemeFontColor: black;
-$lightThemeBlueBackground: blue;
-$darkThemeBlueHover: rgb(89, 136, 232);
-$lightThemeFontColorSelected: white;
+$light-theme-background: white;
+$light-theme-font-color: black;
+$light-theme-blue-background: blue;
+$light-theme-blue-hover: rgb(89, 136, 232);
+$light-theme-font-color-selected: white;
 
-$darkThemeBackground: #1a1a1a;
-$darkThemeFontColor: white;
-$darkThemeGreenBackground: #39fe90;
-$darkThemeGreenHover: #27b164;
-$darkThemeFontColorSelected: black;
+$dark-theme-background: #1a1a1a;
+$dark-theme-font-color: white;
+$dark-theme-green-background: #39fe90;
+$dark-theme-green-hover: #27b164;
+$dark-theme-font-color-selected: black;
+
 
 //General styles
 
@@ -18,6 +19,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 :root {

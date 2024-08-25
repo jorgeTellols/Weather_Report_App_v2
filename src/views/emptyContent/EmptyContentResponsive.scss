@@ -1,107 +1,80 @@
-@media (orientation: portrait) {
-  /* Phones */
-  @media (min-width: 300px) and (max-width: 599px) {
-    .emoji {
-      height: 30%;
-      width: 60%;
-    }
+//Variable initialization
 
-    h1 {
-      font-size: 6vw;
-    }
+$emoji-height-portrait-phone: 30%;
+$emoji-width-portrait-phone: 60%;
+$emoji-height-portrait-tablet: 40%;
+$emoji-width-portrait-tablet: 60%;
+$emoji-width-portrait-bigger-tablet: 50%;
+$emoji-height-landscape-phone: 50%;
+$emoji-width-landscape-phone: 30%;
+$emoji-width-landscape-laptop: 40%;
 
-    span {
-      font-size: 4vw;
-    }
-  }
+$font-size-h1-portrait-phone: 6vw;
+$font-size-h1-portrait-tablet: 3vw;
+$font-size-h1-portrait-bigger-tablet: 5vw;
+$font-size-h1-landscape: 3vw;
 
-  /* Tablets */
-  @media (min-width: 600px) and (max-width: 767px) {
-    .emoji {
-      height: 40%;
-      width: 60%;
-    }
+$font-size-span-portrait-phone: 4vw;
+$font-size-span-portrait-tablet: 2vw;
+$font-size-span-portrait-bigger-tablet: 3vw;
+$font-size-span-landscape: 2vw;
 
-    h1 {
-      font-size: 3vw;
-    }
-
-    span {
-      font-size: 2vw;
-    }
-  }
-
-  /* Horizontal tablets*/
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .emoji {
-      height: 40%;
-      width: 50%;
-    }
-
-    h1 {
-      font-size: 5vw;
-    }
-
-    span {
-      font-size: 3vw;
-    }
+// Mixin for emoji styles
+@mixin emoji-styles($height, $width) {
+  .emoji {
+    height: $height;
+    width: $width;
   }
 }
 
-@media (orientation: landscape) {
-  /* Phones */
+// Mixin for text styles
+@mixin text-styles($font-size-h1, $font-size-span) {
+  h1 {
+    font-size: $font-size-h1;
+  }
+
+  span {
+    font-size: $font-size-span;
+  }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+  // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    .emoji {
-      height: 50%;
-      width: 30%;
-    }
+    @include emoji-styles($emoji-height-portrait-phone, $emoji-width-portrait-phone);
+    @include text-styles($font-size-h1-portrait-phone, $font-size-span-portrait-phone);
   }
 
-  /* Tablets */
+  // Tablets
   @media (min-width: 600px) and (max-width: 767px) {
-    .emoji {
-      height: 50%;
-      width: 30%;
-    }
-
-    h1 {
-      font-size: 3vw;
-    }
-
-    span {
-      font-size: 2vw;
-    }
+    @include emoji-styles($emoji-height-portrait-tablet, $emoji-width-portrait-tablet);
+    @include text-styles($font-size-h1-portrait-tablet, $font-size-span-portrait-tablet);
   }
 
-  /* Horizontal tablets*/
+  // Bigger Tablets and other devices
   @media (min-width: 768px) and (max-width: 1024px) {
-    .emoji {
-      height: 50%;
-      width: 30%;
-    }
+    @include emoji-styles($emoji-height-portrait-tablet, $emoji-width-portrait-bigger-tablet);
+    @include text-styles($font-size-h1-portrait-bigger-tablet, $font-size-span-portrait-bigger-tablet);
+  }
+}
 
-    h1 {
-      font-size: 3vw;
-    }
-
-    span {
-      font-size: 2vw;
-    }
+// Landscape orientation
+@media (orientation: landscape) {
+  // Horizontal phones
+  @media (min-width: 300px) and (max-width: 599px) {
+    @include emoji-styles($emoji-height-landscape-phone, $emoji-width-landscape-phone);
   }
 
-  /*Laptops and desktops*/
+  // Horizontal tablets and bigger devices
+  @media (min-width: 600px) and (max-width: 1024px) {
+    @include emoji-styles($emoji-height-landscape-phone, $emoji-width-landscape-phone);
+    @include text-styles($font-size-h1-landscape, $font-size-span-landscape);
+  }
+
+  // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    .emoji {
-      height: 50%;
-      width: 40%;
-    }
-
-    h1 {
-      font-size: 3vw;
-    }
-
-    span {
-      font-size: 2vw;
-    }
+    @include emoji-styles($emoji-height-landscape-phone, $emoji-width-landscape-laptop);
+    @include text-styles($font-size-h1-landscape, $font-size-span-landscape);
   }
 }

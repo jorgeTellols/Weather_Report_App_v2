@@ -1,5 +1,5 @@
 import useLanguageButtons from './useLanguageButtons';
-import './LanguageButtons.scss';
+import './language_buttons.scss';
 import Button from '../../components/button/Button';
 import Language from '../../utils/Language';
 
@@ -9,13 +9,13 @@ interface Props {
 }
 
 // Destructuring and hook initialization
-function LanguageButtons(switchLanguage: Props) {
+function LanguageButtons({ switchLanguage }: Props) {
   const {
     setEnglish,
     setSpanish,
     languageSelected,
     isHighlighted,
-  } = useLanguageButtons(switchLanguage);
+  } = useLanguageButtons({ switchLanguage });
 
   // Main return
   return (

@@ -2,7 +2,6 @@
 import './App.scss';
 import { useState } from 'react';
 import Language from '../utils/Language';
-// import es from '../utils/es';
 import En from '../utils/En';
 import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';

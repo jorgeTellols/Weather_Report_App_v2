@@ -12,7 +12,9 @@ function useSidebar(
   // Function to to control when the sidebar is showing/hiding
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
-    setFirstTime(false);
+    if (firstTime) {
+      setFirstTime(false);
+    }
   };
 
   // Function that sends the selected option to the parent component
@@ -31,7 +33,6 @@ function useSidebar(
     isVisible,
     firstTime,
     toggleVisibility,
-    handleCitySelection,
     londonSelection,
     torontoSelection,
     singaporeSelection,

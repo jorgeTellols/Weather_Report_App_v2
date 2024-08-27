@@ -1,6 +1,6 @@
 import Language from '../utils/Language';
 import Form from '../widgets/form/Form';
-import './ModalForm.scss';
+import './modal_form.scss';
 
 // Interface to define props
 interface Props {

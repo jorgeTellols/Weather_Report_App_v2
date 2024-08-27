@@ -1,4 +1,4 @@
-import './EmptyContent.scss';
+import './empty_content.scss';
 
 // Interface to define props
 interface Props {

@@ -22,7 +22,7 @@ function Form({
     setEmail,
     setPhone,
     disableButton,
-    buttonEnabledStyle,
+    buttonStatus,
   } = useForm();
 
   // Main return
@@ -40,7 +40,7 @@ function Form({
           <Input handleChange={setPhone} labelContent={languageSelected.formPhoneNumber} inputType="text" />
           <div className="form-buttons-container">
             <Button handleClick={hideModal} styleButton="close-form-button" textContent={languageSelected.formCloseButton} />
-            <Button handleClick={disableButton} highlightedButton={buttonEnabledStyle} styleButton="submit-form-button" textContent={languageSelected.formSubmitButton} />
+            <Button handleClick={disableButton} highlightedButton={buttonStatus} styleButton="submit-form-button" textContent={languageSelected.formSubmitButton} />
           </div>
         </div>
       </form>

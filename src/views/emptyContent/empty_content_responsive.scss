@@ -60,12 +60,7 @@ $font-size-span-landscape: 2vw;
 
 // Landscape orientation
 @media (orientation: landscape) {
-  // Horizontal phones
-  @media (min-width: 300px) and (max-width: 599px) {
-    @include emoji-styles($emoji-height-landscape-phone, $emoji-width-landscape-phone);
-  }
-
-  // Horizontal tablets and bigger devices
+  // Horizontal phones and bigger devices
   @media (min-width: 600px) and (max-width: 1024px) {
     @include emoji-styles($emoji-height-landscape-phone, $emoji-width-landscape-phone);
     @include text-styles($font-size-h1-landscape, $font-size-span-landscape);

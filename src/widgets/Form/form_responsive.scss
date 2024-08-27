@@ -75,7 +75,7 @@ $font-size-button-medium: 3vh;
 // Landscape orientation
 @media (orientation: landscape) {
     //Horizontal phones
-    @media (min-width: 300px) and (max-width: 767px) {
+    @media (min-width: 600px) and (max-width: 767px) {
         label {
             font-size: $font-size-label-medium;
         }

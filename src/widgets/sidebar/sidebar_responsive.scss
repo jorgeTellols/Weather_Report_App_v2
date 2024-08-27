@@ -55,12 +55,6 @@ $font-size-sidebar-text-landscape-tablet-small: 1.3vw;
 // Landscape orientation
 @media (orientation: landscape) {
   // Horizontal phones
-  @media (min-width: 300px) and (max-width: 599px) {
-    @include sidebar-styles($sidebar-width-landscape-phone, $font-size-sidebar-text-landscape-phone);
-    @include sidebar-toggle-styles(30%);
-  }
-
-  // Horizontal tablets
   @media (min-width: 600px) and (max-width: 1024px) {
     @include sidebar-styles($sidebar-width-landscape-tablet, $font-size-sidebar-text-landscape-tablet-small);
 
@@ -70,12 +64,12 @@ $font-size-sidebar-text-landscape-tablet-small: 1.3vw;
       }
     }
 
-    @include sidebar-toggle-styles(30%);
+    @include sidebar-toggle-styles(40%);
   }
 
   // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
     @include sidebar-styles($sidebar-width-landscape-tablet, $font-size-sidebar-text-landscape-tablet-large);
-    @include sidebar-toggle-styles(30%);
+    @include sidebar-toggle-styles(45%);
   }
 }

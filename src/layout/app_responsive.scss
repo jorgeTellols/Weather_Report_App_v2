@@ -48,17 +48,11 @@ $height-landscape-bigger-tablet: 65vh;
 // Landscape orientation
 @media (orientation: landscape) {
   // Horizontal phones
-  @media (min-width: 300px) and (max-width: 599px) {
-    @include language-buttons-container-styles($portrait-margin-bottom-phone);
-    @include content-styles($height-landscape-phone, $width-landscape-phone);
-  }
-
-  // Horizontal tablets
   @media (min-width: 600px) and (max-width: 767px) {
     @include content-styles($height-landscape-tablet, $width-landscape-tablet);
   }
 
-  // Bigger horizontal tablets and other devices
+  // Horizontal tablets and other devices
   @media (min-width: 768px) and (max-width: 1024px) {
     @include content-styles($height-landscape-bigger-tablet, $width-landscape-tablet);
   }

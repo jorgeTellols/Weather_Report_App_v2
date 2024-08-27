@@ -1,6 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-multiple-empty-lines */
 import { renderHook, act } from '@testing-library/react';
 import useSidebar from './useSidebar';
 
@@ -10,13 +7,12 @@ const mockSelectToronto = jest.fn();
 const mockSelectSingapore = jest.fn();
 
 describe('useSidebar', () => {
-  
   // Test for toggleVisibility()
   it('should show/hide the sidebar and set firstTime to false if is true', () => {
     const { result } = renderHook(
       () => useSidebar(mockSelectLondon, mockSelectToronto, mockSelectSingapore),
     );
-    
+
     // Default states to hide the sidebar
     expect(result.current.isVisible).toBe(false);
     expect(result.current.firstTime).toBe(true);
@@ -56,7 +52,7 @@ describe('useSidebar', () => {
       result.current.londonSelection();
     });
     expect(mockSelectLondon).toHaveBeenCalled();
-    expect(result.current.isVisible).toBe(false); 
+    expect(result.current.isVisible).toBe(false);
 
     // Shows the sidebar again
     act(() => {
@@ -68,7 +64,7 @@ describe('useSidebar', () => {
       result.current.torontoSelection();
     });
     expect(mockSelectToronto).toHaveBeenCalled();
-    expect(result.current.isVisible).toBe(false); 
+    expect(result.current.isVisible).toBe(false);
 
     // Shows the sidebar once again
     act(() => {
@@ -80,6 +76,6 @@ describe('useSidebar', () => {
       result.current.singaporeSelection();
     });
     expect(mockSelectSingapore).toHaveBeenCalled();
-    expect(result.current.isVisible).toBe(false); 
+    expect(result.current.isVisible).toBe(false);
   });
 });

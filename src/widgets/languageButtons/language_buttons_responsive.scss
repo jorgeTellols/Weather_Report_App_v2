@@ -41,14 +41,7 @@ $font-size-landscape-large: 2vw;
 
 // Landscape orientation
 @media (orientation: landscape) {
-  // Horizontal phones
-  @media (min-width: 300px) and (max-width: 599px),
-  (min-width: 600px) and (max-width: 767px),
-  (min-width: 768px) and (max-width: 1024px) {
-    @include language-button-styles($height-landscape, $width-landscape, $font-size-landscape-small);
-  }
-
-  //Horizontal tablets and bigger devices
+  //Horizontal phones and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
     @include language-button-styles($height-landscape, $width-landscape, $font-size-landscape-large);
   }

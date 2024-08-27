@@ -43,11 +43,6 @@ $font-size-h1-landscape-laptop: 4vw;
 // Landscape orientation
 @media (orientation: landscape) {
     // Horizontal phones
-    @media (min-width: 300px) and (max-width: 599px) {
-        @include modal-styles($font-size-h1-landscape-phone);
-    }
-
-    // Horizontal tablets
     @media (min-width: 600px) and (max-width: 767px) {
         @include modal-styles($font-size-h1-landscape-tablet);
     }

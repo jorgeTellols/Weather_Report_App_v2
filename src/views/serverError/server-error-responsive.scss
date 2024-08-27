@@ -1,0 +1,41 @@
+// Variable initialization
+
+@import "../clientError/client-error-responsive.scss";
+
+// Mixin for server error styles
+@mixin server-error-styles($height, $img-height, $img-width) {
+    .server-error {
+        height: $height;
+
+        img {
+            height: $img-height;
+            width: $img-width;
+        }
+    }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones and Tablets
+    @media (min-width: 300px) and (max-width: 1024px) {
+        @include server-error-styles($height-portrait, $img-height-portrait, $img-width-portrait);
+    }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+    // Horizontal phones
+    @media (min-width: 600px) and (max-width: 767px) {
+        @include server-error-styles($height-landscape-phone, $img-height-landscape-phone, $img-width-landscape-phone);
+    }
+
+    // Horizontal tablets
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @include server-error-styles($height-landscape-tablet, $img-height-landscape-tablet, $img-width-landscape-tablet);
+    }
+
+    // Laptops and bigger devices
+    @media (min-width: 1024px) and (max-width: 1440px) {
+        @include server-error-styles($height-landscape-laptop, $img-height-landscape-laptop, $img-width-landscape-laptop);
+    }
+}

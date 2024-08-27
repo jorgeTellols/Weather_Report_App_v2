@@ -1,4 +1,3 @@
-// import WeatherReport from './widgets/w-weatherReport';
 import './App.scss';
 import { useState } from 'react';
 import Language from '../utils/Language';
@@ -7,6 +6,7 @@ import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
+import WeatherReport from '../widgets/weatherReport/WeatherReport';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(En);
@@ -69,11 +69,10 @@ function App() {
             emptyContentSpan={languageSelected.emptyContentSpan}
           />
         ) : (
-          // <WeatherReport
-          //   selectedCityName={selectedCityName}
-          //   languageSelected={languageSelected}>
-          // </WeatherReport>
-          <h1>prueba</h1>
+          <WeatherReport
+            // selectedCityName={selectedCityName}
+            languageSelected={languageSelected}
+          />
         )}
       </div>
       {isFormShowing ? (

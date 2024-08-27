@@ -2,6 +2,7 @@ import './App.scss';
 import { useState } from 'react';
 import Language from '../utils/Language';
 import En from '../utils/En';
+import Es from '../utils/Es';
 import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
@@ -34,20 +35,19 @@ function App() {
   // }, [languageSelected])
 
   function setContentBackground() {
-    // if((selectedCityName == (en.sidebarLondon)) || (selectedCityName == (es.sidebarLondon)))
-    // {
-    //   return "london"
-    // }
-    // else if((selectedCityName ==
-    //  (en.sidebarToronto)) || (selectedCityName == (es.sidebarToronto)))
-    // {
-    //   return "toronto"
-    // }
-    // else if((selectedCityName ==
-    //  (en.sidebarSingapore)) || (selectedCityName == (es.sidebarSingapore)))
-    // {
-    //   return "singapore"
-    // }
+    if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {
+      return 'london';
+    }
+    if ((selectedCityName
+     === (En.sidebarToronto)) || (selectedCityName === (Es.sidebarToronto))) {
+      return 'toronto';
+    }
+    if ((selectedCityName
+     === (En.sidebarSingapore)) || (selectedCityName === (Es.sidebarSingapore))) {
+      return 'singapore';
+    }
+
+    return '';
   }
 
   return (

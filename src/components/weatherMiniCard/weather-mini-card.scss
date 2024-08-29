@@ -1,65 +1,45 @@
 .weather-mini-card {
-    border: 0.1vw solid black;
-    border-radius: 8%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-;
-    align-items: center;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
     border-radius: 0;
-}
-
-
-.weather-mini-card h1 {
-    font-size: 1vw;
-}
-
-.weather-mini-card>.first-row {
     display: flex;
-    height: 100%;
-    width: 100%;
     flex-direction: column;
     align-items: center;
-}
 
-.weather-mini-card>.second-row {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-around;
-    font-size: 1vw;
-}
+    h1 {
+        font-size: 1vw;
+    }
 
-.weather-mini-card>.first-row img {
-    height: 100%;
-    width: 80%;
-}
+    .first-row {
+        display: flex;
+        // height: 100%;
+        // width: 100%;
+        flex-direction: column;
+        align-items: center;
 
-.weather-mini-card>.second-row img {
-    height: 100%;
-    width: 60%;
-}
+        // img {
+        //     width: 80%;
+        // }
+    }
 
-.first-mini-card {
-    border-top-left-radius: 2vw;
-    border-bottom-left-radius: 2vw;
-}
+    .second-row {
+        display: flex;
+        align-items: start;
+        font-size: 1vw;
 
-.last-mini-card {
-    border-top-right-radius: 2vw;
-    border-bottom-right-radius: 2vw;
-}
+        img {
+            width: 50%;
+        }
 
-.rain-prob,
-.temperature {
-    display: flex;
-    flex-direction: column;
-}
+        .temperature-mini-card,
+        .rain-prob-mini-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-.rain-prob span,
-.temperature span {
-    font-weight: 500;
-    margin-right: auto;
-    margin-left: auto;
+            img {
+                width: 70%;
+            }
+        }
+    }
 }

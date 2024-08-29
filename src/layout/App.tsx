@@ -7,7 +7,7 @@ import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
-import WeatherReport from '../widgets/weatherReport/WeatherReport';
+import WeatherWidget from '../widgets/weatherReport/WeatherWidget';
 
 function App() {
   const [languageSelected, setLanguageSelected] = useState(En);
@@ -69,7 +69,7 @@ function App() {
             emptyContentSpan={languageSelected.emptyContentSpan}
           />
         ) : (
-          <WeatherReport
+          <WeatherWidget
             // selectedCityName={selectedCityName}
             languageSelected={languageSelected}
           />

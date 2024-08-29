@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './weather_report.scss';
+import './weather_widget.scss';
 import Language from '../../utils/Language';
 import ClientError from '../../views/clientError/ClientError';
 import ServerError from '../../views/serverError/ServerError';
@@ -21,8 +21,8 @@ function WeatherReport({
   const weather = {
     date: '28-03-1998',
     icon: '01d',
-    description: 'Cloudy',
-    temperature: 0,
+    description: 'Muy nublado con precipitaciones abundantes',
+    temperature: 45,
     tempMax: 0,
     tempMin: 0,
     rainProb: 0,
@@ -32,8 +32,8 @@ function WeatherReport({
   const nextDay = {
     date: '28-03-1998',
     icon: '01d',
-    temperature: 0,
-    rainProb: 0,
+    temperature: 88,
+    rainProb: 1,
   };
   const [clientError] = useState(false);
   const [serverError] = useState(false);

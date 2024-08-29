@@ -20,7 +20,7 @@ const En: Language = {
   emptyContentTitle: "Looks like you haven't selected a city yet",
   emptyContentSpan: 'Please, pick a city from the sidebar',
   dataFormat: 'en-US',
-  rainProbSpan: 'Rain probability',
+  rainProbSpan: 'Precipitation probability',
   minTempSpan: 'Min. temperature',
   maxTempSpan: 'Max. temperature',
   serverErrorMessage: 'Server error',

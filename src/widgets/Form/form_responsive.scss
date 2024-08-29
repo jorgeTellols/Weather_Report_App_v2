@@ -1,13 +1,3 @@
-// Variable initialization
-
-$font-size-label-small: 3vh;
-$font-size-label-medium: 3.5vh;
-
-$font-size-input-small: 2.5vh;
-
-$font-size-button-small: 2vh;
-$font-size-button-medium: 3vh;
-
 // Mixin for form
 @mixin form-styles($width: 60%) {
     form {
@@ -38,65 +28,65 @@ $font-size-button-medium: 3vh;
 
 // Portrait orientation
 @media (orientation: portrait) {
-    //Phones
+    // Phones
     @media (min-width: 300px) and (max-width: 599px) {
         @include form-styles(60%);
 
         label {
-            font-size: $font-size-label-small;
+            font-size: 3vh;
         }
 
         input {
-            font-size: $font-size-input-small;
+            font-size: 2.5vh;
             margin-bottom: 15%;
         }
 
-        @include button-styles($font-size-button-small);
+        @include button-styles(2vh);
     }
 
-    //Tablets and bigger devices
+    // Tablets and bigger devices
     @media (min-width: 600px) and (max-width: 767px),
     (min-width: 768px) and (max-width: 1024px) {
         @include form-styles(40%);
 
         label {
-            font-size: $font-size-label-small;
+            font-size: 3vh;
         }
 
         input {
-            font-size: $font-size-input-small;
+            font-size: 2.5vh;
             margin-bottom: 15%;
         }
 
-        @include button-styles($font-size-input-small);
+        @include button-styles(2.5vh);
     }
 }
 
 // Landscape orientation
 @media (orientation: landscape) {
-    //Horizontal phones
+    // Horizontal phones
     @media (min-width: 600px) and (max-width: 767px) {
         label {
-            font-size: $font-size-label-medium;
+            font-size: 3.5vh;
         }
 
         input {
-            font-size: $font-size-input-small;
+            font-size: 2.5vh;
         }
 
-        @include button-styles($font-size-button-medium);
+        @include button-styles(3vh);
     }
 
-    //Horizontal tablets and bigger devices
+    // Horizontal tablets and bigger devices
     @media (min-width: 768px) and (max-width: 1440px) {
         label {
-            font-size: $font-size-label-medium;
+            font-size: 3.5vh;
         }
 
         input {
-            font-size: $font-size-input-small;
+            font-size: 2.5vh;
         }
 
-        @include button-styles($font-size-button-medium);
+        @include button-styles(3vh);
     }
 }

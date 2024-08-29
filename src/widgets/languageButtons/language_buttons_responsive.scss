@@ -1,50 +1,48 @@
-//Variable initialization
-
-$height-portrait-small: 5vh;
-$width-portrait-small: 20vw;
-$height-portrait-medium: 5vh;
-$width-portrait-medium: 15vw;
-$font-size-portrait-small: 4vw;
-$font-size-portrait-medium: 3vw;
-
-$height-landscape: 7vh;
-$width-landscape: 10vw;
-$font-size-landscape-small: 1.5vw;
-$font-size-landscape-large: 2vw;
-
-// Mixin for language button styles
-@mixin language-button-styles($height, $width, $font-size) {
-  .language-button {
-    height: $height;
-    width: $width;
-    margin-right: 5%;
-    margin-top: 10%;
-
-
-    span {
-      font-size: $font-size;
-    }
-  }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
   // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    @include language-button-styles($height-portrait-small, $width-portrait-small, $font-size-portrait-small);
+    .language-button {
+      height: 5vh;
+      width: 20vw;
+      margin-right: 5%;
+      margin-top: 10%;
+
+      span {
+        font-size: 4vw;
+      }
+    }
   }
 
-  //Tablets and bigger devices
+  // Tablets and bigger devices
   @media (min-width: 600px) and (max-width: 767px),
   (min-width: 768px) and (max-width: 1024px) {
-    @include language-button-styles($height-portrait-small, $width-portrait-medium, $font-size-portrait-medium);
+    .language-button {
+      height: 5vh;
+      width: 15vw;
+      margin-right: 5%;
+      margin-top: 10%;
+
+      span {
+        font-size: 3vw;
+      }
+    }
   }
 }
 
 // Landscape orientation
 @media (orientation: landscape) {
-  //Horizontal phones and bigger devices
+  // Horizontal phones and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    @include language-button-styles($height-landscape, $width-landscape, $font-size-landscape-large);
+    .language-button {
+      height: 7vh;
+      width: 10vw;
+      margin-right: 5%;
+      margin-top: 10%;
+
+      span {
+        font-size: 2vw;
+      }
+    }
   }
 }

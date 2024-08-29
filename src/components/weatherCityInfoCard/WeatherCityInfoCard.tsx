@@ -18,7 +18,7 @@ function WeatherCityInfoCard({
 
   // Main return
   return (
-    <div className="location-date">
+    <div className="weather-city-info-card">
       <h1>{selectedCityName}</h1>
       <h1 className="date">{upperCaseDate}</h1>
       <h1 className="date">{time}</h1>

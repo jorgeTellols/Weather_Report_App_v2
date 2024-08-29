@@ -26,23 +26,19 @@ function WeatherCard({
   return (
     <div className="weather-card">
       <div className="first-row">
-        <div className="icon-description">
-          <div className="first-row">
-            <img src={`../assets/${weatherIcon}.png`} alt={weatherDescription} />
-            <p>{weatherDescription}</p>
-          </div>
-          <h1>
-            {weatherTemperature}
-            ºC
-          </h1>
-        </div>
+        <img src={`../assets/${weatherIcon}.png`} alt={weatherDescription} />
+        <h1>
+          {weatherTemperature}
+          ºC
+        </h1>
       </div>
       <div className="second-row">
+        <p>{weatherDescription}</p>
+      </div>
+      <div className="third-row">
         <div className="max-temp">
-          <div className="first-row">
-            <span>{(languageSelected).maxTempSpan}</span>
-          </div>
-          <div className="second-row">
+          <span>{(languageSelected).maxTempSpan}</span>
+          <div className="weather-info">
             <img src="../../../public/assets/temp-max.png" alt="max-temp" />
             <span>
               {weatherTempMax}
@@ -51,10 +47,8 @@ function WeatherCard({
           </div>
         </div>
         <div className="min-temp">
-          <div className="first-row">
-            <span>{(languageSelected).minTempSpan}</span>
-          </div>
-          <div className="second-row">
+          <span>{(languageSelected).minTempSpan}</span>
+          <div className="weather-info">
             <img src="../../../public/assets/temp-min.png" alt="min-temp" />
             <span>
               {weatherTempMin}
@@ -63,10 +57,8 @@ function WeatherCard({
           </div>
         </div>
         <div className="rain-prob">
-          <div className="first-row">
-            <span>{(languageSelected).rainProbSpan}</span>
-          </div>
-          <div className="second-row">
+          <span>{(languageSelected).rainProbSpan}</span>
+          <div className="weather-info">
             <img src="../../../public/assets/raindrop.png" alt="rain-prob" />
             <span>
               {weatherRainProb}

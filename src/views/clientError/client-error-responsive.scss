@@ -1,21 +1,3 @@
-// Variable initialization
-
-$height-portrait: 80vh;
-$img-height-portrait: 40%;
-$img-width-portrait: 60%;
-
-$height-landscape-phone: 70vh;
-$img-height-landscape-phone: 50%;
-$img-width-landscape-phone: 40%;
-
-$height-landscape-tablet: 65vh;
-$img-height-landscape-tablet: 50%;
-$img-width-landscape-tablet: 30%;
-
-$height-landscape-laptop: 70vh;
-$img-height-landscape-laptop: 50%;
-$img-width-landscape-laptop: 40%;
-
 // Mixin for error styles
 @mixin error-styles($height, $img-height, $img-width) {
     .client-error {
@@ -32,7 +14,7 @@ $img-width-landscape-laptop: 40%;
 @media (orientation: portrait) {
     // Phones and Tablets
     @media (min-width: 300px) and (max-width: 1024px) {
-        @include error-styles($height-portrait, $img-height-portrait, $img-width-portrait);
+        @include error-styles(80vh, 40%, 60%);
     }
 }
 
@@ -40,16 +22,16 @@ $img-width-landscape-laptop: 40%;
 @media (orientation: landscape) {
     // Horizontal phones
     @media (min-width: 600px) and (max-width: 767px) {
-        @include error-styles($height-landscape-phone, $img-height-landscape-phone, $img-width-landscape-phone);
+        @include error-styles(70vh, 50%, 40%);
     }
 
     // Horizontal tablets
     @media (min-width: 768px) and (max-width: 1024px) {
-        @include error-styles($height-landscape-tablet, $img-height-landscape-tablet, $img-width-landscape-tablet);
+        @include error-styles(65vh, 50%, 30%);
     }
 
     // Laptops and bigger devices
     @media (min-width: 1024px) and (max-width: 1440px) {
-        @include error-styles($height-landscape-laptop, $img-height-landscape-laptop, $img-width-landscape-laptop);
+        @include error-styles(70vh, 50%, 40%);
     }
 }

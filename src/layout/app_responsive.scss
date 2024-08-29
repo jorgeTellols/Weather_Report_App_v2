@@ -1,20 +1,3 @@
-// Variable initialization
-
-$portrait-margin-bottom-phone: 7%;
-$portrait-margin-bottom-tablet: 4%;
-$height-portrait-phone: 80vh;
-$width-portrait-phone: 80vw;
-$height-portrait-tablet: 75vh;
-$width-portrait-tablet: 70vw;
-
-$height-landscape-phone: 80vh;
-$width-landscape-phone: 80vw;
-$height-landscape-tablet: 70vh;
-$width-landscape-tablet: 60vw;
-$height-landscape-laptop: 70vh;
-$width-landscape-laptop: 65vw;
-$height-landscape-bigger-tablet: 65vh;
-
 // Mixin for language buttons container styles
 @mixin language-buttons-container-styles($margin-bottom) {
   .language-buttons-container {
@@ -34,14 +17,14 @@ $height-landscape-bigger-tablet: 65vh;
 @media (orientation: portrait) {
   // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    @include language-buttons-container-styles($portrait-margin-bottom-phone);
-    @include content-styles($height-portrait-phone, $width-portrait-phone);
+    @include language-buttons-container-styles(7%);
+    @include content-styles(80vh, 80vw);
   }
 
   // Tablets and Bigger Tablets
   @media (min-width: 600px) and (max-width: 1024px) {
-    @include language-buttons-container-styles($portrait-margin-bottom-tablet);
-    @include content-styles($height-portrait-tablet, $width-portrait-tablet);
+    @include language-buttons-container-styles(4%);
+    @include content-styles(75vh, 70vw);
   }
 }
 
@@ -49,16 +32,16 @@ $height-landscape-bigger-tablet: 65vh;
 @media (orientation: landscape) {
   // Horizontal phones
   @media (min-width: 600px) and (max-width: 767px) {
-    @include content-styles($height-landscape-tablet, $width-landscape-tablet);
+    @include content-styles(70vh, 60vw);
   }
 
   // Horizontal tablets and other devices
   @media (min-width: 768px) and (max-width: 1024px) {
-    @include content-styles($height-landscape-bigger-tablet, $width-landscape-tablet);
+    @include content-styles(65vh, 60vw);
   }
 
   // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    @include content-styles($height-landscape-laptop, $width-landscape-laptop);
+    @include content-styles(70vh, 65vw);
   }
 }

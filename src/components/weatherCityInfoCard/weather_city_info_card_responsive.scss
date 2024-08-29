@@ -1,0 +1,11 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones and Tablets
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .weather-city-info-card {
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 100%;
+        }
+    }
+}

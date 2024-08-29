@@ -6,6 +6,7 @@
       height: 5vh;
       width: 20vw;
       margin-right: 5%;
+      margin-left: 4vh;
       margin-top: 10%;
 
       span {
@@ -22,6 +23,7 @@
       width: 15vw;
       margin-right: 5%;
       margin-top: 10%;
+      margin-left: 4vh;
 
       span {
         font-size: 3vw;
@@ -33,12 +35,12 @@
 // Landscape orientation
 @media (orientation: landscape) {
   // Horizontal phones and bigger devices
-  @media (min-width: 1024px) and (max-width: 1440px) {
+  @media (min-width: 600px) and (max-width: 1440px) {
     .language-button {
       height: 7vh;
       width: 10vw;
-      margin-right: 5%;
       margin-top: 10%;
+      margin-left: 2vw;
 
       span {
         font-size: 2vw;

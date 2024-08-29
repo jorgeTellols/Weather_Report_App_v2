@@ -1,0 +1,110 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones
+    @media (min-width: 300px) and (max-width: 599px) {
+        .weather-mini-card {
+            border-left: 0;
+            flex-direction: row;
+            height: 100%;
+
+            h1 {
+                font-size: 1.5vh;
+            }
+
+            .first-row {
+                flex-direction: row;
+                margin-left: 10%;
+
+                img {
+                    margin-left: 10%;
+                    width: 40%;
+                }
+            }
+
+            .second-row {
+                font-size: 2vh;
+                flex-direction: row;
+
+                .temperature-mini-card,
+                .rain-prob-mini-card {
+                    flex-direction: row;
+                    align-items: center;
+
+                    img {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+
+    //Tablets
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .weather-mini-card {
+            border-left: 0;
+            flex-direction: row;
+            height: 100%;
+
+            h1 {
+                font-size: 1.5vh;
+            }
+
+            .first-row {
+                flex-direction: row;
+                margin-left: 10%;
+
+                img {
+                    margin-left: 35%;
+                    max-width: 20%;
+                }
+            }
+
+            .second-row {
+                font-size: 2vh;
+                flex-direction: row;
+
+                .temperature-mini-card,
+                .rain-prob-mini-card {
+                    flex-direction: row;
+                    align-items: center;
+
+                    img {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+    // Horizontal phones
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .weather-mini-card {
+            height: 100%;
+
+            h1 {
+                font-size: 70%;
+            }
+
+            .first-row {
+                img {
+                    width: 30%;
+                }
+            }
+
+            .second-row {
+                font-size: 70%;
+
+                .temperature-mini-card,
+                .rain-prob-mini-card {
+
+                    img {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

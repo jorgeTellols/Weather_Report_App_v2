@@ -19,9 +19,9 @@ function WeatherReport({
   languageSelected,
 } : Props) {
   const weather = {
-    date: '28-03-1998',
+    date: 'Tuesday, August 27, 2024',
     icon: '01d',
-    description: 'Muy nublado con precipitaciones abundantes',
+    description: 'Cloudy',
     temperature: 45,
     tempMax: 0,
     tempMin: 0,
@@ -44,7 +44,7 @@ function WeatherReport({
   const [weatherDay4] = useState(nextDay);
   const [weatherDay5] = useState(nextDay);
   const [weatherDay6] = useState(nextDay);
-  const [selectedCityName] = useState('london');
+  const [selectedCityName] = useState('London 💂🏻‍♀️');
 
   // const [selectedCityName, setSelectedCityName] = useState(props.selectedCityName);
   // const [clientError, setClientError] = useState(false);
@@ -79,7 +79,7 @@ function WeatherReport({
           />
           <WeatherCityInfoCard
             selectedCityName={selectedCityName}
-            date="28-03-1998"
+            date={currentWeather.date}
             time="22:00"
           />
         </div>
@@ -89,42 +89,42 @@ function WeatherReport({
             weatherTemperature={Math.round(weatherDay1.temperature)}
             weatherRainProb={weatherDay1.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
           <WeatherMiniCard
             weatherIcon={weatherDay2.icon}
             weatherTemperature={Math.round(weatherDay2.temperature)}
             weatherRainProb={weatherDay2.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
           <WeatherMiniCard
             weatherIcon={weatherDay3.icon}
             weatherTemperature={Math.round(weatherDay3.temperature)}
             weatherRainProb={weatherDay3.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
           <WeatherMiniCard
             weatherIcon={weatherDay4.icon}
             weatherTemperature={Math.round(weatherDay4.temperature)}
             weatherRainProb={weatherDay4.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
           <WeatherMiniCard
             weatherIcon={weatherDay5.icon}
             weatherTemperature={Math.round(weatherDay5.temperature)}
             weatherRainProb={weatherDay5.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
           <WeatherMiniCard
             weatherIcon={weatherDay6.icon}
             weatherTemperature={Math.round(weatherDay6.temperature)}
             weatherRainProb={weatherDay6.rainProb * 100}
               // date={formatDate(weatherDay3.date, true)}
-            date="28-03-1998"
+            date="12/30"
           />
         </div>
       </>

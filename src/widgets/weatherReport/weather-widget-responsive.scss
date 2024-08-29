@@ -1,0 +1,38 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones
+    @media (min-width: 300px) and (max-width: 599px) {
+        .weather-widget {
+            .second-row {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    //Tablets
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .weather-widget {
+            .second-row {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+    // Horizontal phones
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .weather-widget {
+            .first-row {
+                height: 60%;
+            }
+
+            .second-row {
+                height: 40%;
+            }
+        }
+    }
+}

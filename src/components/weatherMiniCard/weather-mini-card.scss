@@ -1,35 +1,22 @@
 .weather-mini-card {
     border-left: 1px solid black;
     border-top: 1px solid black;
-    border-radius: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     h1 {
         font-size: 1vw;
     }
 
     .first-row {
-        display: flex;
-        // height: 100%;
-        // width: 100%;
+        height: 100%;
+        width: 100%;
         flex-direction: column;
         align-items: center;
-
-        // img {
-        //     width: 80%;
-        // }
     }
 
     .second-row {
-        display: flex;
-        align-items: start;
         font-size: 1vw;
-
-        img {
-            width: 50%;
-        }
 
         .temperature-mini-card,
         .rain-prob-mini-card {
@@ -43,3 +30,5 @@
         }
     }
 }
+
+@import "weather_mini_card_responsive.scss";

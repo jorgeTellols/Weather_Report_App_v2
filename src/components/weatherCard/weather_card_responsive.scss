@@ -1,0 +1,84 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones and Tablets
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .weather-card {
+            width: 60%;
+            font-size: 100%;
+            margin-bottom: 0;
+
+            .first-row {
+                img {
+                    margin-right: 0;
+                    margin-left: -5%;
+                }
+            }
+
+            .second-row {
+                margin-top: -5%;
+            }
+
+            .third-row {
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    height: 100%;
+                    width: 60%;
+                }
+
+                .max-temp,
+                .min-temp,
+                .rain-prob {
+                    flex-direction: row;
+                    align-items: center;
+                    border-right: 0;
+
+                    .weather-info {
+                        margin: 5%;
+                    }
+
+                    span {
+                        margin-left: 5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Landscape orientation
+@media (orientation: landscape) {
+    // Horizontal phones and tablets
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .weather-card {
+            font-size: 50%;
+
+            .first-row {
+                img {
+                    margin-right: 40%;
+                    margin-left: -30%;
+                }
+            }
+
+            .second-row {
+                margin-top: -15%;
+            }
+
+            .third-row {
+
+                img {
+                    width: 40%;
+                }
+
+                .max-temp,
+                .min-temp,
+                .rain-prob {
+                    span {
+                        margin-left: 5%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
     align-items: center;
     border-right: 0.1vw solid black;
     margin-bottom: 2%;
+    font-size: 1vw;
 
     .first-row {
         display: flex;
@@ -57,4 +58,4 @@
     }
 }
 
-@import "weather-card-responsive.scss"
+@import "weather_card_responsive.scss"

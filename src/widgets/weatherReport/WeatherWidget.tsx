@@ -6,7 +6,6 @@ import ServerError from '../../views/serverError/ServerError';
 import WeatherCityInfoCard from '../../components/weatherCityInfoCard/WeatherCityInfoCard';
 import WeatherMiniCard from '../../components/weatherMiniCard/WeatherMiniCard';
 import WeatherCard from '../../components/weatherCard/WeatherCard';
-// import CityInfoWeatherCard from '../components/c-cityInfoWeatherCard';
 
 // Interface to define props
 interface Props {

@@ -1,23 +1,41 @@
+// Mixin for sidebar styles
+@mixin sidebar-styles($width, $border-radius) {
+  .sidebar {
+    width: $width;
+    border-top-right-radius: $border-radius;
+
+    p {
+      font-size: 1rem; 
+    }
+  }
+}
+
+// Mixin for sidebar-toggle styles
+@mixin sidebar-toggle-styles($width, $height, $top) {
+  .sidebar-toggle {
+    width: $width;
+    height: $height;
+    top: $top;
+  }
+}
+
+// Mixin for paragraph styles
+@mixin paragraph-styles($font-size) {
+  .sidebar p {
+    font-size: $font-size;
+  }
+}
+
 // Portrait orientation
 @media (orientation: portrait) {
   // Phones and Tablets
   @media (min-width: 300px) and (max-width: 1024px) {
-    .sidebar {
-      width: 45vw;
-      border-top-right-radius: 0;
-    }
+    @include sidebar-styles(45vw, 0);
+    @include sidebar-toggle-styles(40%, 12%, 0);
+  }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-      p {
-        font-size: 3vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 40%;
-      height: 12%;
-      top: 0;
-    }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @include paragraph-styles(4vw);
   }
 }
 
@@ -25,43 +43,15 @@
 @media (orientation: landscape) {
   // Horizontal phones
   @media (min-width: 600px) and (max-width: 1024px) {
-    .sidebar {
-      width: 15vw;
-      border-top-right-radius: 0;
-
-      p {
-        font-size: 1.3vw;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      p {
-        font-size: 1.8vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 40%;
-      height: 12%;
-      top: 0;
-    }
+    @include sidebar-styles(15vw, 0);
+    @include sidebar-toggle-styles(40%, 12%, 0);
+    @include paragraph-styles(1.3vw);
   }
 
   // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    .sidebar {
-      width: 15vw;
-      border-top-right-radius: 0;
-
-      p {
-        font-size: 1.8vw;
-      }
-    }
-
-    .sidebar-toggle {
-      width: 45%;
-      height: 12%;
-      top: 0;
-    }
+    @include sidebar-styles(15vw, 0);
+    @include sidebar-toggle-styles(45%, 12%, 0);
+    @include paragraph-styles(2vw);
   }
 }

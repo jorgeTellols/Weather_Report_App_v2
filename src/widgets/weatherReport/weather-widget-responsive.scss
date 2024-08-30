@@ -1,23 +1,27 @@
-// Portrait orientation
-@media (orientation: portrait) {
-    // Phones
-    @media (min-width: 300px) and (max-width: 599px) {
-        .weather-widget {
-            .second-row {
-                display: flex;
-                flex-direction: column;
-            }
+// Mixin for weather-widget second-row styles
+@mixin weather-widget-second-row-styles($display, $flex-direction) {
+    .weather-widget {
+        .second-row {
+            display: $display;
+            flex-direction: $flex-direction;
         }
     }
+}
 
-    //Tablets
-    @media (min-width: 600px) and (max-width: 1024px) {
-        .weather-widget {
-            .second-row {
-                display: flex;
-                flex-direction: column;
-            }
+// Mixin for weather-widget second-row height
+@mixin weather-widget-second-row-height($height) {
+    .weather-widget {
+        .second-row {
+            height: $height;
         }
+    }
+}
+
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones and Tablets
+    @media (min-width: 300px) and (max-width: 1024px) {
+        @include weather-widget-second-row-styles(flex, column);
     }
 }
 
@@ -25,14 +29,10 @@
 @media (orientation: landscape) {
     // Horizontal phones
     @media (min-width: 600px) and (max-width: 1024px) {
-        .weather-widget {
-            .first-row {
-                height: 60%;
-            }
+        @include weather-widget-second-row-height(40%);
 
-            .second-row {
-                height: 40%;
-            }
+        .first-row {
+            height: 60%;
         }
     }
 }

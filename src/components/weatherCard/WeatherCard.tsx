@@ -39,7 +39,7 @@ function WeatherCard({
         <div className="max-temp">
           <span>{(languageSelected).maxTempSpan}</span>
           <div className="weather-info">
-            <img src="../../../public/assets/temp-max.png" alt="max-temp" />
+            <img src="assets/temp-max.png" alt="max-temp" />
             <span>
               {weatherTempMax}
               ºC
@@ -49,7 +49,7 @@ function WeatherCard({
         <div className="min-temp">
           <span>{(languageSelected).minTempSpan}</span>
           <div className="weather-info">
-            <img src="../../../public/assets/temp-min.png" alt="min-temp" />
+            <img src="assets/temp-min.png" alt="min-temp" />
             <span>
               {weatherTempMin}
               ºC
@@ -59,7 +59,7 @@ function WeatherCard({
         <div className="rain-prob">
           <span>{(languageSelected).rainProbSpan}</span>
           <div className="weather-info">
-            <img src="../../../public/assets/raindrop.png" alt="rain-prob" />
+            <img src="assets/raindrop.png" alt="rain-prob" />
             <span>
               {weatherRainProb}
               %

@@ -14,17 +14,17 @@
     border-radius: 5%;
 
     &.london {
-      background: url("../public/assets/london.jpg");
+      background: url("assets/london.jpg");
       background-size: cover;
     }
 
     &.singapore {
-      background: url("../public/assets/singapore.jpg");
+      background: url("assets/singapore.jpg");
       background-size: cover;
     }
 
     &.toronto {
-      background: url("../public/assets/toronto.jpg");
+      background: url("assets/toronto.jpg");
       background-size: cover;
     }
   }

@@ -19,20 +19,15 @@ function App() {
   };
 
   // useEffect(() => {
-  //   if((selectedCityName == (en.sidebarLondon)) || (selectedCityName == (es.sidebarLondon)))
-  //   {
-  //     setSelectedCityName(languageSelected.sidebarLondon)
+  //   if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {
+  //     setSelectedCityName(languageSelected.sidebarLondon);
+  //   } else if (selectedCityName === En.sidebarToronto) {
+  //     setSelectedCityName(languageSelected.sidebarToronto);
+  //   } else if ((selectedCityName
+  // === (En.sidebarSingapore)) || (selectedCityName === (Es.sidebarSingapore))) {
+  //     setSelectedCityName(languageSelected.sidebarSingapore);
   //   }
-  //   else if(selectedCityName == en.sidebarToronto)
-  //     {
-  //     setSelectedCityName(languageSelected.sidebarToronto)
-  //   }
-  //   else if((selectedCityName ==
-  // (en.sidebarSingapore)) || (selectedCityName == (es.sidebarSingapore)))
-  //     {
-  //     setSelectedCityName(languageSelected.sidebarSingapore)
-  //   }
-  // }, [languageSelected])
+  // }, [languageSelected, selectedCityName]);
 
   function setContentBackground() {
     if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {
@@ -70,7 +65,7 @@ function App() {
           />
         ) : (
           <WeatherWidget
-            // selectedCityName={selectedCityName}
+            selectedCityName={selectedCityName}
             languageSelected={languageSelected}
           />
         )}

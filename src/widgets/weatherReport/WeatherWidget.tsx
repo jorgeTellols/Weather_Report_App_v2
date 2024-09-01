@@ -3,30 +3,25 @@ import './weather_widget.scss';
 import Language from '../../utils/Language';
 import ClientError from '../../views/clientError/ClientError';
 import ServerError from '../../views/serverError/ServerError';
-import WeatherCityInfoCard from '../../components/weatherCityInfoCard/WeatherCityInfoCard';
+// import WeatherCityInfoCard from '../../components/weatherCityInfoCard/WeatherCityInfoCard';
 import WeatherMiniCard from '../../components/weatherMiniCard/WeatherMiniCard';
-import WeatherCard from '../../components/weatherCard/WeatherCard';
+// import WeatherCard from '../../components/weatherCard/WeatherCard';
+import useWeatherWidget from './useWeatherWidget';
 
 // Interface to define props
 interface Props {
-  // selectedCityName: string,
+  selectedCityName: string,
   languageSelected: Language
 }
 // Destructuring and hook initialization
 function WeatherReport({
-  // selectedCityName,
+  selectedCityName,
   languageSelected,
 } : Props) {
-  const weather = {
-    date: 'Tuesday, August 27, 2024',
-    icon: '01d',
-    description: 'Cloudy',
-    temperature: 45,
-    tempMax: 0,
-    tempMin: 0,
-    rainProb: 0,
-    timeZone: 'America/Chicago',
-  };
+  const {
+    clientError,
+    serverError,
+  } = useWeatherWidget({ selectedCityName, languageSelected });
 
   const nextDay = {
     date: '28-03-1998',
@@ -34,27 +29,15 @@ function WeatherReport({
     temperature: 88,
     rainProb: 1,
   };
-  const [clientError] = useState(false);
-  const [serverError] = useState(false);
-  const [currentWeather] = useState(weather);
+
+  // const [weatherToday] = useState(getData);
   const [weatherDay1] = useState(nextDay);
   const [weatherDay2] = useState(nextDay);
   const [weatherDay3] = useState(nextDay);
   const [weatherDay4] = useState(nextDay);
   const [weatherDay5] = useState(nextDay);
   const [weatherDay6] = useState(nextDay);
-  const [selectedCityName] = useState('London 💂🏻‍♀️');
-
-  // const [selectedCityName, setSelectedCityName] = useState(props.selectedCityName);
-  // const [clientError, setClientError] = useState(false);
-  // const [serverError, setServerError] = useState(true);
   // const [currentWeather, setCurrentWeather] = useState("");
-  // const [weatherDay1, setWeatherDay1] = useState("");
-  // const [weatherDay2, setWeatherDay2] = useState("");
-  // const [weatherDay3, setWeatherDay3] = useState("");
-  // const [weatherDay4, setWeatherDay4] = useState("");
-  // const [weatherDay5, setWeatherDay5] = useState("");
-  // const [weatherDay6, setWeatherDay6] = useState("");
 
   // Condition to display error screens or the weather report
   let content;
@@ -67,20 +50,20 @@ function WeatherReport({
     content = (
       <>
         <div className="first-row">
-          <WeatherCard
+          {/* <WeatherCard
             languageSelected={languageSelected}
-            weatherIcon={currentWeather.icon}
-            weatherDescription={currentWeather.description}
-            weatherTemperature={Math.round(currentWeather.temperature)}
-            weatherTempMax={Math.round(currentWeather.tempMax)}
-            weatherRainProb={(currentWeather.rainProb) * 100}
-            weatherTempMin={Math.round(currentWeather.tempMin)}
-          />
-          <WeatherCityInfoCard
+            weatherIcon={weatherToday.getIcon()}
+            weatherDescription={weatherToday.getDescription()}
+            weatherTemperature={Math.round(weatherToday.getTemperature())}
+            weatherTempMax={Math.round(weatherToday.getTempMax())}
+            weatherRainProb={(weatherToday.getRainProb()) * 100}
+            weatherTempMin={Math.round(weatherToday.getTempMin())}
+          /> */}
+          {/* <WeatherCityInfoCard
             selectedCityName={selectedCityName}
-            date={currentWeather.date}
+            date={weatherToday.getDate()}
             time="22:00"
-          />
+          /> */}
         </div>
         <div className="second-row">
           <WeatherMiniCard

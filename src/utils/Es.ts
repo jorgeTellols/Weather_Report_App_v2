@@ -19,7 +19,7 @@ const Es: Language = {
   formCloseButton: 'Cancelar',
   emptyContentTitle: 'Parece que aún no has seleccionado ciudad',
   emptyContentSpan: 'Por favor, elige una ciudad de la barra lateral',
-  dataFormat: 'es-ES',
+  dataFormat: 'es',
   rainProbSpan: 'Probabilidad de lluvia',
   minTempSpan: 'Temperatura mínima',
   maxTempSpan: 'Temperatura máxima',

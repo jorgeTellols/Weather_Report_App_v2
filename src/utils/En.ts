@@ -19,7 +19,7 @@ const En: Language = {
   formCloseButton: 'Cancel',
   emptyContentTitle: "Looks like you haven't selected a city yet",
   emptyContentSpan: 'Please, pick a city from the sidebar',
-  dataFormat: 'en-US',
+  dataFormat: 'en',
   rainProbSpan: 'Precipitation probability',
   minTempSpan: 'Min. temperature',
   maxTempSpan: 'Max. temperature',

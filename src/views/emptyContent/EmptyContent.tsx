@@ -14,7 +14,7 @@ function EmptyContent({
   // Main return
   return (
     <div className="empty-content">
-      <img className="emoji" src="../public/assets/thinking.gif" alt="emoji" />
+      <img className="emoji" src="assets/thinking.gif" alt="emoji" />
       <h1>
         {emptyContentTitle}
       </h1>

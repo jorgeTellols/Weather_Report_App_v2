@@ -23,11 +23,11 @@ function WeatherMiniCard({
     <div className="weather-mini-card">
       <div className="first-row">
         <h1>{upperCaseDate}</h1>
-        <img src={`../../../public/assets/${weatherIcon}.png`} alt="weather-icon" />
+        <img src={`assets/${weatherIcon}.png`} alt="weather-icon" />
       </div>
       <div className="second-row">
         <div className="temperature-mini-card">
-          <img src="../../public/assets/temperature.png" alt="temperature" />
+          <img src="assets/temperature.png" alt="temperature" />
           <span>
             {weatherTemperature}
             {' '}
@@ -35,7 +35,7 @@ function WeatherMiniCard({
           </span>
         </div>
         <div className="rain-prob-mini-card">
-          <img src="../../public/assets/raindrop.png" alt="raindrop" />
+          <img src="assets/raindrop.png" alt="raindrop" />
           <span>
             {weatherRainProb}
             %

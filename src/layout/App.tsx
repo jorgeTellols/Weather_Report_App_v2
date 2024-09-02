@@ -27,7 +27,7 @@ function App() {
   // === (En.sidebarSingapore)) || (selectedCityName === (Es.sidebarSingapore))) {
   //     setSelectedCityName(languageSelected.sidebarSingapore);
   //   }
-  // }, [languageSelected, selectedCityName]);
+  // }, [selectedCityName]);
 
   function setContentBackground() {
     if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {

@@ -1,11 +1,18 @@
 import { useState } from 'react';
 
-// Custom hook to separate logic from UI in the "Sidebar" component
-function useSidebar(
+// Interface to define the props from the parent
+interface Props {
   selectLondon: () => void,
   selectToronto: () => void,
   selectSingapore: () => void,
-) {
+}
+
+// Custom hook to separate logic from UI in the "Sidebar" component
+function useSidebar({
+  selectLondon,
+  selectToronto,
+  selectSingapore,
+} : Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [firstTime, setFirstTime] = useState(true);
 

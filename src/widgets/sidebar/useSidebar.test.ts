@@ -10,7 +10,11 @@ describe('useSidebar', () => {
   // Test for toggleVisibility()
   it('should show/hide the sidebar and set firstTime to false if is true', () => {
     const { result } = renderHook(
-      () => useSidebar(mockSelectLondon, mockSelectToronto, mockSelectSingapore),
+      () => useSidebar({
+        selectLondon: mockSelectLondon,
+        selectToronto: mockSelectToronto,
+        selectSingapore: mockSelectSingapore,
+      }),
     );
 
     // Default states to hide the sidebar
@@ -39,7 +43,11 @@ describe('useSidebar', () => {
   // Test for handleCitySelection()
   it('should call the appropriate city selection function and toggle visibility', () => {
     const { result } = renderHook(
-      () => useSidebar(mockSelectLondon, mockSelectToronto, mockSelectSingapore),
+      () => useSidebar({
+        selectLondon: mockSelectLondon,
+        selectToronto: mockSelectToronto,
+        selectSingapore: mockSelectSingapore,
+      }),
     );
 
     // Shows the sidebar

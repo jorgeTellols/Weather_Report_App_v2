@@ -21,9 +21,11 @@ function useWeatherWidget({
   // Function to check an error origin
   const checkError = (statusCode: number) => {
     if (statusCode >= 400 && statusCode <= 499) {
+      setServerError(false);
       setClientError(true);
     }
     if (statusCode >= 500 && statusCode <= 599) {
+      setClientError(false);
       setServerError(true);
     }
   };
@@ -32,7 +34,7 @@ function useWeatherWidget({
   useEffect(() => {
     // Function that handles the data received from the call to the service
     const getData = async () => {
-      const data = await weatherWidgetService(selectedCityName, languageSelected.dataFormat);
+      const data = await weatherWidgetService(selectedCityName, languageSelected);
 
       if (!Array.isArray(data)) {
         checkError(data);
@@ -48,7 +50,7 @@ function useWeatherWidget({
 
   // Function that formats data to build the object and return it to the UI component
   const formatData = (dayOfTheWeek: number) => {
-    if (!weekWeatherReport) {
+    if (!weekWeatherReport || !weekWeatherReport[dayOfTheWeek]) {
       return null;
     }
 
@@ -65,6 +67,7 @@ function useWeatherWidget({
 
   // Hook return
   return {
+    checkError,
     serverError,
     clientError,
     selectedCityName,

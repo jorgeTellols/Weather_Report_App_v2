@@ -1,10 +1,11 @@
 import Weather from './Weather';
 import formatDate from '../../../utils/formatDate/formatDate';
 import formatDescription from '../../../utils/formatDescription/formatDescription';
+import Language from '../../../utils/Language';
 
 async function weatherWidgetService(
   cityName: string,
-  language: string,
+  languageSelected: Language,
 ): Promise<Array<Weather> | number> {
   const weeklyReportArr: Array<Weather> = [];
   let lat: string = '';
@@ -24,7 +25,7 @@ async function weatherWidgetService(
     lon = '103.85';
   }
 
-  const url: string = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&lang=${language}&units=metric&appid=${apiKey}`;
+  const url: string = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&lang=${languageSelected.dataFormat}&units=metric&appid=${apiKey}`;
 
   // GET
   try {

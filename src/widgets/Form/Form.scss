@@ -37,7 +37,7 @@ label {
   font-weight: 500;
   font-style: bold;
   font-size: 1vw;
-  color: $dark-theme-green-background;
+  color: var(--theme-colored-background);
 }
 
 input {
@@ -90,7 +90,7 @@ input {
 }
 
 .highlighted-button {
-  background-color: $dark-theme-green-background;
+  background-color: var(--theme-colored-background);
   color: black;
   cursor: pointer;
 }

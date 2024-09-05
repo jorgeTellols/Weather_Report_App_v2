@@ -1,8 +1,7 @@
 @import "../../index.scss";
 
 .language-buttons-container {
-  margin-top: 1%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   width: 100%;
   display: flex;
   justify-content: right;
@@ -14,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $dark-theme-background;
+  background-color: var(--theme-background);
   border: 0.1vw solid silver;
   border-radius: 15%;
   padding: 0.5% 1%;
@@ -26,23 +25,23 @@
   span {
     font-size: 1vw;
     font-weight: 500;
-    color: $dark-theme-font-color;
+    color: var(--theme-font-color);
   }
 
   &:hover {
-    background-color: $dark-theme-green-hover;
+    background-color: var(--theme-colored-hover);
 
     span {
-      color: $dark-theme-font-color-selected;
+      color: var(--theme-font-color-selected);
     }
   }
 }
 
 .highlighted-button {
-  background-color: $dark-theme-green-background;
+  background-color: var(--theme-colored-background);
 
   span {
-    color: $dark-theme-font-color-selected;
+    color: var(--theme-font-color-selected);
   }
 }
 

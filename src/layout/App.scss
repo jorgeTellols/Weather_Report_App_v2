@@ -5,11 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  height: 100vh;
+  background-color: var(--theme-background);
 
   .content {
-    height: inherit;
-    width: 45vw;
+    height: 75%;
+    width: 45%;
     text-align: center;
     border-radius: 5%;
 

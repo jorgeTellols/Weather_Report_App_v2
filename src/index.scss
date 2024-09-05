@@ -1,17 +1,20 @@
-//Variable initialization
+// Variables to change the theme
 
-$light-theme-background: white;
-$light-theme-font-color: black;
-$light-theme-blue-background: blue;
-$light-theme-blue-hover: rgb(89, 136, 232);
-$light-theme-font-color-selected: white;
+.light {
+  --theme-background: #fffffd;
+  --theme-font-color: black;
+  --theme-colored-background: #679ef1;
+  --theme-colored-hover: #a4c6f9;
+  --theme-font-color-selected: black;
+}
 
-$dark-theme-background: #1a1a1a;
-$dark-theme-font-color: white;
-$dark-theme-green-background: #39fe90;
-$dark-theme-green-hover: #27b164;
-$dark-theme-font-color-selected: black;
-
+.dark {
+  --theme-background: #1f2222;
+  --theme-font-color: white;
+  --theme-colored-background: #39fe90;
+  --theme-colored-hover: #27b164;
+  --theme-font-color-selected: black;
+}
 
 //General styles
 
@@ -19,15 +22,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--theme-background);
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1f2222;
 }
 
 h1,

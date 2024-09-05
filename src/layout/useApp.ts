@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import Language from '../utils/Language';
 import En from '../utils/En';
+import useThemeSetter from '../widgets/themeSetter/useThemeSetter';
 
 // Custom hook to handle the logic of the App component
 function useApp() {
   const [languageSelected, setLanguageSelected] = useState(En);
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
+  const { currentTheme, setDarkTheme, setLightTheme } = useThemeSetter('light');
 
-  // Function to handle language change
+  // Function that changes the language
   const handleLanguageChange = (language: Language) => {
     setLanguageSelected(language);
   };
 
-  // Handlers for city selection and modal display
+  // Functions to avoid in-line calls in the component
   const selectLondon = () => setSelectedCityName('london');
   const selectToronto = () => setSelectedCityName('toronto');
   const selectSingapore = () => setSelectedCityName('singapore');
@@ -24,12 +26,15 @@ function useApp() {
     languageSelected,
     isFormShowing,
     selectedCityName,
+    currentTheme,
     handleLanguageChange,
     selectLondon,
     selectToronto,
     selectSingapore,
     showModal,
     hideModal,
+    setDarkTheme,
+    setLightTheme,
   };
 }
 

@@ -45,12 +45,12 @@ function App() {
             languageSelected={languageSelected}
           />
         )}
-        <ThemeSetter
-          currentTheme={currentTheme}
-          setDarkTheme={setDarkTheme}
-          setLightTheme={setLightTheme}
-        />
       </div>
+      <ThemeSetter
+        currentTheme={currentTheme}
+        setDarkTheme={setDarkTheme}
+        setLightTheme={setLightTheme}
+      />
       {isFormShowing && (
         <ModalForm
           languageSelected={languageSelected}

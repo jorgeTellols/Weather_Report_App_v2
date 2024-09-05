@@ -1,3 +1,4 @@
+import './theme_setter.scss';
 import Button from '../../components/button/Button';
 
 // Interface to define props
@@ -17,9 +18,9 @@ function ThemeSetter({
   return (
     <div className="theme-setter-container">
       {currentTheme === 'dark' ? (
-        <Button handleClick={setLightTheme} textContent="Switch to Light" />
+        <Button styleButton="light-button" handleClick={setLightTheme} textContent="☀️" />
       ) : (
-        <Button handleClick={setDarkTheme} textContent="Switch to Dark" />
+        <Button styleButton="dark-button" handleClick={setDarkTheme} textContent="🌙" />
       )}
     </div>
   );

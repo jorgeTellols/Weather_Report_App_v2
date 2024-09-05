@@ -8,7 +8,13 @@ function useApp() {
   const [languageSelected, setLanguageSelected] = useState(En);
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
-  const { currentTheme, setDarkTheme, setLightTheme } = useThemeSetter('light');
+
+  // Hook to handle the theme change
+  const {
+    currentTheme,
+    setDarkTheme,
+    setLightTheme,
+  } = useThemeSetter('dark');
 
   // Function that changes the language
   const handleLanguageChange = (language: Language) => {

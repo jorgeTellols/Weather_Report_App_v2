@@ -2,6 +2,7 @@ import Weather from './Weather';
 import formatDate from '../../../utils/formatDate/formatDate';
 import formatDescription from '../../../utils/formatDescription/formatDescription';
 import Language from '../../../utils/Language';
+import data from './prueba.json';
 
 async function weatherWidgetService(
   cityName: string,
@@ -29,14 +30,14 @@ async function weatherWidgetService(
 
   // GET
   try {
-    const response = await fetch(url);
+    // const response = await fetch(url);
 
-    if (!response.ok) {
-      const error = response.status;
-      throw new Error(error.toString());
-    }
+    // if (!response.ok) {
+    //   const error = response.status;
+    //   throw new Error(error.toString());
+    // }
 
-    const data = await response.json();
+    // const data = await response.json();
 
     //  Loop to GET the weather for the next 7 days
     for (let k = 0; k <= 6; k += 1) {
@@ -44,10 +45,10 @@ async function weatherWidgetService(
         formatDate(data.daily[k].dt),
         data.daily[k].weather[0].icon,
         formatDescription(data.daily[k].weather[0].description),
-        data.current.temp,
-        data.daily[k].temp.max,
-        data.daily[k].temp.min,
-        data.daily[k].pop,
+        Math.round(data.current.temp),
+        Math.round(data.daily[k].temp.max),
+        Math.round(data.daily[k].temp.min),
+        Math.round((data.daily[k].pop * 100)),
         data.timezone,
         data.daily[k].wind_speed,
         data.daily[k].humidity,

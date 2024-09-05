@@ -43,7 +43,7 @@ it('should return weather data and put it into todayWeather', async () => {
       temperature: 20,
       tempMax: 25,
       tempMin: 15,
-      rainProb: 10,
+      rainProb: 0.1,
     });
   });
 });

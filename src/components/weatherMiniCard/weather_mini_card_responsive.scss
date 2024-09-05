@@ -58,7 +58,7 @@
     @media (min-width: 300px) and (max-width: 599px) {
         @include weather-mini-card-styles(0, row, 100%);
         @include weather-mini-card-h1-styles(1.5vh);
-        @include weather-mini-card-first-row-styles(row, 10%, 10%, 40%, null);
+        @include weather-mini-card-first-row-styles(row, 5%, 0%, 40%, null);
         @include weather-mini-card-second-row-styles(2vh, row);
     }
 

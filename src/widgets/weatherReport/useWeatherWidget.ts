@@ -58,10 +58,10 @@ function useWeatherWidget({
       date: weekWeatherReport[dayOfTheWeek].getDate(),
       icon: weekWeatherReport[dayOfTheWeek].getIcon(),
       description: weekWeatherReport[dayOfTheWeek].getDescription(),
-      temperature: Math.round(weekWeatherReport[dayOfTheWeek].getTemperature()),
-      tempMax: Math.round(weekWeatherReport[dayOfTheWeek].getTempMax()),
-      tempMin: Math.round(weekWeatherReport[dayOfTheWeek].getTempMin()),
-      rainProb: Math.round(weekWeatherReport[dayOfTheWeek].getRainProb() * 100),
+      temperature: weekWeatherReport[dayOfTheWeek].getTemperature(),
+      tempMax: weekWeatherReport[dayOfTheWeek].getTempMax(),
+      tempMin: weekWeatherReport[dayOfTheWeek].getTempMin(),
+      rainProb: weekWeatherReport[dayOfTheWeek].getRainProb(),
     };
   };
 

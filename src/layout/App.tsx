@@ -1,8 +1,5 @@
 import './App.scss';
-import { useState } from 'react';
-import Language from '../utils/Language';
-import En from '../utils/En';
-import Es from '../utils/Es';
+import useApp from './useApp';
 import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
@@ -10,54 +7,29 @@ import ModalForm from '../modals/ModalForm';
 import WeatherWidget from '../widgets/weatherReport/WeatherWidget';
 
 function App() {
-  const [languageSelected, setLanguageSelected] = useState(En);
-  const [isFormShowing, setIsFormShowing] = useState(false);
-  const [selectedCityName, setSelectedCityName] = useState('');
-
-  const handleLanguageChange = (language: Language) => {
-    setLanguageSelected(language);
-  };
-
-  // useEffect(() => {
-  //   if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {
-  //     setSelectedCityName(languageSelected.sidebarLondon);
-  //   } else if (selectedCityName === En.sidebarToronto) {
-  //     setSelectedCityName(languageSelected.sidebarToronto);
-  //   } else if ((selectedCityName
-  // === (En.sidebarSingapore)) || (selectedCityName === (Es.sidebarSingapore))) {
-  //     setSelectedCityName(languageSelected.sidebarSingapore);
-  //   }
-  // }, [selectedCityName]);
-
-  function setContentBackground() {
-    if ((selectedCityName === (En.sidebarLondon)) || (selectedCityName === (Es.sidebarLondon))) {
-      return 'london';
-    }
-    if ((selectedCityName
-     === (En.sidebarToronto)) || (selectedCityName === (Es.sidebarToronto))) {
-      return 'toronto';
-    }
-    if ((selectedCityName
-     === (En.sidebarSingapore)) || (selectedCityName === (Es.sidebarSingapore))) {
-      return 'singapore';
-    }
-
-    return '';
-  }
+  const {
+    languageSelected,
+    isFormShowing,
+    selectedCityName,
+    handleLanguageChange,
+    selectLondon,
+    selectToronto,
+    selectSingapore,
+    showModal,
+    hideModal,
+  } = useApp();
 
   return (
     <div className="weather-app">
       <Sidebar
-        selectLondon={() => setSelectedCityName(languageSelected.sidebarLondon)}
-        selectToronto={() => setSelectedCityName(languageSelected.sidebarToronto)}
-        selectSingapore={() => setSelectedCityName(languageSelected.sidebarSingapore)}
-        showModal={() => setIsFormShowing(true)}
+        selectLondon={selectLondon}
+        selectToronto={selectToronto}
+        selectSingapore={selectSingapore}
+        showModal={showModal}
         languageSelected={languageSelected}
       />
-      <LanguageButtons
-        switchLanguage={handleLanguageChange}
-      />
-      <div className={`${setContentBackground()} content`}>
+      <LanguageButtons switchLanguage={handleLanguageChange} />
+      <div className={`${selectedCityName} content`}>
         {selectedCityName === '' ? (
           <EmptyContent
             emptyContentTitle={languageSelected.emptyContentTitle}
@@ -70,12 +42,12 @@ function App() {
           />
         )}
       </div>
-      {isFormShowing ? (
+      {isFormShowing && (
         <ModalForm
           languageSelected={languageSelected}
-          hideModal={() => setIsFormShowing(false)}
+          hideModal={hideModal}
         />
-      ) : ('')}
+      )}
     </div>
   );
 }

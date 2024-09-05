@@ -56,6 +56,7 @@ function WeatherReport({
             weatherTempMin={todayWeather.tempMin}
           />
           <WeatherCityInfoCard
+            languageSelected={languageSelected}
             selectedCityName={selectedCityName}
             date={todayWeather.date}
           />

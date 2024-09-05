@@ -27,7 +27,7 @@ function Sidebar({
     londonSelection,
     torontoSelection,
     singaporeSelection,
-  } = useSidebar(selectLondon, selectToronto, selectSingapore);
+  } = useSidebar({ selectLondon, selectToronto, selectSingapore });
 
   // Main return
   return (

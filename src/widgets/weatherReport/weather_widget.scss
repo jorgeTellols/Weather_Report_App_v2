@@ -16,7 +16,12 @@ WeatherReport>.London {
     .second-row {
         height: 100%;
         display: flex;
+
+        :first-child {
+            border-left: none;
+        }
     }
+
 }
 
 @import "weather-widget-responsive.scss"

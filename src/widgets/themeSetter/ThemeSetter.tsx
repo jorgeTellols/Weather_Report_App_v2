@@ -18,7 +18,7 @@ function ThemeSetter({
   return (
     <div className="theme-setter-container">
       {currentTheme === 'dark' ? (
-        <Button styleButton="light-button" handleClick={setLightTheme} textContent="☀️" />
+        <Button styleButton="light-button" handleClick={setLightTheme} textContent="🌞" />
       ) : (
         <Button styleButton="dark-button" handleClick={setDarkTheme} textContent="🌙" />
       )}

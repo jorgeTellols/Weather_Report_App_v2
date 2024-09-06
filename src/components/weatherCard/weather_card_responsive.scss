@@ -61,7 +61,7 @@
 @media (orientation: portrait) {
     // Phones and Tablets
     @media (min-width: 300px) and (max-width: 1024px) {
-        @include weather-card-styles(60%, 100%, 0);
+        @include weather-card-styles(60%, 1.5vh, 0);
         @include weather-card-first-row-img-styles(0, -5%);
         @include weather-card-second-row-styles(-5%);
         @include weather-card-third-row-styles(column, 60%, 100%, row);

@@ -17,7 +17,7 @@
 }
 
 // Mixin for first-row styles
-@mixin weather-mini-card-first-row-styles($flex-direction, $margin-left, $img-margin-left, $img-width, $img-max-width) {
+@mixin weather-mini-card-first-row-styles($flex-direction, $margin-left, $img-margin-left, $img-width) {
     .weather-mini-card {
         .first-row {
             flex-direction: $flex-direction;
@@ -26,7 +26,6 @@
             img {
                 margin-left: $img-margin-left;
                 width: $img-width;
-                max-width: $img-max-width;
             }
         }
     }
@@ -54,19 +53,27 @@
 
 // Portrait orientation
 @media (orientation: portrait) {
+    // Smaller phones (Iphone SE)
+    @media (max-width: 375px) {
+        @include weather-mini-card-styles(0, row, 100%);
+        @include weather-mini-card-h1-styles(1.8vh);
+        @include weather-mini-card-first-row-styles(row, 5%, 0, 30%);
+        @include weather-mini-card-second-row-styles(2vh, row);
+    }
+
     // Phones
-    @media (min-width: 300px) and (max-width: 599px) {
+    @media (min-width: 376px) and (max-width: 599px) {
         @include weather-mini-card-styles(0, row, 100%);
         @include weather-mini-card-h1-styles(1.5vh);
-        @include weather-mini-card-first-row-styles(row, 5%, 0%, 40%, null);
+        @include weather-mini-card-first-row-styles(row, 5%, 0%, 40%);
         @include weather-mini-card-second-row-styles(2vh, row);
     }
 
     // Tablets
     @media (min-width: 600px) and (max-width: 1024px) {
         @include weather-mini-card-styles(0, row, 100%);
-        @include weather-mini-card-h1-styles(1.5vh);
-        @include weather-mini-card-first-row-styles(row, 10%, 35%, null, 20%);
+        @include weather-mini-card-h1-styles(2vh);
+        @include weather-mini-card-first-row-styles(row, 10%, 15%, 20%);
         @include weather-mini-card-second-row-styles(2vh, row);
     }
 }

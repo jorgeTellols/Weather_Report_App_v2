@@ -1,5 +1,7 @@
 import './weather_card.scss';
 import Language from '../../utils/Language';
+import useWeatherCard from './useWeatherCard';
+import Button from '../button/Button';
 
 // Interface to define props
 interface Props {
@@ -9,6 +11,8 @@ interface Props {
   weatherTempMax: number;
   weatherTempMin: number;
   weatherRainProb: number;
+  selectedCityName: string;
+  date: string;
   languageSelected: Language;
 }
 
@@ -21,50 +25,67 @@ function WeatherCard({
   weatherTempMin,
   weatherRainProb,
   languageSelected,
+  selectedCityName,
+  date,
 } : Props) {
+  const {
+    displayedCity,
+  } = useWeatherCard(languageSelected, selectedCityName);
+
   // Main return
   return (
     <div className="weather-card">
-      <div className="first-row">
-        <img src={`../assets/${weatherIcon}.png`} alt={weatherDescription} />
-        <h1>
-          {weatherTemperature}
-          ºC
-        </h1>
-      </div>
-      <div className="second-row">
-        <p>{weatherDescription}</p>
-      </div>
-      <div className="third-row">
-        <div className="max-temp">
-          <span>{(languageSelected).maxTempSpan}</span>
-          <div className="weather-info">
-            <img src="assets/temp-max.png" alt="max-temp" />
-            <span>
-              {weatherTempMax}
-              ºC
-            </span>
+      <div className="weather-info">
+        <div className="first-row">
+          <img src={`../assets/${weatherIcon}.png`} alt={weatherDescription} />
+          <h1>
+            {weatherTemperature}
+            ºC
+          </h1>
+        </div>
+        <div className="second-row">
+          <p>{weatherDescription}</p>
+        </div>
+        <div className="third-row">
+          <div className="max-temp">
+            <span>{(languageSelected).maxTempSpan}</span>
+            <div className="weather-info">
+              <img src="assets/temp-max.png" alt="max-temp" />
+              <span>
+                {weatherTempMax}
+                ºC
+              </span>
+            </div>
+          </div>
+          <div className="min-temp">
+            <span>{(languageSelected).minTempSpan}</span>
+            <div className="weather-info">
+              <img src="assets/temp-min.png" alt="min-temp" />
+              <span>
+                {weatherTempMin}
+                ºC
+              </span>
+            </div>
+          </div>
+          <div className="rain-prob">
+            <span>{(languageSelected).rainProbSpan}</span>
+            <div className="weather-info">
+              <img src="assets/raindrop.png" alt="rain-prob" />
+              <span>
+                {weatherRainProb}
+                %
+              </span>
+            </div>
           </div>
         </div>
-        <div className="min-temp">
-          <span>{(languageSelected).minTempSpan}</span>
-          <div className="weather-info">
-            <img src="assets/temp-min.png" alt="min-temp" />
-            <span>
-              {weatherTempMin}
-              ºC
-            </span>
-          </div>
+      </div>
+      <div className="city-info">
+        <div className="city-info-card">
+          <h1>{displayedCity}</h1>
+          <h1 className="date">{date}</h1>
         </div>
-        <div className="rain-prob">
-          <span>{(languageSelected).rainProbSpan}</span>
-          <div className="weather-info">
-            <img src="assets/raindrop.png" alt="rain-prob" />
-            <span>
-              {weatherRainProb}
-              %
-            </span>
-          </div>
+        <div className="show-more">
+          <Button styleButton="full-report-button" handleClick={() => console.log('change thing')} textContent="+" />
         </div>
       </div>
     </div>

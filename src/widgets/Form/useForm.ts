@@ -27,23 +27,14 @@ function useForm() {
   const handlePhoneChange = (phoneNumber: string) => setPhoneNumberField(phoneNumber.trim());
   const disableButton = (e: React.MouseEvent<HTMLButtonElement>) => e.preventDefault();
 
-  // Functions to avoid using in-line funciton on the component
-  const setName = (e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e.target.value);
-  const setBirthdate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleBirthChange(e.target.value);
-  };
-  const setCity = (e: React.ChangeEvent<HTMLInputElement>) => handleCityChange(e.target.value);
-  const setEmail = (e: React.ChangeEvent<HTMLInputElement>) => handleEmailChange(e.target.value);
-  const setPhone = (e: React.ChangeEvent<HTMLInputElement>) => handlePhoneChange(e.target.value);
-
   // Hook return
   return {
     buttonStatus,
-    setName,
-    setBirthdate,
-    setCity,
-    setEmail,
-    setPhone,
+    setName: (e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e.target.value),
+    setBirthdate: (e: React.ChangeEvent<HTMLInputElement>) => handleBirthChange(e.target.value),
+    setCity: (e: React.ChangeEvent<HTMLInputElement>) => handleCityChange(e.target.value),
+    setEmail: (e: React.ChangeEvent<HTMLInputElement>) => handleEmailChange(e.target.value),
+    setPhone: (e: React.ChangeEvent<HTMLInputElement>) => handlePhoneChange(e.target.value),
     disableButton,
   };
 }

@@ -9,7 +9,7 @@ function useApp() {
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
 
-  // Hook to handle the theme change
+  // Call to the hook to handle the theme change
   const {
     currentTheme,
     setDarkTheme,
@@ -21,24 +21,16 @@ function useApp() {
     setLanguageSelected(language);
   };
 
-  // Functions to avoid in-line calls in the component
-  const selectLondon = () => setSelectedCityName('london');
-  const selectToronto = () => setSelectedCityName('toronto');
-  const selectSingapore = () => setSelectedCityName('singapore');
-  const showModal = () => setIsFormShowing(true);
-  const hideModal = () => setIsFormShowing(false);
-
   return {
     languageSelected,
     isFormShowing,
     selectedCityName,
     currentTheme,
     handleLanguageChange,
-    selectLondon,
-    selectToronto,
-    selectSingapore,
-    showModal,
-    hideModal,
+    selectLondon: () => setSelectedCityName('london'),
+    selectToronto: () => setSelectedCityName('toronto'),
+    selectSingapore: () => setSelectedCityName('singapore'),
+    toggleModal: () => setIsFormShowing(!isFormShowing),
     setDarkTheme,
     setLightTheme,
   };

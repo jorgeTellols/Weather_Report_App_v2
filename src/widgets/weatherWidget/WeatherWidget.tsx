@@ -5,17 +5,16 @@ import ServerError from '../../views/serverError/ServerError';
 import Spinner from '../../components/spinner/Spinner';
 import WeatherMiniCard from '../../components/weatherMiniCard/WeatherMiniCard';
 import WeatherCard from '../../components/weatherCard/WeatherCard';
-import WeatherCityInfoCard from '../../components/weatherCityInfoCard/WeatherCityInfoCard';
 import useWeatherWidget from './useWeatherWidget';
 
 // Interface to define props
 interface Props {
-  selectedCityName: string,
-  languageSelected: Language
+  selectedCityName: string;
+  languageSelected: Language;
 }
 
 // Destructuring and hook initialization
-function WeatherReport({
+function WeatherWidget({
   selectedCityName,
   languageSelected,
 }: Props) {
@@ -29,6 +28,7 @@ function WeatherReport({
     weatherDay4,
     weatherDay5,
     weatherDay6,
+    fullWeatherReport,
   } = useWeatherWidget({ selectedCityName, languageSelected });
 
   // Condition to display error screens, a loading screen or the weather report
@@ -38,12 +38,16 @@ function WeatherReport({
     content = <ServerError languageSelected={languageSelected} />;
   } else if (clientError) {
     content = <ClientError languageSelected={languageSelected} />;
-  } else if (!todayWeather || !weatherDay1 || !weatherDay2
-    || !weatherDay3 || !weatherDay4
-    || !weatherDay5 || !weatherDay6) {
+  } else if (
+    !todayWeather || !weatherDay1
+    || !weatherDay2 || !weatherDay3
+    || !weatherDay4 || !weatherDay5 || !weatherDay6
+  ) {
     content = <Spinner />;
   } else {
-    content = (
+    content = fullWeatherReport ? (
+      <h1>fullreport</h1>
+    ) : (
       <>
         <div className="first-row">
           <WeatherCard
@@ -54,9 +58,6 @@ function WeatherReport({
             weatherTempMax={todayWeather.tempMax}
             weatherRainProb={todayWeather.rainProb}
             weatherTempMin={todayWeather.tempMin}
-          />
-          <WeatherCityInfoCard
-            languageSelected={languageSelected}
             selectedCityName={selectedCityName}
             date={todayWeather.date}
           />
@@ -107,4 +108,4 @@ function WeatherReport({
   return <div className="weather-widget">{content}</div>;
 }
 
-export default WeatherReport;
+export default WeatherWidget;

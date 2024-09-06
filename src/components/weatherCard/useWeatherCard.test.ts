@@ -1,14 +1,14 @@
 import { renderHook } from '@testing-library/react';
-import useWeatherCityInfoCard from './useWeatherCityInfoCard';
+import useWeatherCard from './useWeatherCard';
 import Es from '../../utils/Es';
 import En from '../../utils/En';
 
-describe('useWeatherCityInfoCard', () => {
+describe('useWeatherCard', () => {
   // Test to see if getDisplayedCity() works
   it('should change the displayedCity content to match the language selected', () => {
     // We render the hook (English is selected by default)
     const { result, rerender } = renderHook(
-      ({ language, city }) => useWeatherCityInfoCard(language, city),
+      ({ language, city }) => useWeatherCard(language, city),
       {
         initialProps: { language: En, city: 'london' },
       },

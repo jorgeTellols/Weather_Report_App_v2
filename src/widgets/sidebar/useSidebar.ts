@@ -30,19 +30,14 @@ function useSidebar({
     toggleVisibility();
   };
 
-  // Functions to avoid using in-line functions on the component
-  const londonSelection = () => handleCitySelection(selectLondon);
-  const torontoSelection = () => handleCitySelection(selectToronto);
-  const singaporeSelection = () => handleCitySelection(selectSingapore);
-
   // Hook return
   return {
     isVisible,
     firstTime,
     toggleVisibility,
-    londonSelection,
-    torontoSelection,
-    singaporeSelection,
+    londonSelection: () => handleCitySelection(selectLondon),
+    torontoSelection: () => handleCitySelection(selectToronto),
+    singaporeSelection: () => handleCitySelection(selectSingapore),
   };
 }
 

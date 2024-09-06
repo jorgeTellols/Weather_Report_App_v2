@@ -65,6 +65,11 @@
         @include weather-card-first-row-img-styles(0, -5%);
         @include weather-card-second-row-styles(-5%);
         @include weather-card-third-row-styles(column, 60%, 100%, row);
+        .city-info {
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 3vw;
+        }
     }
 }
 

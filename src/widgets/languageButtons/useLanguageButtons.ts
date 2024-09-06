@@ -26,17 +26,12 @@ function useLanguageButtons({ switchLanguage } : Props) {
     return false;
   };
 
-  // Functions to avoid in-line functions on the component
-  const setEnglish = () => setLanguage(En);
-  const setSpanish = () => setLanguage(Es);
-  const isHighlighted = applyHighlight();
-
   // Hook return
   return {
-    setEnglish,
-    setSpanish,
+    setEnglish: () => setLanguage(En),
+    setSpanish: () => setLanguage(Es),
+    isHighlighted: () => applyHighlight(),
     languageSelected,
-    isHighlighted,
   };
 }
 

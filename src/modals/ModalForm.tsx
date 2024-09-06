@@ -9,7 +9,7 @@ interface Props {
 }
 
 // Destructuring and hook initialization
-function Modal({
+function ModalForm({
   hideModal,
   languageSelected,
 }: Props) {
@@ -26,4 +26,4 @@ function Modal({
   );
 }
 
-export default Modal;
+export default ModalForm;

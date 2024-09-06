@@ -16,6 +16,7 @@ function useWeatherWidget({
 }: Props) {
   const [clientError, setClientError] = useState(false);
   const [serverError, setServerError] = useState(false);
+  const [fullWeatherReport, setFullWeatherReport] = useState(false);
   const [weekWeatherReport, setWeekWeatherReport] = useState<Array<Weather> | null>(null);
 
   // Function to check an error origin
@@ -78,6 +79,7 @@ function useWeatherWidget({
     weatherDay4: formatData(4),
     weatherDay5: formatData(5),
     weatherDay6: formatData(6),
+    fullWeatherReport,
   };
 }
 

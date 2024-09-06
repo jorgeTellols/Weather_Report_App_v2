@@ -4,7 +4,7 @@ import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import ModalForm from '../modals/ModalForm';
-import WeatherWidget from '../widgets/weatherReport/WeatherWidget';
+import WeatherWidget from '../widgets/weatherWidget/WeatherWidget';
 import ThemeSetter from '../widgets/themeSetter/ThemeSetter';
 
 function App() {
@@ -17,8 +17,7 @@ function App() {
     selectLondon,
     selectToronto,
     selectSingapore,
-    showModal,
-    hideModal,
+    toggleModal,
     setDarkTheme,
     setLightTheme,
   } = useApp();
@@ -29,7 +28,7 @@ function App() {
         selectLondon={selectLondon}
         selectToronto={selectToronto}
         selectSingapore={selectSingapore}
-        showModal={showModal}
+        showModal={toggleModal}
         languageSelected={languageSelected}
       />
       <LanguageButtons switchLanguage={handleLanguageChange} />
@@ -54,7 +53,7 @@ function App() {
       {isFormShowing && (
         <ModalForm
           languageSelected={languageSelected}
-          hideModal={hideModal}
+          hideModal={toggleModal}
         />
       )}
     </div>

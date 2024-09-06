@@ -64,8 +64,8 @@
 
 // Landscape orientation
 @media (orientation: landscape) {
-    // Horizontal phones
-    @media (min-width: 600px) and (max-width: 767px) {
+    // Horizontal phones, tablets and bigger
+    @media (min-width: 600px) and (max-width: 1024px) {
         label {
             font-size: 3.5vh;
         }
@@ -78,7 +78,7 @@
     }
 
     // Horizontal tablets and bigger devices
-    @media (min-width: 768px) and (max-width: 1440px) {
+    @media (min-width: 1025px) and (max-width: 1440px) {
         label {
             font-size: 3.5vh;
         }

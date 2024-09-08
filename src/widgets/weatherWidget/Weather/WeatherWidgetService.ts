@@ -49,7 +49,6 @@ async function weatherWidgetService(
         Math.round(data.daily[k].temp.max),
         Math.round(data.daily[k].temp.min),
         Math.round((data.daily[k].pop * 100)),
-        data.timezone,
         data.daily[k].wind_speed,
         data.daily[k].humidity,
         data.daily[k].pressure,

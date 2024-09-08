@@ -13,8 +13,6 @@ class Weather {
 
   private rainProb: number;
 
-  private timeZone: string;
-
   private windSpeed: number;
 
   private humidity: number;
@@ -29,7 +27,6 @@ class Weather {
     tempMax: number,
     tempMin: number,
     rainProb: number,
-    timeZone: string,
     windSpeed: number,
     humidity: number,
     pressure: number,
@@ -41,7 +38,6 @@ class Weather {
     this.tempMax = tempMax;
     this.tempMin = tempMin;
     this.rainProb = rainProb;
-    this.timeZone = timeZone;
     this.windSpeed = windSpeed;
     this.humidity = humidity;
     this.pressure = pressure;
@@ -73,10 +69,6 @@ class Weather {
 
   getRainProb(): number {
     return this.rainProb;
-  }
-
-  getTimeZone(): string {
-    return this.timeZone;
   }
 
   getWindSpeed(): number {

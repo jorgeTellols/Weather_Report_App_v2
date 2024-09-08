@@ -11,12 +11,14 @@ import useWeatherWidget from './useWeatherWidget';
 interface Props {
   selectedCityName: string;
   languageSelected: Language;
+  showModal: () => void;
 }
 
 // Destructuring and hook initialization
 function WeatherWidget({
   selectedCityName,
   languageSelected,
+  showModal,
 }: Props) {
   const {
     clientError,
@@ -28,7 +30,7 @@ function WeatherWidget({
     weatherDay4,
     weatherDay5,
     weatherDay6,
-    fullWeatherReport,
+    // displayFullWeather,
   } = useWeatherWidget({ selectedCityName, languageSelected });
 
   // Condition to display error screens, a loading screen or the weather report
@@ -38,16 +40,11 @@ function WeatherWidget({
     content = <ServerError languageSelected={languageSelected} />;
   } else if (clientError) {
     content = <ClientError languageSelected={languageSelected} />;
-  } else if (
-    !todayWeather || !weatherDay1
-    || !weatherDay2 || !weatherDay3
-    || !weatherDay4 || !weatherDay5 || !weatherDay6
-  ) {
+  } else if (!todayWeather || !weatherDay1 || !weatherDay2 || !weatherDay3
+  || !weatherDay4 || !weatherDay5 || !weatherDay6) {
     content = <Spinner />;
   } else {
-    content = fullWeatherReport ? (
-      <h1>fullreport</h1>
-    ) : (
+    content = (
       <>
         <div className="first-row">
           <WeatherCard
@@ -60,6 +57,7 @@ function WeatherWidget({
             weatherTempMin={todayWeather.tempMin}
             selectedCityName={selectedCityName}
             date={todayWeather.date}
+            showFullReport={showModal}
           />
         </div>
         <div className="second-row">

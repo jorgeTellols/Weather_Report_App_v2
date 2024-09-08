@@ -1,4 +1,5 @@
 import './weather-mini-card.scss';
+// import Button from '../button/Button';
 
 // Interface to define props
 interface Props {
@@ -6,6 +7,7 @@ interface Props {
   weatherTemperature: number;
   weatherRainProb: number;
   date: string;
+  // showFullReport: () => void;
 }
 
 // Destructuring and hook initialization
@@ -14,15 +16,13 @@ function WeatherMiniCard({
   weatherTemperature,
   weatherRainProb,
   date,
+  // showFullReport,
 } : Props) {
-  // Made this to make sure that the first letter of the displayed day is in upper case.
-  const upperCaseDate = date.charAt(0).toUpperCase() + date.slice(1);
-
   // Main return
   return (
     <div className="weather-mini-card">
       <div className="first-row">
-        <h1>{upperCaseDate}</h1>
+        <h1>{date}</h1>
         <img src={`assets/${weatherIcon}.png`} alt="weather-icon" />
       </div>
       <div className="second-row">
@@ -42,6 +42,9 @@ function WeatherMiniCard({
           </span>
         </div>
       </div>
+      {/* <div className="third-row">
+        <Button styleButton="full-report-button" handleClick={showFullReport} textContent="+" />
+      </div> */}
     </div>
   );
 }

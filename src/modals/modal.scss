@@ -14,7 +14,7 @@
   .modal {
     height: 65%;
     width: 45%;
-    background-color: #1f2222;
+    background-color: var(--theme-background);
     border: solid 0.5vh var(--theme-colored-background);
     animation: MakeModalPop linear 0.3s;
     border-radius: 2%;
@@ -41,4 +41,4 @@
   }
 }
 
-@import "modal_form_responsive.scss";
+@import "modal_responsive.scss";

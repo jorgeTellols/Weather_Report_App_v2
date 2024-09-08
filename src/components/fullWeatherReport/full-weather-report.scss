@@ -1,0 +1,18 @@
+.full-weather-report {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    .second-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: 10%;
+            width: 20%
+        }
+    }
+}

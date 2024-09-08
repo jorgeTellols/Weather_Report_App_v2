@@ -2,7 +2,10 @@ import { useState } from 'react';
 import Language from '../../utils/Language';
 
 // Custom hook to handle the logic of the WeatherCard component
-function useWeatherCard(languageSelected: Language, selectedCityName: string) {
+function useWeatherCard(
+  languageSelected: Language,
+  selectedCityName: string,
+) {
   const [isWeatherReportShowing, setIsWeatherReportShowing] = useState(false);
 
   // Function thats shows the modal with the full weather report

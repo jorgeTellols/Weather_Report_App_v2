@@ -30,7 +30,7 @@ function useLanguageButtons({ switchLanguage } : Props) {
   return {
     setEnglish: () => setLanguage(En),
     setSpanish: () => setLanguage(Es),
-    isHighlighted: () => applyHighlight(),
+    isHighlighted: applyHighlight(),
     languageSelected,
   };
 }

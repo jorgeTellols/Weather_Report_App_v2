@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Language from '../utils/Language';
 import En from '../utils/En';
 import useThemeSetter from '../widgets/themeSetter/useThemeSetter';
+import Weather from '../widgets/weatherWidget/Weather/Weather';
+// import Weather from '../widgets/weatherWidget/Weather/Weather';
 
 // Custom hook to handle the logic of the App component
 function useApp() {
@@ -9,6 +11,7 @@ function useApp() {
   const [isFormShowing, setIsFormShowing] = useState(false);
   const [selectedCityName, setSelectedCityName] = useState('');
   const [modalType, setModalType] = useState('');
+  const [fullReport, setFullReport] = useState<Weather>();
 
   // Call to the hook to handle the theme change
   const {
@@ -29,9 +32,12 @@ function useApp() {
   };
 
   // Function that defines the modal to "Report" and shows/hides it
-  const toggleReportModal = () => {
-    setModalType('report');
-    setIsFormShowing(!isFormShowing);
+  const toggleReportModal = (weatherReport: Weather | null) => {
+    if (weatherReport) {
+      setModalType('report');
+      setFullReport(weatherReport);
+      setIsFormShowing(true);
+    }
   };
 
   // Function that just closes the modal
@@ -45,6 +51,7 @@ function useApp() {
     selectedCityName,
     currentTheme,
     modalType,
+    fullReport,
     handleLanguageChange,
     selectLondon: () => setSelectedCityName('london'),
     selectToronto: () => setSelectedCityName('toronto'),
@@ -54,6 +61,7 @@ function useApp() {
     hideModal,
     setDarkTheme,
     setLightTheme,
+    setFullReport,
   };
 }
 

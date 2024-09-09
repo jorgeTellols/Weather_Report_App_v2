@@ -6,12 +6,13 @@ import Spinner from '../../components/spinner/Spinner';
 import WeatherMiniCard from '../../components/weatherMiniCard/WeatherMiniCard';
 import WeatherCard from '../../components/weatherCard/WeatherCard';
 import useWeatherWidget from './useWeatherWidget';
+import Weather from './Weather/Weather';
 
 // Interface to define props
 interface Props {
   selectedCityName: string;
   languageSelected: Language;
-  showModal: () => void;
+  showModal: (weatherReport: Weather | null) => void;
 }
 
 // Destructuring and hook initialization
@@ -30,7 +31,7 @@ function WeatherWidget({
     weatherDay4,
     weatherDay5,
     weatherDay6,
-    // displayFullWeather,
+    weekWeatherReport,
   } = useWeatherWidget({ selectedCityName, languageSelected });
 
   // Condition to display error screens, a loading screen or the weather report
@@ -57,7 +58,7 @@ function WeatherWidget({
             weatherTempMin={todayWeather.tempMin}
             selectedCityName={selectedCityName}
             date={todayWeather.date}
-            showFullReport={showModal}
+            showModal={() => showModal(weekWeatherReport ? weekWeatherReport[0] : null)}
           />
         </div>
         <div className="second-row">

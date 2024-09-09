@@ -24,7 +24,12 @@
     h1 {
       text-align: center;
       font-size: 2vw;
-      color: var(--theme-colored-background);
+      color: var(--theme-font-color);
+    }
+
+    h2 {
+      font-weight: 400;
+      color: var(--theme-font-color);
     }
   }
 }

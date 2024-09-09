@@ -15,9 +15,13 @@ type Language = {
   formPhoneNumber: string;
   formSubmitButton: string;
   formCloseButton: string;
+  fullWeatherReportCloseButton: string;
   emptyContentTitle: string;
   emptyContentSpan: string;
   dataFormat: string;
+  humiditySpan: string;
+  pressureSpan: string;
+  windSpeedSpan: string;
   rainProbSpan: string;
   minTempSpan: string;
   maxTempSpan: string;

@@ -1,13 +1,17 @@
+/* eslint-disable react/require-default-props */
 import FullWeatherReport from '../components/fullWeatherReport/FullWeatherReport';
 import Language from '../utils/Language';
 import Form from '../widgets/form/Form';
+import Weather from '../widgets/weatherWidget/Weather/Weather';
 import './modal.scss';
 
 // Interface to define props
 interface Props {
-  languageSelected: Language,
-  hideModal: () => void;
+  languageSelected: Language
+  hideModal: () => void
   modalType: string
+  fullReport?: Weather
+  // cityName: string
 }
 
 // Destructuring and hook initialization
@@ -15,6 +19,8 @@ function ModalForm({
   hideModal,
   languageSelected,
   modalType,
+  // cityName,
+  fullReport = undefined,
 }: Props) {
   let modalContent;
 
@@ -25,11 +31,14 @@ function ModalForm({
         languageSelected={languageSelected}
       />
     );
-  } else if (modalType === 'report') {
+  } else if ((modalType === 'report') && fullReport) {
     modalContent = (
-      <FullWeatherReport />
+      <FullWeatherReport
+        hideModal={hideModal}
+        fullReport={fullReport}
+        languageSelected={languageSelected}
+      />
       // cityName={cityName}
-      // fullReport={todaysWeather}
     );
   }
 

@@ -14,7 +14,7 @@ interface Props {
   selectedCityName: string;
   date: string;
   languageSelected: Language;
-  showFullReport: () => void;
+  showModal: () => void;
 }
 
 // Destructuring and hook initialization
@@ -28,7 +28,7 @@ function WeatherCard({
   languageSelected,
   selectedCityName,
   date,
-  showFullReport,
+  showModal,
 } : Props) {
   const {
     displayedCity,
@@ -87,7 +87,11 @@ function WeatherCard({
           <h1 className="date">{date}</h1>
         </div>
         <div className="show-more">
-          <Button styleButton="full-report-button" handleClick={showFullReport} textContent="+" />
+          <Button
+            styleButton="full-report-button"
+            handleClick={showModal}
+            textContent="+"
+          />
         </div>
       </div>
     </div>

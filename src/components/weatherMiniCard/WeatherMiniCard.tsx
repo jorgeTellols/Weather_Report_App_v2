@@ -16,7 +16,6 @@ function WeatherMiniCard({
   weatherTemperature,
   weatherRainProb,
   date,
-  // showFullReport,
 } : Props) {
   // Main return
   return (

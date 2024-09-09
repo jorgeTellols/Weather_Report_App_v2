@@ -62,8 +62,14 @@ function useWeatherWidget({
       tempMax: weekWeatherReport[dayOfTheWeek].getTempMax(),
       tempMin: weekWeatherReport[dayOfTheWeek].getTempMin(),
       rainProb: weekWeatherReport[dayOfTheWeek].getRainProb(),
+      pressure: weekWeatherReport[dayOfTheWeek].getPressure(),
+      humidity: weekWeatherReport[dayOfTheWeek].getHumidity(),
+      windSpeed: weekWeatherReport[dayOfTheWeek].getWindSpeed(),
     };
   };
+
+  // Function that sets the weather from the selected day into the parent state
+  // by doing this I can show the full weather report in the modal
 
   // Hook return
   return {
@@ -71,6 +77,7 @@ function useWeatherWidget({
     serverError,
     clientError,
     selectedCityName,
+    weekWeatherReport,
     todayWeather: formatData(0),
     weatherDay1: formatData(1),
     weatherDay2: formatData(2),

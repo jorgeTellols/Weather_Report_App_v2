@@ -14,6 +14,7 @@ function App() {
     selectedCityName,
     currentTheme,
     modalType,
+    fullReport,
     hideModal,
     toggleFormModal,
     toggleReportModal,
@@ -54,13 +55,15 @@ function App() {
         setDarkTheme={setDarkTheme}
         setLightTheme={setLightTheme}
       />
-      {isFormShowing && (
+      {isFormShowing ? (
         <Modal
           languageSelected={languageSelected}
           hideModal={hideModal}
           modalType={modalType}
+          fullReport={fullReport}
+          // cityName={selectedCityName}
         />
-      )}
+      ) : ''}
     </div>
   );
 }

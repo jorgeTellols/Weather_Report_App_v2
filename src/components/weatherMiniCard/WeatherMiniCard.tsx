@@ -1,5 +1,5 @@
-import './weather-mini-card.scss';
-// import Button from '../button/Button';
+import './weather_mini_card.scss';
+import Button from '../button/Button';
 
 // Interface to define props
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   weatherTemperature: number;
   weatherRainProb: number;
   date: string;
-  // showFullReport: () => void;
+  showModal: () => void;
 }
 
 // Destructuring and hook initialization
@@ -16,12 +16,13 @@ function WeatherMiniCard({
   weatherTemperature,
   weatherRainProb,
   date,
+  showModal,
 } : Props) {
   // Main return
   return (
     <div className="weather-mini-card">
       <div className="first-row">
-        <h1>{date}</h1>
+        <span>{date}</span>
         <img src={`assets/${weatherIcon}.png`} alt="weather-icon" />
       </div>
       <div className="second-row">
@@ -29,7 +30,6 @@ function WeatherMiniCard({
           <img src="assets/temperature.png" alt="temperature" />
           <span>
             {weatherTemperature}
-            {' '}
             ºC
           </span>
         </div>
@@ -41,9 +41,9 @@ function WeatherMiniCard({
           </span>
         </div>
       </div>
-      {/* <div className="third-row">
-        <Button styleButton="full-report-button" handleClick={showFullReport} textContent="+" />
-      </div> */}
+      <div className="third-row">
+        <Button styleButton="full-report-button" handleClick={showModal} textContent="+" />
+      </div>
     </div>
   );
 }

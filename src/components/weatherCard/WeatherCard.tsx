@@ -51,7 +51,7 @@ function WeatherCard({
         <div className="third-row">
           <div className="max-temp">
             <span>{(languageSelected).maxTempSpan}</span>
-            <div className="weather-info">
+            <div className="weather-category">
               <img src="assets/temp-max.png" alt="max-temp" />
               <span>
                 {weatherTempMax}
@@ -61,7 +61,7 @@ function WeatherCard({
           </div>
           <div className="min-temp">
             <span>{(languageSelected).minTempSpan}</span>
-            <div className="weather-info">
+            <div className="weather-category">
               <img src="assets/temp-min.png" alt="min-temp" />
               <span>
                 {weatherTempMin}
@@ -71,7 +71,7 @@ function WeatherCard({
           </div>
           <div className="rain-prob">
             <span>{(languageSelected).rainProbSpan}</span>
-            <div className="weather-info">
+            <div className="weather-category">
               <img src="assets/raindrop.png" alt="rain-prob" />
               <span>
                 {weatherRainProb}
@@ -84,7 +84,7 @@ function WeatherCard({
       <div className="city-info">
         <div className="city-info-card">
           <h1>{displayedCity}</h1>
-          <h1 className="date">{date}</h1>
+          <span className="date">{date}</span>
         </div>
         <div className="show-more">
           <Button

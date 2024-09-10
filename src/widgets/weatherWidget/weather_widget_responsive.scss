@@ -1,0 +1,16 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    // Phones and Tablets
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .weather-widget {
+            .second-row {
+                display: flex;
+                flex-direction: column;
+
+                .weather-mini-card {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}

@@ -1,27 +1,31 @@
-WeatherReport>.London {
-    background-color: black
-}
-
 .weather-widget {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     .first-row {
-        display: flex;
+        height: 50%;
     }
 
     .second-row {
-        height: 100%;
+        height: 50%;
         display: flex;
 
         :first-child {
-            border-left: none;
+            border-left: 0;
+
+            .third-row {
+                border-bottom-left-radius: 40%;
+            }
+        }
+
+        :last-child {
+            .third-row {
+                border-bottom-right-radius: 40%;
+            }
         }
     }
-
 }
 
-@import "weather-widget-responsive.scss"
+@import "weather_widget_responsive.scss"

@@ -1,0 +1,111 @@
+// Portrait orientation
+@media (orientation: portrait) {
+    //Phones
+    @media (min-width: 300px) and (max-width: 599px) {
+        .full-weather-report {
+
+            .close-button {
+                height: 45%;
+                width: 20%;
+
+                span {
+                    font-size: 2vh;
+                }
+            }
+
+            .second-row {
+                flex-direction: column;
+                justify-content: space-between;
+
+                .first-col {
+                    height: 20%;
+                    width: 100%;
+
+                    .forecast {
+                        h2 {
+                            width: 100%;
+                            text-align: center;
+                            color: var(--theme-font-color);
+                        }
+                    }
+                }
+
+                .second-col {
+                    height: 70%;
+                    width: 100%;
+
+                    table {
+                        tr {
+                            td {
+                                border-top: 1px solid grey;
+
+                                span {
+                                    font-size: 4vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Tablets and bigger devices
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .full-weather-report {
+
+            .close-button {
+                height: 45%;
+                width: 20%;
+
+                span {
+                    font-size: 2vh;
+                }
+            }
+
+            .second-row {
+                flex-direction: column;
+                justify-content: space-between;
+
+                .first-col {
+                    height: 20%;
+                    width: 100%;
+
+                    img {
+                        width: 25%;
+                    }
+
+                    .forecast {
+                        h2 {
+                            width: 100%;
+                            text-align: center;
+                            color: var(--theme-font-color);
+                        }
+                    }
+                }
+
+                .second-col {
+                    height: 70%;
+                    width: 100%;
+
+                    table {
+                        tr {
+                            td {
+                                border-top: 1px solid grey;
+
+                                img {
+                                    height: 60%;
+                                    width: 40%
+                                }
+
+                                span {
+                                    font-size: 3vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

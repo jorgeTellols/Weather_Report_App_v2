@@ -1,102 +1,78 @@
-// Mixin for weather-mini-card styles
-@mixin weather-mini-card-styles($border-left, $flex-direction, $height) {
-    .weather-mini-card {
-        border-left: $border-left;
-        flex-direction: $flex-direction;
-        height: $height;
-    }
-}
+// Portrait orientation
+@media (orientation: portrait) {
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .weather-mini-card {
+            height: 16.6%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
 
-// Mixin for h1 styles
-@mixin weather-mini-card-h1-styles($font-size) {
-    .weather-mini-card {
-        h1 {
-            font-size: $font-size;
-        }
-    }
-}
-
-// Mixin for first-row styles
-@mixin weather-mini-card-first-row-styles($flex-direction, $margin-left, $img-margin-left, $img-width) {
-    .weather-mini-card {
-        .first-row {
-            flex-direction: $flex-direction;
-            margin-left: $margin-left;
-
-            img {
-                margin-left: $img-margin-left;
-                width: $img-width;
-            }
-        }
-    }
-}
-
-// Mixin for second-row styles
-@mixin weather-mini-card-second-row-styles($font-size, $flex-direction) {
-    .weather-mini-card {
-        .second-row {
-            font-size: $font-size;
-            flex-direction: $flex-direction;
-
-            .temperature-mini-card,
-            .rain-prob-mini-card {
-                flex-direction: $flex-direction;
+            .first-row {
+                width: 33.3%;
+                display: flex;
+                flex-direction: row;
                 align-items: center;
 
                 img {
-                    width: 20%;
+                    width: 40%;
+                }
+            }
+
+            .second-row {
+                height: 100%;
+                width: 33.3%;
+                flex-direction: row;
+
+                .temperature-mini-card,
+                .rain-prob-mini-card {
+                    flex-direction: row;
+                    align-items: center;
+
+                    img {
+                        width: 40%;
+                    }
+                }
+            }
+
+            .third-row {
+                height: 100%;
+                width: 20%;
+                border-bottom-left-radius: 0;
+
+                :last-child {
+                    border-bottom-right-radius: 0;
+                }
+
+
+                .full-report-button {
+                    font-size: 3.5vh;
+                    border-left: 1px solid black;
                 }
             }
         }
     }
 }
 
-// Portrait orientation
-@media (orientation: portrait) {
-    // Smaller phones (Iphone SE)
-    @media (max-width: 375px) {
-        @include weather-mini-card-styles(0, row, 100%);
-        @include weather-mini-card-h1-styles(1.8vh);
-        @include weather-mini-card-first-row-styles(row, 5%, 0, 30%);
-        @include weather-mini-card-second-row-styles(2vh, row);
-    }
-
-    // Phones
-    @media (min-width: 376px) and (max-width: 599px) {
-        @include weather-mini-card-styles(0, row, 100%);
-        @include weather-mini-card-h1-styles(1.5vh);
-        @include weather-mini-card-first-row-styles(row, 5%, 0%, 40%);
-        @include weather-mini-card-second-row-styles(2vh, row);
-    }
-
-    // Tablets
-    @media (min-width: 600px) and (max-width: 1024px) {
-        @include weather-mini-card-styles(0, row, 100%);
-        @include weather-mini-card-h1-styles(2vh);
-        @include weather-mini-card-first-row-styles(row, 10%, 15%, 20%);
-        @include weather-mini-card-second-row-styles(2vh, row);
-    }
-}
-
 // Landscape orientation
 @media (orientation: landscape) {
+
     // Horizontal phones
     @media (min-width: 600px) and (max-width: 1024px) {
         .weather-mini-card {
-            height: 100%;
 
-            h1 {
-                font-size: 70%;
-            }
+            font-size: 60%;
 
             .first-row {
+                height: 40%;
+
                 img {
                     width: 60%;
                 }
             }
 
             .second-row {
-                font-size: 70%;
+                height: 40%;
+                font-size: 100%;
 
                 .temperature-mini-card,
                 .rain-prob-mini-card {

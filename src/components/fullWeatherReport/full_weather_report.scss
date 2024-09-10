@@ -28,7 +28,7 @@
 
         span {
             color: white;
-            font-size: 1vw;
+            font-size: 100%;
         }
     }
 
@@ -63,6 +63,7 @@
                 h2 {
                     text-align: center;
                     color: var(--theme-font-color);
+                    font-weight: 400;
                 }
             }
         }
@@ -113,3 +114,5 @@
         }
     }
 }
+
+@import 'full_weather_report_responsive.scss';

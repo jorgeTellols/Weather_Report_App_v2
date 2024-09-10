@@ -1,9 +1,10 @@
+@import '../../index.scss';
+
 .weather-card {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin-bottom: 2%;
     font-size: 1vw;
 
     .weather-info {
@@ -12,46 +13,48 @@
         border-right: 0.1vw solid black;
 
         .first-row {
+            height: 40%;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-evenly;
+
+            img {
+                width: 30%;
+            }
         }
 
         .second-row {
-            height: auto;
+            height: 20%;
             color: black;
             font-weight: 500;
             justify-content: center;
         }
 
         .third-row {
-            height: 43%;
+            height: 40%;
             display: flex;
             flex-direction: row;
-            align-items: center;
-
-            img {
-                width: 50%;
-            }
-
 
             .max-temp,
             .min-temp,
             .rain-prob {
-                border: 1px solid #1f2222;
-                border-left: 0;
+                border-right: 1px solid #1f2222;
+                border-top: 1px solid #1f2222;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                justify-content: space-around;
                 font-weight: 500;
-                border-bottom: 0;
 
-                .weather-info {
-                    border-right: 0;
-                    margin-top: 10%;
+                .weather-category {
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 40%;
+                    }
                 }
             }
 
@@ -71,16 +74,12 @@
 
         .city-info-card {
             margin-top: 10%;
-            font-size: 1vw;
-
-            .date {
-                font-size: 100%;
-            }
         }
 
         .show-more {
             height: 25%;
             width: 100%;
+            background: var(--theme-colored-background);
 
             .full-report-button {
                 border: 0;
@@ -89,12 +88,10 @@
                 height: 100%;
                 font-size: 3vw;
                 background: none;
-                opacity: 0.7;
+                opacity: 0.6;
             }
         }
-
     }
-
 }
 
 @import "weather_card_responsive.scss"

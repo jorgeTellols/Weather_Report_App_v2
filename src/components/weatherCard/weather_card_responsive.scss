@@ -1,89 +1,60 @@
-// Mixin for weather-card styles
-@mixin weather-card-styles($width, $font-size, $margin-bottom) {
-    .weather-card {
-        width: $width;
-        font-size: $font-size;
-        margin-bottom: $margin-bottom;
-    }
-}
-
-// Mixin for first-row img styles
-@mixin weather-card-first-row-img-styles($margin-right, $margin-left) {
-    .weather-card {
-        .first-row {
-            img {
-                margin-right: $margin-right;
-                margin-left: $margin-left;
-            }
-        }
-    }
-}
-
-// Mixin for second-row styles
-@mixin weather-card-second-row-styles($margin-top) {
-    .weather-card {
-        .second-row {
-            margin-top: $margin-top;
-        }
-    }
-}
-
-// Mixin for third-row styles
-@mixin weather-card-third-row-styles($flex-direction, $img-width, $img-height, $card-flex-direction) {
-    .weather-card {
-        .third-row {
-            flex-direction: $flex-direction;
-
-            img {
-                width: $img-width;
-                height: $img-height;
-            }
-
-            .max-temp,
-            .min-temp,
-            .rain-prob {
-                flex-direction: $card-flex-direction;
-                align-items: center;
-
-                .weather-info {
-                    margin: 5%;
-                }
-
-                span {
-                    margin-left: 5%;
-                }
-            }
-        }
-    }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
     // Phones and Tablets
     @media (min-width: 300px) and (max-width: 1024px) {
-        @include weather-card-styles(60%, 1.5vh, 0);
-        @include weather-card-first-row-img-styles(0, -5%);
-        @include weather-card-second-row-styles(-5%);
-        @include weather-card-third-row-styles(column, 60%, 100%, row);
-        .city-info {
-            justify-content: space-evenly;
-            align-items: center;
-            font-size: 3vw;
+        .weather-card {
+            font-size: 2vh;
+
+            .weather-info {
+                .first-row {
+                    height: 35%;
+
+                    img {
+                        width: 50%;
+                    }
+                }
+
+                .third-row {
+                    display: flex;
+                    flex-direction: column;
+
+                    .max-temp,
+                    .min-temp,
+                    .rain-prob {
+                        flex-direction: row;
+                        border-right: 0;
+                        margin-left: 2%;
+
+                        .weather-category {
+                            img {
+                                width: 40%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .city-info {
+                .city-info-card {
+                    margin-top: 30%;
+                }
+
+                .show-more {
+                    .full-report-button {
+                        font-size: 5vh;
+                    }
+                }
+            }
         }
     }
 }
 
 // Landscape orientation
 @media (orientation: landscape) {
-    // Horizontal phones and tablets
-    @media (min-width: 600px) and (max-width: 1024px) {
-        @include weather-card-styles(100%, 50%, 20%);
-        @include weather-card-first-row-img-styles(60%, -40%);
-        @include weather-card-second-row-styles(-15%);
-        @include weather-card-third-row-styles(row, 40%, auto, column);
-    }
-
-    @media (min-width: 1024px) and (max-width: 1440px) {
-        @include weather-card-styles(100%, 100%, null);
+    // Horizontal devices
+    @media (min-width: 300px) and (max-width: 1024px) {
+        .weather-card {
+            font-size: 1.2vw;
+        }
     }
 }

@@ -1,11 +1,13 @@
+@import '../../index.scss';
+
 .weather-mini-card {
     border-left: 1px solid black;
     border-top: 1px solid black;
     display: flex;
     flex-direction: column;
 
-    h1 {
-        font-size: 1vw;
+    span {
+        font-size: 100%;
     }
 
     .first-row {
@@ -13,16 +15,28 @@
         width: 100%;
         flex-direction: column;
         align-items: center;
+
+        img {
+            margin-left: 10%;
+        }
+
+        span {
+            font-size: 85%;
+        }
     }
 
     .second-row {
-        font-size: 1vw;
 
         .temperature-mini-card,
         .rain-prob-mini-card {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-left: 10%;
+
+            span {
+                font-size: 85%;
+            }
 
             img {
                 width: 70%;
@@ -33,6 +47,7 @@
     .third-row {
         height: 25%;
         width: 100%;
+        background: var(--theme-colored-background);
 
         .full-report-button {
             border: 0;
@@ -41,9 +56,9 @@
             height: 100%;
             font-size: 3vw;
             background: none;
-            opacity: 0.7;
+            opacity: 0.6;
         }
     }
 }
 
-@import "weather_mini_card_responsive.scss";
+@import 'weather_mini_card_responsive.scss'

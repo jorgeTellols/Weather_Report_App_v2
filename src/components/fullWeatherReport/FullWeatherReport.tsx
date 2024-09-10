@@ -1,4 +1,4 @@
-import './full-weather-report.scss';
+import './full_weather_report.scss';
 import Button from '../button/Button';
 import Weather from '../../widgets/weatherWidget/Weather/Weather';
 import Language from '../../utils/Language';

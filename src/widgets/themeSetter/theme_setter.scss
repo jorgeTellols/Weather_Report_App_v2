@@ -1,17 +1,19 @@
+@mixin toggleButton($background-color) {
+    height: 100%;
+    width: 100%;
+    font-size: x-large;
+    border-radius: 25%;
+    background-color: $background-color;
+}
+
 .theme-setter-container {
     margin-top: 6vh;
 }
 
 .light-button {
-    height: 100%;
-    width: 100%;
-    font-size: x-large;
-    background-color: #fffffd;
+    @include toggleButton(#fffffd)
 }
 
 .dark-button {
-    height: 100%;
-    width: 100%;
-    font-size: x-large;
-    background-color: #1f2222;
+    @include toggleButton(#1f2222);
 }

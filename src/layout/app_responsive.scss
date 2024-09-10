@@ -1,30 +1,25 @@
-// Mixin for language buttons container styles
-@mixin language-buttons-container-styles($margin-bottom) {
-  .language-buttons-container {
-    margin-bottom: $margin-bottom;
-  }
-}
-
-// Mixin for content styles
-@mixin content-styles($width) {
-  .content {
-    width: $width;
-  }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
   // Phones
   @media (min-width: 300px) and (max-width: 599px) {
-    @include language-buttons-container-styles(7%);
-    @include content-styles(80%);
+    .language-buttons-container {
+      margin-bottom: 7%;
+    }
 
+    .content {
+      width: 80%;
+    }
   }
 
   // Tablets and Bigger Tablets
   @media (min-width: 600px) and (max-width: 1024px) {
-    @include language-buttons-container-styles(4%);
-    @include content-styles(70%);
+    .language-buttons-container {
+      margin-bottom: 4%;
+    }
+
+    .content {
+      width: 70%;
+    }
   }
 }
 
@@ -32,15 +27,16 @@
 @media (orientation: landscape) {
   // Horizontal phones and tablets
   @media (min-width: 600px) and (max-width: 1024px) {
-    @include content-styles(60%);
-
     .content {
       height: 75%;
+      width: 60%;
     }
   }
 
   // Laptops and bigger devices
   @media (min-width: 1024px) and (max-width: 1440px) {
-    @include content-styles(65%);
+    .content {
+      width: 65%;
+    }
   }
 }

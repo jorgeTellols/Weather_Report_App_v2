@@ -68,9 +68,6 @@ function useWeatherWidget({
     };
   };
 
-  // Function that sets the weather from the selected day into the parent state
-  // by doing this I can show the full weather report in the modal
-
   // Hook return
   return {
     checkError,

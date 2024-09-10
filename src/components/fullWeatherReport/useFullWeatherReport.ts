@@ -1,31 +1,52 @@
+import Language from '../../utils/Language';
 import Weather from '../../widgets/weatherWidget/Weather/Weather';
 
+// Interface to define the props from the parent
 interface Props {
   fullReport: Weather;
+  languageSelected: Language
+  selectedCityName: string;
 }
 
-function useFullWeatherReport({
-  fullReport,
-} : Props) {
-  const setForecast = () => {
-    const weather = new Weather(
-      fullReport.getDate(),
-      fullReport.getIcon(),
-      fullReport.getDescription(),
-      fullReport.getTemperature(),
-      fullReport.getTempMax(),
-      fullReport.getTempMin(),
-      fullReport.getRainProb(),
-      fullReport.getPressure(),
-      fullReport.getHumidity(),
-      fullReport.getWindSpeed(),
-    );
+// Custom hook to handle the logic of the WeatherCard component
+function useFullWeatherReport(
+  {
+    fullReport,
+    selectedCityName,
+    languageSelected,
+  }: Props,
+) {
+  // We build the object to use it the UI component
+  const weather = {
+    date: fullReport.getDate(),
+    icon: fullReport.getIcon(),
+    description: fullReport.getDescription(),
+    temperature: fullReport.getTemperature(),
+    tempMax: fullReport.getTempMax(),
+    tempMin: fullReport.getTempMin(),
+    rainProb: fullReport.getRainProb(),
+    pressure: fullReport.getPressure(),
+    humidity: fullReport.getHumidity(),
+    windSpeed: fullReport.getWindSpeed(),
+  };
 
-    return weather;
+  // Function that displays the city name in the correct language
+  const getDisplayedCity = () => {
+    if (selectedCityName === 'london') {
+      return languageSelected.sidebarLondon;
+    }
+    if (selectedCityName === 'toronto') {
+      return languageSelected.sidebarToronto;
+    }
+    if (selectedCityName === 'singapore') {
+      return languageSelected.sidebarSingapore;
+    }
+    return selectedCityName;
   };
 
   return {
-    weather: () => setForecast,
+    weather,
+    displayedCity: getDisplayedCity(),
   };
 }
 

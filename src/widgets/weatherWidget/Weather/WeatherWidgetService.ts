@@ -15,13 +15,13 @@ async function weatherWidgetService(
   // const apiKey: string = '2b86aec52c83a8cee2493754f4579d58';
 
   // Condition that build the url correctly
-  if ((cityName === 'London 💂🏻‍♀️') || (cityName === 'Londres 💂🏻‍♀️')) {
+  if (cityName === 'london') {
     lat = '51.50';
     lon = '-0.11';
-  } if (cityName === 'Toronto 🍁') {
+  } else if (cityName === 'toronto') {
     lat = '43.65';
     lon = '-79.34';
-  } else if ((cityName === 'Singapore 🏯') || (cityName === 'Singapur 🏯')) {
+  } else if (cityName === 'singapore') {
     lat = '1.29';
     lon = '103.85';
   }

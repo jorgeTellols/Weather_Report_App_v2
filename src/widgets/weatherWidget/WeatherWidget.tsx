@@ -58,7 +58,9 @@ function WeatherWidget({
             weatherTempMin={todayWeather.tempMin}
             selectedCityName={selectedCityName}
             date={todayWeather.date}
-            showModal={() => showModal(weekWeatherReport ? weekWeatherReport[0] : null)}
+            showModal={() => {
+              showModal(weekWeatherReport ? weekWeatherReport[0] : null);
+            }}
           />
         </div>
         <div className="second-row">

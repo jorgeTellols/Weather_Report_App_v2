@@ -11,7 +11,7 @@ interface Props {
   hideModal: () => void
   modalType: string
   fullReport?: Weather
-  // cityName: string
+  selectedCityName: string
 }
 
 // Destructuring and hook initialization
@@ -19,7 +19,7 @@ function ModalForm({
   hideModal,
   languageSelected,
   modalType,
-  // cityName,
+  selectedCityName,
   fullReport = undefined,
 }: Props) {
   let modalContent;
@@ -37,8 +37,8 @@ function ModalForm({
         hideModal={hideModal}
         fullReport={fullReport}
         languageSelected={languageSelected}
+        selectedCityName={selectedCityName}
       />
-      // cityName={cityName}
     );
   }
 

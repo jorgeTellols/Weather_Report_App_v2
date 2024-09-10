@@ -61,7 +61,7 @@ function App() {
           hideModal={hideModal}
           modalType={modalType}
           fullReport={fullReport}
-          // cityName={selectedCityName}
+          selectedCityName={selectedCityName}
         />
       ) : ''}
     </div>

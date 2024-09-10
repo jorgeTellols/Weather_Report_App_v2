@@ -28,8 +28,6 @@ function useWeatherCard(
     return selectedCityName;
   };
 
-  // Function
-
   // Hook return
   return {
     displayedCity: getDisplayedCity(),

@@ -1,28 +1,17 @@
 // Mixin for sidebar styles
-@mixin sidebar-styles($width, $border-radius) {
+@mixin sidebar-styles($width) {
   .sidebar {
     width: $width;
-    border-top-right-radius: $border-radius;
-
-    p {
-      font-size: 1rem; 
-    }
+    border-top-right-radius: 0;
   }
 }
 
 // Mixin for sidebar-toggle styles
-@mixin sidebar-toggle-styles($width, $height, $top) {
+@mixin sidebar-toggle-styles() {
   .sidebar-toggle {
-    width: $width;
-    height: $height;
-    top: $top;
-  }
-}
-
-// Mixin for paragraph styles
-@mixin paragraph-styles($font-size) {
-  .sidebar p {
-    font-size: $font-size;
+    width: 40%;
+    height: 12%;
+    top: 0;
   }
 }
 
@@ -30,28 +19,16 @@
 @media (orientation: portrait) {
   // Phones and Tablets
   @media (min-width: 300px) and (max-width: 1024px) {
-    @include sidebar-styles(45vw, 0);
-    @include sidebar-toggle-styles(40%, 12%, 0);
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    @include paragraph-styles(4vw);
+    @include sidebar-styles(45vw);
+    @include sidebar-toggle-styles;
   }
 }
 
 // Landscape orientation
 @media (orientation: landscape) {
-  // Horizontal phones
-  @media (min-width: 600px) and (max-width: 1024px) {
-    @include sidebar-styles(15vw, 0);
-    @include sidebar-toggle-styles(40%, 12%, 0);
-    @include paragraph-styles(1.3vw);
-  }
-
-  // Laptops and bigger devices
-  @media (min-width: 1024px) and (max-width: 1440px) {
-    @include sidebar-styles(15vw, 0);
-    @include sidebar-toggle-styles(45%, 12%, 0);
-    @include paragraph-styles(2vw);
+  // Horizontal phones and bigger devices
+  @media (min-width: 600px) and (max-width: 1440px) {
+    @include sidebar-styles(15vw);
+    @include sidebar-toggle-styles;
   }
 }

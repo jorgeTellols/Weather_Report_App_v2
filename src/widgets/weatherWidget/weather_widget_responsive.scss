@@ -10,6 +10,12 @@
                 .weather-mini-card {
                     border-left: none;
                 }
+
+                :first-child {
+                    .third-row {
+                        border-bottom-left-radius: 0;
+                    }
+                }
             }
         }
     }

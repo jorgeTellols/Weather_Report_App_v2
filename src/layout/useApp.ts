@@ -45,6 +45,7 @@ function useApp() {
     setIsFormShowing(false);
   };
 
+  // Hook return
   return {
     languageSelected,
     isFormShowing,

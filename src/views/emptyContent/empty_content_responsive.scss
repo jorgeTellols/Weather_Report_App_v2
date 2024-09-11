@@ -1,54 +1,27 @@
-// Mixin for emoji styles
-@mixin emoji-styles($height, $width) {
-  .emoji {
-    height: $height;
-    width: $width;
-  }
-}
-
-// Mixin for text styles
-@mixin text-styles($font-size-h1, $font-size-span) {
-  h1 {
-    font-size: $font-size-h1;
-  }
-
-  span {
-    font-size: $font-size-span;
-  }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
   // Phones
-  @media (min-width: 300px) and (max-width: 599px) {
-    @include emoji-styles(30%, 60%);
-    @include text-styles(6vw, 4vw);
-  }
+  @media (min-width: 300px) and (max-width: 1024px) {
+    .emoji {
+      height: 35%;
+      width: 65%;
+    }
 
-  // Tablets
-  @media (min-width: 600px) and (max-width: 767px) {
-    @include emoji-styles(40%, 60%);
-    @include text-styles(3vw, 2vw);
-  }
+    h1 {
+      font-size: 2.5vh;
+    }
 
-  // Bigger Tablets and other devices
-  @media (min-width: 768px) and (max-width: 1024px) {
-    @include emoji-styles(40%, 50%);
-    @include text-styles(5vw, 3vw);
+    span {
+      font-size: 2vh
+    }
   }
 }
 
-// Landscape orientation
 @media (orientation: landscape) {
-  // Horizontal phones and bigger devices
-  @media (min-width: 600px) and (max-width: 1024px) {
-    @include emoji-styles(50%, 30%);
-    @include text-styles(3vw, 2vw);
-  }
-
-  // Laptops and bigger devices
-  @media (min-width: 1024px) and (max-width: 1440px) {
-    @include emoji-styles(50%, 40%);
-    @include text-styles(3vw, 2vw);
+  @media (min-width: 600px) and (max-width: 1440px) {
+    .emoji {
+      height: 45%;
+      width: 25%;
+    }
   }
 }

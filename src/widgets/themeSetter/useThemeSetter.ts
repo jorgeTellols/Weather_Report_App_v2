@@ -12,6 +12,7 @@ function useThemeSetter(theme: string) {
   const setDarkTheme = () => handleThemeChange('dark');
   const setLightTheme = () => handleThemeChange('light');
 
+  // Hook return
   return {
     currentTheme,
     setDarkTheme,

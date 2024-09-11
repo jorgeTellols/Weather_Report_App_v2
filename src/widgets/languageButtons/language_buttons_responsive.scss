@@ -1,29 +1,16 @@
-// Mixin for language-button styles
-@mixin language-button-styles($height, $width, $margin-right, $margin-left, $margin-top, $font-size) {
-  .language-button {
-    height: $height;
-    width: $width;
-    margin-right: $margin-right;
-    margin-left: $margin-left;
-    margin-top: $margin-top;
-
-    span {
-      font-size: $font-size;
-    }
-  }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
   // Phones
-  @media (min-width: 300px) and (max-width: 599px) {
-    @include language-button-styles(5vh, 20vw, 5%, 4vh, 0, 4vw);
-  }
+  @media (min-width: 300px) and (max-width: 1024px) {
+    .language-button {
+      height: 5vh;
+      width: 20vw;
+      margin-left: 5%;
 
-  // Tablets and bigger devices
-  @media (min-width: 600px) and (max-width: 767px),
-  (min-width: 768px) and (max-width: 1024px) {
-    @include language-button-styles(5vh, 15vw, 5%, 4vh, 0, 3vw);
+      span {
+        font-size: 2vh;
+      }
+    }
   }
 }
 
@@ -31,6 +18,14 @@
 @media (orientation: landscape) {
   // Horizontal phones and bigger devices
   @media (min-width: 600px) and (max-width: 1440px) {
-    @include language-button-styles(7vh, 10vw, 5%, 2vw, 0, 2vw);
+    .language-buttons-container {
+      margin-top: 3%;
+
+      .language-button {
+        span {
+          font-size: 1.5vw;
+        }
+      }
+    }
   }
 }

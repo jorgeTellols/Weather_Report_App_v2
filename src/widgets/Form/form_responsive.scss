@@ -1,18 +1,3 @@
-// Mixin for form
-@mixin form-styles($width: 60%) {
-    form {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .first-row,
-        .second-row {
-            width: $width;
-            justify-content: space-around;
-        }
-    }
-}
-
 // Mixin for buttons
 @mixin button-styles($font-size) {
     .submit-form-button {
@@ -29,8 +14,18 @@
 // Portrait orientation
 @media (orientation: portrait) {
     // Phones
-    @media (min-width: 300px) and (max-width: 599px) {
-        @include form-styles(60%);
+    @media (min-width: 300px) and (max-width: 1024px) {
+        form {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .first-row,
+            .second-row {
+                width: 60%;
+                justify-content: space-around;
+            }
+        }
 
         label {
             font-size: 3vh;
@@ -43,42 +38,12 @@
 
         @include button-styles(2vh);
     }
-
-    // Tablets and bigger devices
-    @media (min-width: 600px) and (max-width: 767px),
-    (min-width: 768px) and (max-width: 1024px) {
-        @include form-styles(40%);
-
-        label {
-            font-size: 3vh;
-        }
-
-        input {
-            font-size: 2.5vh;
-            margin-bottom: 15%;
-        }
-
-        @include button-styles(2.5vh);
-    }
 }
 
 // Landscape orientation
 @media (orientation: landscape) {
     // Horizontal phones, tablets and bigger
-    @media (min-width: 600px) and (max-width: 1024px) {
-        label {
-            font-size: 3.5vh;
-        }
-
-        input {
-            font-size: 2.5vh;
-        }
-
-        @include button-styles(3vh);
-    }
-
-    // Horizontal tablets and bigger devices
-    @media (min-width: 1025px) and (max-width: 1440px) {
+    @media (min-width: 600px) and (max-width: 1440px) {
         label {
             font-size: 3.5vh;
         }

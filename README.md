@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an upgraded version of the weather app I made previously.
 
-Currently, two official plugins are available:
+You can check it here: https://github.com/jorgeTellols/WeatherReport_Techincal_Test
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What's new? (From a user's perspective)
 
-## Expanding the ESLint configuration
+All the original funcionalities are still here + some new things:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- You can now check the full weather forecast of any of the displayed days (by clicking the "+" button).
+- You can choose between light and dark mode.
+- Added support to phones and tablets, now you can visualize the app in this type of devices.
 
-- Configure the top-level `parserOptions` property like this:
+## What's new? (From a technical perspective)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Introduced Typescript to make everything more robust via strong typing.
+- Introduced SCSS as the style language. Used mixins to simplify some parts of the code to follow the DRY principle (especially in the responsive design aspect). I also used variables to change the theme dinamically and nesting to make everything more readable.
+- Tried to follow clean code principles (I tried to get as close to the SOLID principles as I could). Also tried to follow some pattern designs like "Observer" and "Facade"
+- Made custom hooks for every component that needed logic. I did this to separate UI and logic and follow good practices.
+- Used JEST and the library [@react/testing-library](https://github.com/testing-library/react-testing-library) to test my hooks and detect issues.
+- Followed the AirBNB style guide. Managed to use ESlint to format the code under these principle (despite having some issues with version).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- NodeJS
+- Vite
+- React 
+- TypeScript
+- SCSS
+- Jest
+- ESlint
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## How do I navigate through the files?
+
+This is a single page site, so eveything has its root on App.tsx. You can reach anything from there.
+
+I separated the components in folders. Some like "widgets" refers to complex components while other like "components" are more simple. There are also folders like "views", "layout" or "modals" that I used to give some structure to the whole thing. There are also folders dedicated to "models" and "services". 
+
+In a component's folder you will find anything related to it (the stylesheet, the logic, the tests, etc...). Every picture I used can be found in the folder "/public/assets" and the translation files and some other utilities can be found in the "utils" folder.
+
+
+

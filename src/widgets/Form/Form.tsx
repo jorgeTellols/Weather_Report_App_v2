@@ -1,8 +1,9 @@
-import './Form.scss';
 import useForm from './useForm';
 import Button from '../../components/button/Button';
 import Input from '../../components/input/Input';
 import Language from '../../utils/Language';
+
+import './Form.scss';
 
 // Interface to define props
 interface Props {

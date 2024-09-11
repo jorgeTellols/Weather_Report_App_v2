@@ -1,8 +1,23 @@
 import { renderHook, act } from '@testing-library/react';
 import useApp from './useApp';
 import Es from '../utils/Es';
+import Weather from '../models/Weather';
 
 describe('useApp', () => {
+  // Mock of a weather object that we'll use later
+  const mockWeather = new Weather(
+    '2024-09-09',
+    '01d',
+    'Clear sky',
+    25,
+    30,
+    20,
+    10,
+    15,
+    60,
+    1013,
+  );
+
   // Test of handleLanguageChange() function
   it('should update the language when handleLanguageChange is called', () => {
     // We render the hook
@@ -50,14 +65,28 @@ describe('useApp', () => {
     expect(result.current.selectedCityName).toBe('singapore');
   });
 
-  // Test to check the showModal() function
-  it('should show the form modal when showModal is called', () => {
+  // Test to check the toggleFormModal() function
+  it('should show the modal and set the modalType to form', () => {
     const { result } = renderHook(() => useApp());
 
     act(() => {
-      result.current.showModal();
+      result.current.toggleFormModal();
     });
 
+    expect(result.current.modalType).toBe('form');
+    expect(result.current.isFormShowing).toBe(true);
+  });
+
+  // Test to check the toggleReportModal() function
+  it('should show the modal, set modalType to report and set fullReport with a Weather object', () => {
+    const { result } = renderHook(() => useApp());
+
+    act(() => {
+      result.current.toggleReportModal(mockWeather);
+    });
+
+    expect(result.current.modalType).toBe('report');
+    expect(result.current.fullReport).toBe(mockWeather);
     expect(result.current.isFormShowing).toBe(true);
   });
 

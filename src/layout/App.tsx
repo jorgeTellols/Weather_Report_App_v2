@@ -1,4 +1,3 @@
-import './App.scss';
 import useApp from './useApp';
 import LanguageButtons from '../widgets/languageButtons/LanguageButtons';
 import EmptyContent from '../views/emptyContent/EmptyContent';
@@ -6,6 +5,8 @@ import Sidebar from '../widgets/sidebar/Sidebar';
 import Modal from '../modals/Modal';
 import WeatherWidget from '../widgets/weatherWidget/WeatherWidget';
 import ThemeSetter from '../widgets/themeSetter/ThemeSetter';
+
+import './App.scss';
 
 function App() {
   const {

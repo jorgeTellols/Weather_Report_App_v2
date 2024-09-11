@@ -1,20 +1,20 @@
-import Weather from './Weather';
-import formatDate from '../../../utils/formatDate/formatDate';
-import formatDescription from '../../../utils/formatDescription/formatDescription';
-import Language from '../../../utils/Language';
-import data from './prueba.json';
+import Weather from '../models/Weather';
+import formatDate from '../utils/formatDate/formatDate';
+import formatDescription from '../utils/formatDescription/formatDescription';
+import Language from '../utils/Language';
 
+// Service that calls the API and returns the weather in an array or an error number
 async function weatherWidgetService(
   cityName: string,
   languageSelected: Language,
 ): Promise<Array<Weather> | number> {
+  // Variable initialization
   const weeklyReportArr: Array<Weather> = [];
   let lat: string = '';
   let lon: string = '';
-  const apiKey: string = '2b86aec52c83a8cee2493754f4579d5';
-  // const apiKey: string = '2b86aec52c83a8cee2493754f4579d58';
+  const apiKey: string = '2b86aec52c83a8cee2493754f4579d58';
 
-  // Condition that build the url correctly
+  // Condition that builds the url correctly
   if (cityName === 'london') {
     lat = '51.50';
     lon = '-0.11';
@@ -30,16 +30,16 @@ async function weatherWidgetService(
 
   // GET
   try {
-    // const response = await fetch(url);
+    const response = await fetch(url);
 
-    // if (!response.ok) {
-    //   const error = response.status;
-    //   throw new Error(error.toString());
-    // }
+    if (!response.ok) {
+      const error = response.status;
+      throw new Error(error.toString());
+    }
 
-    // const data = await response.json();
+    const data = await response.json();
 
-    //  Loop to GET the weather for the next 7 days
+    //  Loop to GET the weather for the next 7 days (as an array)
     for (let k = 0; k <= 6; k += 1) {
       const weatherReport = new Weather(
         formatDate(data.daily[k].dt),
@@ -56,7 +56,7 @@ async function weatherWidgetService(
       weeklyReportArr.push(weatherReport);
     }
     return weeklyReportArr;
-    // Catch to return the error code
+    // Catch to return the error code (as a number)
   } catch (error) {
     const statusCode = parseInt((error as Error).message, 10);
     return statusCode;

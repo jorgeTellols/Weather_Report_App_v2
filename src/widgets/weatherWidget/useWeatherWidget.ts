@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import weatherWidgetService from './Weather/WeatherWidgetService';
-import Weather from './Weather/Weather';
+import weatherWidgetService from '../../services/WeatherWidgetService';
+import Weather from '../../models/Weather';
 import Language from '../../utils/Language';
 
 // Interface to define the props from the parent

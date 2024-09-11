@@ -1,5 +1,5 @@
 import Language from '../../utils/Language';
-import Weather from '../../widgets/weatherWidget/Weather/Weather';
+import Weather from '../../models/Weather';
 
 // Interface to define the props from the parent
 interface Props {

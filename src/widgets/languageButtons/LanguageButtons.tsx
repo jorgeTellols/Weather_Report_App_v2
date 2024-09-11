@@ -1,7 +1,8 @@
 import useLanguageButtons from './useLanguageButtons';
-import './language_buttons.scss';
 import Button from '../../components/button/Button';
 import Language from '../../utils/Language';
+
+import './language_buttons.scss';
 
 // Interface to define props
 interface Props {
@@ -9,7 +10,9 @@ interface Props {
 }
 
 // Destructuring and hook initialization
-function LanguageButtons({ switchLanguage }: Props) {
+function LanguageButtons({
+  switchLanguage,
+}: Props) {
   const {
     setEnglish,
     setSpanish,

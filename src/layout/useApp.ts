@@ -1,9 +1,9 @@
 import { useState } from 'react';
+
 import Language from '../utils/Language';
 import En from '../utils/En';
 import useThemeSetter from '../widgets/themeSetter/useThemeSetter';
-import Weather from '../widgets/weatherWidget/Weather/Weather';
-// import Weather from '../widgets/weatherWidget/Weather/Weather';
+import Weather from '../models/Weather';
 
 // Custom hook to handle the logic of the App component
 function useApp() {
@@ -28,7 +28,7 @@ function useApp() {
   // Function that defines the modal to "Form" and shows/hides it
   const toggleFormModal = () => {
     setModalType('form');
-    setIsFormShowing(!isFormShowing);
+    setIsFormShowing(true);
   };
 
   // Function that defines the modal to "Report" and shows/hides it

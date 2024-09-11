@@ -1,5 +1,6 @@
-import './weather_mini_card.scss';
 import Button from '../button/Button';
+
+import './weather_mini_card.scss';
 
 // Interface to define props
 interface Props {

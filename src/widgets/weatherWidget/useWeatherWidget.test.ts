@@ -1,11 +1,12 @@
 import { renderHook, waitFor, act } from '@testing-library/react';
+
 import useWeatherWidget from './useWeatherWidget';
-import weatherWidgetService from './Weather/WeatherWidgetService';
-import Weather from './Weather/Weather';
+import weatherWidgetService from '../../services/WeatherWidgetService';
+import Weather from '../../models/Weather';
 import En from '../../utils/En';
 
 // Mock the service
-jest.mock('./Weather/WeatherWidgetService');
+jest.mock('../../services/WeatherWidgetService.ts');
 
 // Variable initialization
 const selectedCityName = 'London 💂🏻‍♀️';
@@ -44,6 +45,9 @@ it('should return weather data and put it into todayWeather', async () => {
       tempMax: 25,
       tempMin: 15,
       rainProb: 0.1,
+      pressure: 1013,
+      humidity: 60,
+      windSpeed: 5,
     });
   });
 });

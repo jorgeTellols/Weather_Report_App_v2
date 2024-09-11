@@ -2,7 +2,8 @@
 import FullWeatherReport from '../components/fullWeatherReport/FullWeatherReport';
 import Language from '../utils/Language';
 import Form from '../widgets/form/Form';
-import Weather from '../widgets/weatherWidget/Weather/Weather';
+import Weather from '../models/Weather';
+
 import './modal.scss';
 
 // Interface to define props
@@ -20,10 +21,11 @@ function ModalForm({
   languageSelected,
   modalType,
   selectedCityName,
-  fullReport = undefined,
+  fullReport,
 }: Props) {
   let modalContent;
 
+  // Condition to choose what type of form show
   if (modalType === 'form') {
     modalContent = (
       <Form

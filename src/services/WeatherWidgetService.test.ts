@@ -1,6 +1,6 @@
 import weatherWidgetService from './WeatherWidgetService';
-import Weather from './Weather';
-import En from '../../../utils/En';
+import Weather from '../models/Weather';
+import En from '../utils/En';
 
 // Mock global fetch
 global.fetch = jest.fn();
@@ -14,7 +14,7 @@ describe('weatherWidgetService', () => {
   // Test if the url is built correctly
   it('should build the correct URL based on cityName', async () => {
     // Variable initialization and call to the API
-    const cityName = 'Toronto 🍁';
+    const cityName = 'toronto';
     const language = En;
     await weatherWidgetService(cityName, language);
 

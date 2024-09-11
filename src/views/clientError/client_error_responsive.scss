@@ -1,37 +1,12 @@
-// Mixin for error styles
-@mixin error-styles($height, $img-height, $img-width) {
-    .client-error {
-        height: $height;
-
-        img {
-            height: $img-height;
-            width: $img-width;
-        }
-    }
-}
-
 // Portrait orientation
 @media (orientation: portrait) {
     // Phones and Tablets
     @media (min-width: 300px) and (max-width: 1024px) {
-        @include error-styles(80vh, 40%, 60%);
-    }
-}
-
-// Landscape orientation
-@media (orientation: landscape) {
-    // Horizontal phones
-    @media (min-width: 600px) and (max-width: 767px) {
-        @include error-styles(70vh, 50%, 40%);
-    }
-
-    // Horizontal tablets
-    @media (min-width: 768px) and (max-width: 1024px) {
-        @include error-styles(65vh, 50%, 30%);
-    }
-
-    // Laptops and bigger devices
-    @media (min-width: 1024px) and (max-width: 1440px) {
-        @include error-styles(70vh, 50%, 40%);
+        .client-error {
+            img {
+                height: 40%;
+                width: 60%;
+            }
+        }
     }
 }

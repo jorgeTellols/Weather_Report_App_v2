@@ -1,7 +1,8 @@
-import './weather_card.scss';
 import Language from '../../utils/Language';
 import useWeatherCard from './useWeatherCard';
 import Button from '../button/Button';
+
+import './weather_card.scss';
 
 // Interface to define props
 interface Props {

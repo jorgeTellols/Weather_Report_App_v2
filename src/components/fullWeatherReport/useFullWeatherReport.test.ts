@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import useFullWeatherReport from './useFullWeatherReport';
-import Weather from '../../widgets/weatherWidget/Weather/Weather';
+import Weather from '../../models/Weather';
 import Es from '../../utils/Es';
 import En from '../../utils/En';
 

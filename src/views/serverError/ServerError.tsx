@@ -1,6 +1,6 @@
 import Language from '../../utils/Language';
+
 import './server_error.scss';
-// import serverErrorImage from '../../assets/server_error.gif';
 
 // Interface to define props
 interface Props {

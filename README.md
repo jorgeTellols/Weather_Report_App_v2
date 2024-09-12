@@ -35,9 +35,9 @@ All the original funcionalities are still here + some new things:
 
 This is a single page site, so eveything has its root on App.tsx. You can reach anything from there.
 
-I separated the components in folders. Some like "widgets" refers to complex components while other like "components" are more simple. There are also folders like "views", "layout" or "modals" that I used to give some structure to the whole thing. There are also folders dedicated to "models" and "services". 
+I separated the components in folders. Some like "widgets" refers to complex components while other like "components" are more simple. There are also folders like "views", "layout" or "modals" that I used to give some structure to the whole thing. Folders dedicated to "models" and "services" were made to deal with the API call and create the object that I show on the UI. 
 
-In a component's folder you will find anything related to it (the stylesheet, the logic, the tests, etc...). Every picture I used can be found in the folder "/public/assets" and the translation files and some other utilities can be found in the "utils" folder.
+Inside a component's folder you will find anything related to it (the stylesheet, the logic, the tests, etc...). Every picture I used can be found in the folder "/public/assets" and the translation files and some other utilities can be found in the "utils" folder.
 
 
 
